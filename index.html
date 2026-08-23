@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claude実践 個人レッスン｜AI勉強会 資料サイト</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{--hd:#0F2A5C;--navy:#0B1F44;--accent:#3466E8;--muted:#5E6A84;--border:#DCE3EF;--tint:#E8EFFC;--bg:#F7F9FC;--gold:#E8B93E;}
+  *{box-sizing:border-box;margin:0;}
+  body{font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:#1D2940;background:#FFF;line-height:1.8;}
+  a{color:var(--accent);}
+
+  /* ヒーロー（Udemy風ダークバンド） */
+  .hero{background:linear-gradient(95deg,var(--navy) 0%,var(--hd) 55%,rgba(15,42,92,.85) 100%);color:#FFF;position:relative;overflow:hidden;}
+  .hero-img{position:absolute;right:0;top:0;height:100%;width:52%;object-fit:cover;opacity:.5;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 45%);mask-image:linear-gradient(90deg,transparent,#000 45%);}
+  .hero-inner{position:relative;max-width:1080px;margin:0 auto;padding:56px 24px 48px;}
+  .crumb{font-size:13px;color:#B8CAF4;font-weight:700;letter-spacing:1px;}
+  .hero h1{font-size:34px;font-weight:900;line-height:1.4;margin-top:14px;max-width:620px;}
+  .hero .lead{margin-top:14px;font-size:16px;color:#DCE3EF;max-width:600px;}
+  .badges{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .chip{font-size:12.5px;font-weight:700;border-radius:4px;padding:4px 10px;background:rgba(255,255,255,.14);color:#FFF;}
+  .chip.gold{background:var(--gold);color:#3A2E00;}
+  .hero .meta{margin-top:14px;font-size:13.5px;color:#B8CAF4;}
+  .cta{display:inline-block;margin-top:22px;background:#FFF;color:var(--hd);font-weight:700;
+    padding:12px 26px;border-radius:8px;text-decoration:none;font-size:15px;}
+  .cta:hover{background:var(--tint);}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:40px 24px 64px;}
+  h2.sec{font-size:22px;color:var(--hd);font-weight:900;margin:40px 0 16px;}
+
+  /* 学べること */
+  .learn{border:1px solid var(--border);border-radius:12px;padding:24px 28px;background:#FFF;
+    display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;}
+  .learn p{font-size:14.5px;display:flex;gap:10px;}
+  .learn p::before{content:"✓";color:var(--accent);font-weight:900;}
+  @media(max-width:700px){.learn{grid-template-columns:1fr;}}
+
+  /* カリキュラム（Udemy風アコーディオン） */
+  .curr{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#FFF;}
+  details{border-bottom:1px solid var(--border);}
+  details:last-child{border-bottom:none;}
+  summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:15px 20px;background:var(--bg);}
+  summary::-webkit-details-marker{display:none;}
+  summary:hover{background:var(--tint);}
+  .num{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700;color:var(--accent);width:56px;font-size:13px;}
+  .stitle{flex:1;font-weight:700;color:var(--hd);font-size:15px;}
+  .ltag{font-size:11.5px;font-weight:700;color:var(--muted);border:1px solid var(--border);border-radius:999px;
+    padding:2px 10px;white-space:nowrap;background:#FFF;}
+  .dur{font-size:12.5px;color:var(--muted);width:70px;text-align:right;white-space:nowrap;}
+  .caret{color:var(--muted);font-size:12px;transition:transform .15s;}
+  details[open] .caret{transform:rotate(90deg);}
+  .dbody{padding:16px 20px 20px 90px;font-size:14px;background:#FFF;}
+  .dbody .goal{color:var(--muted);font-size:13.5px;margin-bottom:10px;}
+  .res{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+  .res a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;text-decoration:none;
+    border:1.5px solid var(--accent);color:var(--accent);border-radius:6px;padding:6px 14px;background:#FFF;}
+  .res a:hover{background:var(--tint);}
+  .res .soon{font-size:13px;color:var(--muted);border:1px dashed var(--border);border-radius:6px;padding:6px 14px;}
+
+  /* 2カラム */
+  .cols{display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:start;}
+  @media(max-width:900px){.cols{grid-template-columns:1fr;}}
+  .side{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#FFF;position:sticky;top:16px;}
+  .side img{width:100%;display:block;aspect-ratio:16/7;object-fit:cover;}
+  .side .in{padding:18px 20px;}
+  .side h3{font-size:15px;color:var(--hd);margin-bottom:8px;}
+  .side ul{padding-left:0;list-style:none;font-size:13.5px;color:#1D2940;}
+  .side li{padding:5px 0;border-bottom:1px solid var(--bg);display:flex;gap:8px;}
+  .side li::before{content:"・";color:var(--accent);font-weight:900;}
+  .side .note{font-size:12px;color:var(--muted);margin-top:10px;}
+
+  footer{border-top:1px solid var(--border);margin-top:24px;padding:20px 24px;font-size:12.5px;color:var(--muted);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;max-width:1080px;margin-left:auto;margin-right:auto;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img class="hero-img" src="assets/hero_course.png" alt="">
+  <div class="hero-inner">
+    <p class="crumb">株式会社ククルデザイン ＞ AI導入支援 ＞ 個人レッスン</p>
+    <h1>Claude実践 個人レッスン<br>ゼロから12回で、仕事を任せられるまで</h1>
+    <p class="lead">Anthropic公式コース「Claude Academy」に沿って、Chat・Cowork・Claude Codeを対面マンツーマンで習得する全12回。最終回に公式修了バッジを取得します。</p>
+    <div class="badges">
+      <span class="chip gold">Claude Academy 準拠</span>
+      <span class="chip">全12回・24時間</span>
+      <span class="chip">マンツーマン</span>
+      <span class="chip">公式修了バッジ対応</span>
+    </div>
+    <a class="cta" href="第1回/deck.html">第1回の資料を開く</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="cols">
+    <div>
+      <h2 class="sec" style="margin-top:0;">このコースで学べること</h2>
+      <div class="learn">
+        <p>Claudeとは何かを説明し、効果的な最初の会話ができる</p>
+        <p>明確なプロンプトを書き、結果を改善・洗練できる</p>
+        <p>Chat・Cowork・Codeの3モードを使い分けられる</p>
+        <p>Projects・Artifacts・スキルで作業を整理できる</p>
+        <p>コネクタとResearchでツールとウェブをつなげられる</p>
+        <p>自分の職種のユースケースを実際に組み、業務に定着させる</p>
+      </div>
+
+      <h2 class="sec">カリキュラム ── 全12回・各2時間</h2>
+      <div class="curr">
+        <details open>
+          <summary><span class="num">第1回</span><span class="stitle">Claudeとは何か。出会いと最初の会話</span><span class="ltag">101 / L1</span><span class="dur">8/25</span><span class="caret">▶</span></summary>
+          <div class="dbody">
+            <p class="goal">設計を導く原則（Constitutional AI）／単純なチャットボットとの違い／アクセス3経路（ウェブ・デスクトップ・モバイル）＋実機セットアップと最初のひと言</p>
+            <div class="res">
+              <a href="第1回/deck.html">講義スライド（HTML）</a>
+              <a href="第1回/out/第1回_講義スライド_v2.0.pdf">印刷用PDF</a>
+            </div>
+          </div>
+        </details>
+        <details>
+          <summary><span class="num">第2回</span><span class="stitle">Claudeとの最初の会話</span><span class="ltag">101 / L2</span><span class="dur">2時間</span><span class="caret">▶</span></summary>
+          <div class="dbody"><p class="goal">インターフェース操作／明確で具体的なプロンプト／ファイル・画像のアップロード／フォローアップでの改善</p><div class="res"><span class="soon">資料は開催1週間前に公開</span></div></div>
+        </details>
+        <details>
+          <summary><span class="num">第3回</span><span class="stitle">つまずきの直し方と、AI活用力（＋入力の線引き）</span><span class="ltag">101 / L3＋補講</span><span class="dur">2時間</span><span class="caret">▶</span></summary>
+          <div class="dbody"><p class="goal">よくある課題のトラブルシューティング／AI活用力（4D）／簡易eval。独自補講: 入力してよい情報の判断フローと利用ルール5行</p><div class="res"><span class="soon">準備中</span></div></div>
+        </details>
+        <details>
+          <summary><span class="num">第4回</span><span class="stitle">デスクトップアプリの3モード: Chat・Cowork・Code</span><span class="ltag">101 / L4</span><span class="dur">2時間</span><span class="caret">▶</span></summary>
+          <div class="dbody"><p class="goal">3モードの設計目的と特有機能（クイックエントリー・スケジュールタスク）／作業の種類でモードを選ぶ</p><div class="res"><span class="soon">準備中</span></div></div>
+        </details>
+        <details>
+          <summary><span class="num">第5回</span><span class="stitle">プロジェクト入門</span><span class="ltag">101 / L5</span><span class="dur">2時間</span><span class="caret">▶</span></summary>
+          <div class="dbody"><p class="goal">Projectsの作成／ナレッジベースへの資料追加／効果的なプロジェクト指示</p><div class="res"><span class="soon">準備中</span></div></div>
+        </details>
+        <details>
+          <summary><span class="num">第6回</span><span class="stitle">アーティファクトで作成する</span><span class="ltag">101 / L6</span><span class="dur">2時間</span><span class="caret">▶</span></summary>
+          <div class="dbody"><p class="goal">Artifactsの作成条件／共有と一般公開／よくある問題の対処</p><div class="res"><span class="soon">準備中</span></div></div>
+        </details>
+        <details>
+          <summary><span class="num">第7回</span><span class="stitle">スキルとコネクタ</span><span class="ltag">101 / L7・L8</span><span class="dur">2時間</span><span class="caret">▶</span></summary>
+          <div class="dbody"><p class="goal">組み込みスキル（Word/Excel/PowerPoint/PDF）の有効化／コネクタの設定と会話からの活用</p><div class="res"><span class="soon">準備中</span></div></div>
+        </details>
+        <details>
+          <summary><span class="num">第8回</span><span class="stitle">深掘りのためのResearchモード</span><span class="ltag">101 / L10</span><span class="dur">2時間</span><span class="caret">▶</span></summary>
+          <div class="dbody"><p class="goal">Researchの使いどころ／拡張思考との連携／効果的なResearchプロンプト</p><div class="res"><span class="soon">準備中</span></div></div>
+        </details>
+        <details>
+          <summary><span class="num">第9回</span><span class="stitle">職種別ユースケースを組む</span><span class="ltag">101 / L11</span><span class="dur">2時間</span><span class="caret">▶</span></summary>
+          <div class="dbody"><p class="goal">すぐ試せるユースケースを2〜3組む／アイデアの探し場所</p><div class="res"><span class="soon">準備中</span></div></div>
+        </details>
+        <details>
+          <summary><span class="num">第10回</span><span class="stitle">Cowork。作業を丸ごと任せる</span><span class="ltag">Cowork入門</span><span class="dur">2時間</span><span class="caret">▶</span></summary>
+          <div class="dbody"><p class="goal">Chatとの違い／作業フォルダ・権限の設定／複数ステップのタスクを最初から最後まで委任し、方向付けとレビューをする</p><div class="res"><span class="soon">準備中</span></div></div>
+        </details>
+        <details>
+          <summary><span class="num">第11回</span><span class="stitle">Claude Code体験と、他のClaude製品</span><span class="ltag">Code 101＋101 / L12</span><span class="dur">2時間</span><span class="caret">▶</span></summary>
+          <div class="dbody"><p class="goal">エージェントループ／Plan Modeで小さな業務ツールを1本／Tag・Design・M365・in Chromeをいつ使うか</p><div class="res"><span class="soon">準備中</span></div></div>
+        </details>
+        <details>
+          <summary><span class="num">第12回</span><span class="stitle">総まとめ。クイズ・修了バッジ・成果発表</span><span class="ltag">101 / L13＋クイズ</span><span class="dur">2時間</span><span class="caret">▶</span></summary>
+          <div class="dbody"><p class="goal">Claude 101のコースクイズに合格して公式修了バッジを取得／12回で変えた業務を発表／修了後の独学ルート</p><div class="res"><span class="soon">準備中</span></div></div>
+        </details>
+      </div>
+      <p style="font-size:12.5px;color:var(--muted);margin-top:10px;">※ 各回の資料は開催が近づいたら追加されます。「101 / L◯」はAnthropic公式コース Claude 101 の対応レッスン番号です。</p>
+    </div>
+
+    <aside class="side">
+      <img src="assets/cover_session1.png" alt="">
+      <div class="in">
+        <h3>受講に必要なもの</h3>
+        <ul>
+          <li>ノートPC（Windows / Mac）</li>
+          <li>Claude Proプラン（月20ドル ※2026年8月時点）</li>
+          <li>Claudeデスクトップアプリ</li>
+        </ul>
+        <h3 style="margin-top:16px;">このコースに含まれるもの</h3>
+        <ul>
+          <li>講義スライド・教材（全回HTML閲覧可）</li>
+          <li>演習データ・配布ワークシート</li>
+        </ul>
+        <p class="note">料金確認: <a href="https://www.claude.com/pricing" target="_blank">claude.com/pricing</a></p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer><span>AI勉強会 個人レッスン 資料サイト v2.0（2026-08-23）</span><span>株式会社ククルデザイン</span></footer>
+</body>
+</html>
