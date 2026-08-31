@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+  <meta name="hz:canvas-width" content="1280">
+  <meta name="hz:canvas-height" content="720">
+  <meta name="hz:slide-selector" content=".slide">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#F7F9FC; --bg-white:#FFF; --bg-soft:#EEF2F8;
+      --text-body:#1D2940; --text-muted:#5E6A84; --border:#DCE3EF;
+      --font-jp:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+      --font-num:"Helvetica Neue",Inter,Arial,sans-serif;
+    }
+    [data-theme="blue"]{ --text-hd:#0F2A5C; --primary:#0F2A5C; --accent:#3466E8; --accent-soft:#B8CAF4; --bg-tint:#E8EFFC; }
+
+    *{margin:0;box-sizing:border-box;}
+    body{background:#888;}
+    .slide{
+      width:1280px;height:720px;position:relative;overflow:hidden;
+      background:var(--bg);color:var(--text-body);font-family:var(--font-jp);
+      padding:64px 72px;margin:0 auto 24px;
+    }
+    .eyebrow{font-family:var(--font-num);font-weight:700;font-size:15px;letter-spacing:4px;
+      text-transform:uppercase;color:var(--text-muted);}
+    .action-title{font-weight:700;font-size:34px;line-height:1.4;color:var(--text-hd);}
+    .display{font-weight:700;font-size:120px;line-height:1.05;color:var(--text-hd);letter-spacing:-2px;}
+    .body{font-size:19px;line-height:1.7;}
+    .metric{font-family:var(--font-num);font-weight:700;font-size:88px;color:var(--text-hd);line-height:1;}
+    .metric .unit{font-family:var(--font-jp);font-weight:400;font-size:34px;color:var(--text-muted);margin-left:6px;}
+    .source{font-size:13px;font-style:italic;color:var(--text-muted);position:absolute;left:72px;bottom:28px;}
+    .action-title::before{content:"";display:inline-block;width:11px;height:11px;border-radius:50%;
+      background:var(--accent);margin-right:14px;vertical-align:middle;}
+    table{border-collapse:collapse;width:100%;font-size:17px;} th,td{border:none;border-bottom:1px solid var(--border);
+      padding:12px 8px;text-align:left;} th{color:var(--text-hd);font-weight:700;}
+    .mesh{position:absolute;inset:0;z-index:0;background:
+      radial-gradient(60% 50% at 80% 10%, var(--bg-tint), transparent 70%),
+      radial-gradient(50% 40% at 10% 90%, var(--accent-soft), transparent 70%);opacity:.55;}
+    .card{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;
+      padding:28px;box-shadow:0 12px 32px rgba(15,42,92,.06);position:relative;z-index:1;}
+    .grad-accent{background:linear-gradient(90deg,var(--primary),var(--accent));
+      -webkit-background-clip:text;background-clip:text;color:transparent;}
+    .pagefoot{position:absolute;right:72px;bottom:26px;font-family:var(--font-num);
+      font-size:13px;color:var(--text-muted);letter-spacing:1px;}
+    .flowrow{display:grid;grid-template-columns:190px 1fr;align-items:center;gap:20px;
+      padding:13px 0;border-bottom:1px solid var(--border);}
+    .stmt{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;}
+    .chip{display:inline-block;font-family:var(--font-num);font-weight:700;font-size:15px;
+      color:var(--accent);background:var(--bg-tint);border-radius:999px;padding:4px 14px;margin-right:10px;}
+    @media print{ .slide{page-break-after:always;margin:0;} body{background:#fff;} }
+  </style>
+</head>
+<body data-theme="blue">
+
+<!-- 1. 表紙 -->
+<section class="slide" data-intent="cover" style="padding:0;">
+  <img src="assets/cover_session2.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+  <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(247,249,252,.92) 0%,rgba(247,249,252,.78) 42%,rgba(247,249,252,0) 68%);"></div>
+  <div style="position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;padding:64px 72px;">
+    <p class="eyebrow">AI STUDY SESSION / DAY 2 OF 12</p>
+    <h1 class="display" style="font-size:72px;margin-top:20px;">Claudeとの、<br><span class="grad-accent">最初の会話</span></h1>
+    <p class="body" style="margin-top:30px;color:var(--text-muted);">AI勉強会 第2回（全12回）<br>株式会社ククルデザイン</p>
+  </div>
+  <p class="pagefoot" style="color:#5E6A84;">v2.0</p>
+</section>
+
+<!-- 2. 今日のゴール -->
+<section class="slide" data-intent="goal">
+  <p class="eyebrow">TODAY'S GOAL</p>
+  <h2 class="action-title">今日のゴールは、この4つです</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px;">
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 1</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">新しい会話を始めて、<b>画面を迷わず操作</b>できる</p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 2</p>
+      <p class="body" style="margin-top:10px;font-weight:500;"><b>明確で具体的な言葉</b>で、効果的に頼める</p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 3</p>
+      <p class="body" style="margin-top:10px;font-weight:500;"><b>ファイルや画像を渡して</b>、こちらの事情を伝えられる</p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 4</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">返ってきた文章を<b>会話で改善・洗練</b>できる</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:30px;color:var(--text-muted);">前回は「出会う」まで。今日は道具として使い始める回です。時間の7割は手を動かします。</p>
+  <p class="pagefoot">01</p>
+</section>
+
+<!-- 3. 画面の地図 -->
+<section class="slide" data-intent="interface">
+  <p class="eyebrow">THE SCREEN ⚠️</p>
+  <h2 class="action-title">今日覚える場所は5つ。あとは全部無視して構いません</h2>
+  <div style="margin-top:24px;">
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:19px;">入力欄と送信</p>
+      <p class="body">画面下部。ここに話しかける。改行はShift＋Enter ⚠️</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:19px;">新しい会話</p>
+      <p class="body">サイドバーの一番上。<b>話題が変わったら新しい会話</b>。前の話を引きずらせない</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:19px;">履歴</p>
+      <p class="body">サイドバーに過去の会話が全部残る。あとから続きを頼める</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:19px;">添付（クリップ）</p>
+      <p class="body">入力欄のクリップのアイコン。ファイルや画像を渡す。ドラッグでも入る ⚠️</p>
+    </div>
+    <div class="flowrow" style="border-bottom:none;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:19px;">モデル選択</p>
+      <p class="body">入力欄の下に現在のモデル名。今日は触らず、標準のままでいきます ⚠️</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:22px;color:var(--text-muted);">サイドバーのProjects・Artifactsは第5回と第6回で。存在だけ覚えておいてください。</p>
+  <p class="pagefoot">02</p>
+</section>
+
+<!-- 4. 基本姿勢 -->
+<section class="slide" data-intent="statement">
+  <div class="mesh"></div>
+  <div class="stmt">
+    <p class="eyebrow">PRINCIPLE</p>
+    <h2 class="display" style="font-size:76px;margin-top:20px;">同僚に話しかけるように、<br><span class="grad-accent">自然に。簡潔に。</span></h2>
+    <p class="body" style="margin-top:32px;font-size:22px;">これがClaude公式の推奨です。命令文を組み立てる必要はありません。<br>会話調のまま、次の3つだけ意識します。</p>
+  </div>
+  <p class="pagefoot">03</p>
+</section>
+
+<!-- 5. 頼み方の3要素 -->
+<section class="slide" data-intent="three">
+  <p class="eyebrow">3 ELEMENTS</p>
+  <h2 class="action-title">良い頼み方の3要素。「舞台・タスク・ルール」</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;">
+    <div class="card">
+      <div class="metric" style="font-size:36px;color:var(--accent-soft);">1</div>
+      <h3 style="font-size:22px;color:var(--text-hd);margin-top:10px;">舞台を整える</h3>
+      <p class="body" style="margin-top:12px;">自分の役割・目標・知っておいてほしい事情。「私は食品小売店を経営していて…」</p>
+    </div>
+    <div class="card">
+      <div class="metric" style="font-size:36px;color:var(--accent-soft);">2</div>
+      <h3 style="font-size:22px;color:var(--text-hd);margin-top:10px;">タスクを定義する</h3>
+      <p class="body" style="margin-top:12px;">何をしてほしいか。書く・整理する・分析する・案を出す。動詞をはっきり</p>
+    </div>
+    <div class="card">
+      <div class="metric" style="font-size:36px;color:var(--accent-soft);">3</div>
+      <h3 style="font-size:22px;color:var(--text-hd);margin-top:10px;">ルールを指定する</h3>
+      <p class="body" style="margin-top:12px;">トーン・形式・分量・お手本。「丁寧に、5行以内で、3案」</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:34px;color:var(--text-muted);">3つ全部そろえなくても動きます。足りない分は、あとから会話で足せばいい。まず投げることが先です。</p>
+  <p class="pagefoot">04</p>
+</section>
+
+<!-- 6. 前後比較 -->
+<section class="slide" data-intent="beforeafter">
+  <p class="eyebrow">BEFORE / AFTER</p>
+  <h2 class="action-title">同じ用件でも、3要素があると返事の精度が変わります</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px;">
+    <div class="card" style="background:var(--bg-soft);box-shadow:none;">
+      <p class="eyebrow" style="letter-spacing:2px;">BEFORE ── 動くが、当たらない</p>
+      <p class="body" style="margin-top:14px;font-size:18px;">「このメールに返事を書いて」</p>
+      <p class="body" style="margin-top:12px;font-size:15px;color:var(--text-muted);">→ 一般的で長い返信が返ってくる。伝えるべき事実（再入荷の時期）が入らない</p>
+    </div>
+    <div class="card" style="border:2px solid var(--accent);">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">AFTER ── 3要素入り</p>
+      <p class="body" style="margin-top:14px;font-size:16.5px;">「<b>私は食品小売店の店主です</b>。下のお問い合わせに返信したい。<b>再入荷は9月中旬の見込みで、入荷したら連絡する形にしたい</b>。返信案を<b>3つ、それぞれ5行以内で</b>、書き方を変えて出して」</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:32px;color:var(--text-muted);">左が舞台なし・ルールなし。右は舞台（店主）・タスク（返信案）・ルール（3案・5行以内）がそろった形。ハンズオンで両方投げて、違いを見ます。</p>
+  <p class="pagefoot">05</p>
+</section>
+
+<!-- 7. 文脈は渡す -->
+<section class="slide" data-intent="context">
+  <p class="eyebrow">GIVE CONTEXT ⚠️</p>
+  <h2 class="action-title">説明し直すより、渡すほうが早い。ファイルと画像の添付</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px;">
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:22px;color:var(--text-hd);">渡せるもの</h3>
+      <p class="body" style="margin-top:14px;">PDF・Word・Excel・CSV・テキスト・画像（写真） ⚠️。会議の記録も、価格表も、手書きメモの写真も、そのまま</p>
+    </div>
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:22px;color:var(--text-hd);">渡し方は2つ</h3>
+      <p class="body" style="margin-top:14px;">入力欄のクリップのアイコンから選ぶか、ファイルを入力欄へドラッグ。あとは普通に頼むだけ</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:34px;">アップロードは、こちらの事情をClaudeに理解させる<b>近道</b>です（公式の表現）。要点を人が打ち直すのではなく、<b>資料ごと渡して、要点を出させる</b>。前回話した「順序の逆転」を今日体験します。</p>
+  <p class="pagefoot">06</p>
+</section>
+
+<!-- 8. ステートメント -->
+<section class="slide" data-intent="statement2">
+  <div class="mesh"></div>
+  <div class="stmt">
+    <p class="eyebrow">PRINCIPLE 2</p>
+    <h2 class="display" style="font-size:84px;margin-top:20px;">一発で当てない。<br><span class="grad-accent">会話で寄せる。</span></h2>
+    <p class="body" style="margin-top:32px;font-size:22px;">Claudeの本当の力は、単発の頼みではなく続けたやり取りから生まれます（公式）。<br>最初の1投は6割で十分。残りは往復で仕上げます。</p>
+  </div>
+  <p class="pagefoot">07</p>
+</section>
+
+<!-- 9. 直しの言い方カタログ -->
+<section class="slide" data-intent="refine">
+  <p class="eyebrow">FOLLOW-UP PHRASES</p>
+  <h2 class="action-title">直しの言い方は、この6つでほとんど足ります</h2>
+  <div style="margin-top:24px;">
+    <div class="flowrow" style="grid-template-columns:320px 1fr;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">「もっと短くして」</p>
+      <p class="body" style="font-size:17px;">長い返事はまず圧縮。「半分に」「3行で」と数字で言うとなお効く</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:320px 1fr;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">「もっとやわらかく／かたく」</p>
+      <p class="body" style="font-size:17px;">トーンの調整。相手との関係に合わせて</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:320px 1fr;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">「2番目の案をベースに」</p>
+      <p class="body" style="font-size:17px;">複数案から選んで育てる。ゼロからやり直させない</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:320px 1fr;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">「表に整理して」</p>
+      <p class="body" style="font-size:17px;">形式の変更。箇条書き・表・手順書に組み替えられる</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:320px 1fr;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">「ここだけ直して」</p>
+      <p class="body" style="font-size:17px;">部分修正。気に入っている箇所を巻き込まない</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:320px 1fr;border-bottom:none;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">「なぜそうしたか説明して」</p>
+      <p class="body" style="font-size:17px;">判断の根拠を聞く。納得してから使える</p>
+    </div>
+  </div>
+  <p class="pagefoot">08</p>
+</section>
+
+<!-- 10. ハンズオン -->
+<section class="slide" data-intent="handson">
+  <p class="eyebrow">HANDS-ON 70 MIN</p>
+  <h2 class="action-title">ここから実機。4つの体験と自由時間です</h2>
+  <div style="margin-top:26px;">
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">12<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">before/afterを両方投げて、返事を見比べる（再入荷の問い合わせメールに返信）</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">15<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ファイル添付。会議の文字起こし.txtを丸ごと渡して「決まったこと・宿題・期限」を表に ⚠️</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">15<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">画像。手書きメモをスマホで撮ってアプリから送り、文字にさせる。PCでも同じ会話が開けることを確認 ⚠️</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">18<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">仕上げの往復。ご自身の実務の文章を1本選び、直しの言い方だけで3往復して完成させる</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;border-bottom:none;">
+      <p class="metric" style="font-size:22px;">10<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">自由時間。試したいことリストから1本</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:22px;color:var(--text-muted);">頼み方はすべて体験シートに印刷してあります。約束3つ（名前と秘密の数字はまだ入れない・読んでから使う・迷ったら聞く）は今日も継続です。</p>
+  <p class="pagefoot">09</p>
+</section>
+
+<!-- 11. 持ち帰り -->
+<section class="slide" data-intent="takeaway">
+  <p class="eyebrow">TAKEAWAY</p>
+  <h2 class="action-title">持ち帰りは「自分の定型の頼み方」2本です</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;">
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">よく書く文章の頼み方 1本</h3>
+      <p class="body" style="margin-top:12px;">毎週書いているメール・案内・報告のどれかを、3要素入りの頼み方にして体験シートに書き残す。次回からコピペで使えます。</p>
+    </div>
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">よく読む資料の頼み方 1本</h3>
+      <p class="body" style="margin-top:12px;">定期的に目を通す記録・資料を「添付→何を出させるか」の形で1本。会議メモでも日報でも。</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:36px;color:var(--text-muted);">宿題はありません。書いた2本を、気が向いたときに実際の業務で1回使ってみてください。うまくいかなかったら、その話が次回の材料になります。</p>
+  <p class="pagefoot">10</p>
+</section>
+
+<!-- 12. 次回予告 -->
+<section class="slide" data-intent="cta">
+  <div class="mesh"></div>
+  <div class="stmt">
+    <p class="eyebrow">NEXT SESSION</p>
+    <h2 class="display" style="font-size:68px;margin-top:20px;">次回は、つまずきの直し方と<br><span class="grad-accent">安心の線引き。</span></h2>
+    <p class="body" style="margin-top:30px;font-size:21px;">思い通りにならなかったときの立て直し方と、「どこまで入力してよいか」の判断基準を一緒に作ります。<br>判断に迷いそうな書類があれば、1つ持ってきてください。</p>
+    <p class="body" style="margin-top:36px;color:var(--text-muted);">第3回 つまずきの直し方と、安心の線引き｜株式会社ククルデザイン</p>
+  </div>
+  <p class="pagefoot">11</p>
+</section>
+
+</body>
+</html>

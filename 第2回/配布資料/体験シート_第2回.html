@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page{size:A4;margin:0;}
+  *{margin:0;box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:#1D2940;width:210mm;}
+  .page{width:210mm;height:296mm;padding:13mm 15mm 9mm;position:relative;page-break-after:always;}
+  .page:last-child{page-break-after:auto;}
+  .eyebrow{font-size:9pt;letter-spacing:3px;color:#5E6A84;font-weight:700;}
+  h1{font-size:18pt;color:#0F2A5C;margin-top:2mm;}
+  h1::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#3466E8;margin-right:8px;vertical-align:middle;}
+  .lead{font-size:10pt;line-height:1.6;margin-top:3mm;}
+  .exp{border:1.5px solid #DCE3EF;border-radius:10px;padding:4mm 5mm;margin-top:3.2mm;background:#FFF;}
+  .exp-head{display:flex;align-items:center;gap:3mm;}
+  .chip{font-size:8.5pt;font-weight:700;color:#3466E8;background:#E8EFFC;border-radius:999px;padding:1mm 3.5mm;}
+  .et{font-size:11pt;font-weight:700;color:#0F2A5C;margin-left:1mm;}
+  .todo{font-size:9.5pt;line-height:1.6;margin-top:2mm;}
+  .prompt{margin-top:2.2mm;background:#F7F9FC;border:1px dashed #B8CAF4;border-radius:6px;
+    padding:2.8mm 4mm;font-size:9.5pt;line-height:1.7;color:#1D2940;}
+  .prompt b{color:#0F2A5C;}
+  .memo{margin-top:2.2mm;font-size:9pt;color:#5E6A84;}
+  .memo .line{display:inline-block;border-bottom:1px solid #9AA5BC;min-width:118mm;height:4.5mm;vertical-align:-1mm;}
+  .foot{position:absolute;left:15mm;right:15mm;bottom:7mm;padding-top:2.5mm;border-top:1px solid #DCE3EF;
+    font-size:8.5pt;color:#5E6A84;display:flex;justify-content:space-between;}
+  .hint{font-size:9pt;color:#5E6A84;line-height:1.7;margin-top:2mm;}
+  .note{margin-top:5mm;border-radius:10px;background:#E8EFFC;padding:4mm 6mm;font-size:9.5pt;line-height:1.8;color:#0F2A5C;}
+  h2{font-size:13pt;color:#0F2A5C;margin-top:6mm;}
+  .tmpl{border:1.5px solid #DCE3EF;border-radius:10px;padding:4mm 5mm;margin-top:3mm;background:#FFF;}
+  .tmpl .rows{margin-top:2mm;}
+  .tmpl .row{display:grid;grid-template-columns:34mm 1fr;gap:3mm;align-items:end;padding:2.2mm 0;}
+  .tmpl .lbl{font-size:9pt;font-weight:700;color:#3466E8;}
+  .tmpl .fill{border-bottom:1px solid #9AA5BC;height:6mm;}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <p class="eyebrow">AI勉強会 第2回 体験シート（1/2）</p>
+  <h1>今日の4つの体験</h1>
+  <p class="lead">点線の枠をそのまま打つかコピーして使います。<b>〇〇はご自身の言葉に置き換え。</b>終わるたびにメモ欄へ「自分の仕事ならどこで使うか」を1行。</p>
+
+  <div class="exp">
+    <div class="exp-head"><span class="chip">12分</span><span class="et">① before / after ── 同じ用件を2回頼む</span></div>
+    <p class="todo">演習データ「問い合わせメール」のメール4を使い、まず雑に、次に3要素入りで頼みます。</p>
+    <div class="prompt">（before）このメールに返事を書いて。<br>【ここにメール4を貼り付け】</div>
+    <div class="prompt">（after）<b>私は食品小売店の店主です</b>。下のお問い合わせに返信したい。<b>再入荷は9月中旬の見込みで、入荷したら連絡する形にしたい</b>。返信案を<b>3つ、それぞれ5行以内で</b>、書き方を変えて出してください。<br>【ここにメール4を貼り付け】</div>
+    <p class="memo">2つの返事の違いメモ: <span class="line"></span></p>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head"><span class="chip">15分</span><span class="et">② ファイルを丸ごと渡す</span></div>
+    <p class="todo">演習データ「販促会議の文字起こし.txt」を、貼り付けではなく<b>クリップのアイコンから添付</b>（ドラッグでも可）。</p>
+    <div class="prompt">添付した会議の文字起こしから、決まったこと、宿題（誰が・何を・いつまで）、期限を、表に整えてください。</div>
+    <p class="todo">表が出たら、元の文字起こしと日付を1つ照合。続けて「宿題だけ、期限が近い順に並べ直して」と頼んでみる。</p>
+    <p class="memo">メモ: <span class="line"></span></p>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head"><span class="chip">15分</span><span class="et">③ 画像を渡す ── スマホとPCの連携</span></div>
+    <p class="todo">手書きメモや紙の書類をスマホで撮影し、<b>スマホのClaudeアプリ</b>から画像を添付して送ります。</p>
+    <div class="prompt">この写真に書いてあることを、文字にしてください。読めない部分は「？」のままで構いません。</div>
+    <p class="todo">終わったらPCで同じ会話を開き、履歴が同期されていることを確認。続きの指示はPCから打てます。</p>
+    <p class="memo">メモ: <span class="line"></span></p>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head"><span class="chip">18分</span><span class="et">④ 会話で仕上げる ── 3往復</span></div>
+    <p class="todo">ご自身の実務の文章（メール・案内・お知らせ）を1本選び、まず6割の頼み方で投げる。あとは<b>直しの言い方だけ</b>で仕上げます。</p>
+    <div class="prompt">直しの言い方: 「もっと短くして」「もっとやわらかく」「2番目の案をベースに」「表に整理して」「ここだけ直して」「なぜそうしたか説明して」</div>
+    <p class="memo">何往復で使える形になったか: <span class="line"></span></p>
+  </div>
+
+  <div class="foot"><span>AI勉強会 第2回 体験シート｜株式会社ククルデザイン</span><span>演習データはすべて架空です</span></div>
+</div>
+
+<div class="page">
+  <p class="eyebrow">AI勉強会 第2回 体験シート（2/2）</p>
+  <h1>持ち帰り ── 自分の定型の頼み方 2本</h1>
+  <p class="lead">今日の3要素（<b>舞台・タスク・ルール</b>）で、ご自身の業務用の頼み方を2本作ります。ここに書いた文は、次回以降そのままコピペで使う「自分の道具」になります。</p>
+
+  <div class="tmpl">
+    <h2 style="margin-top:0;">1本目 ── よく書く文章（メール・案内・報告など）</h2>
+    <div class="rows">
+      <div class="row"><p class="lbl">舞台（私は…）</p><div class="fill"></div></div>
+      <div class="row"><p class="lbl">タスク（…して）</p><div class="fill"></div></div>
+      <div class="row"><p class="lbl">ルール（形式・分量・トーン）</p><div class="fill"></div></div>
+      <div class="row"><p class="lbl">通し書き</p><div class="fill"></div></div>
+      <div class="row"><p class="lbl"></p><div class="fill"></div></div>
+    </div>
+  </div>
+
+  <div class="tmpl">
+    <h2 style="margin-top:0;">2本目 ── よく読む資料（会議メモ・日報・送られてくる資料など）</h2>
+    <div class="rows">
+      <div class="row"><p class="lbl">添付するもの</p><div class="fill"></div></div>
+      <div class="row"><p class="lbl">出させるもの</p><div class="fill"></div></div>
+      <div class="row"><p class="lbl">通し書き</p><div class="fill"></div></div>
+      <div class="row"><p class="lbl"></p><div class="fill"></div></div>
+    </div>
+  </div>
+
+  <div class="note"><b>今日の約束（継続中）</b><br>
+  ① 人の名前・連絡先・社外に出せない数字は、まだ入れない（きちんとした線引きは次回作ります）<br>
+  ② 出てきた文章は、読んでから使う　③ 迷ったら入れずに聞く<br><br>
+  <b>宿題はありません。</b>書いた2本を、気が向いたときに実際の業務で1回試してみてください。うまくいかなかったら、その話を次回聞かせてください。</div>
+
+  <div class="foot"><span>AI勉強会 第2回 体験シート｜株式会社ククルデザイン</span><span></span></div>
+</div>
+
+</body>
+</html>
