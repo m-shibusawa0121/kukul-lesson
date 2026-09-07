@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page{size:A4;margin:0;}
+  *{margin:0;box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:#1D2940;width:210mm;}
+  .page{width:210mm;height:296mm;padding:13mm 15mm 9mm;position:relative;page-break-after:always;}
+  .page:last-child{page-break-after:auto;}
+  .eyebrow{font-size:9pt;letter-spacing:3px;color:#5E6A84;font-weight:700;}
+  h1{font-size:18pt;color:#0F2A5C;margin-top:2mm;}
+  h1::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#3466E8;margin-right:8px;vertical-align:middle;}
+  .lead{font-size:10pt;line-height:1.6;margin-top:3mm;}
+  .exp{border:1.5px solid #DCE3EF;border-radius:10px;padding:4mm 5mm;margin-top:3.2mm;background:#FFF;}
+  .exp-head{display:flex;align-items:center;gap:3mm;}
+  .chip{font-size:8.5pt;font-weight:700;color:#3466E8;background:#E8EFFC;border-radius:999px;padding:1mm 3.5mm;}
+  .et{font-size:11pt;font-weight:700;color:#0F2A5C;margin-left:1mm;}
+  .todo{font-size:9.5pt;line-height:1.6;margin-top:2mm;}
+  .prompt{margin-top:2.2mm;background:#F7F9FC;border:1px dashed #B8CAF4;border-radius:6px;
+    padding:2.8mm 4mm;font-size:9.5pt;line-height:1.7;color:#1D2940;}
+  .prompt b{color:#0F2A5C;}
+  .memo{margin-top:2.2mm;font-size:9pt;color:#5E6A84;}
+  .memo .line{display:inline-block;border-bottom:1px solid #9AA5BC;min-width:118mm;height:4.5mm;vertical-align:-1mm;}
+  .foot{position:absolute;left:15mm;right:15mm;bottom:7mm;padding-top:2.5mm;border-top:1px solid #DCE3EF;
+    font-size:8.5pt;color:#5E6A84;display:flex;justify-content:space-between;}
+  .rx{border:1.5px solid #DCE3EF;border-radius:10px;padding:4mm 5mm;margin-top:3mm;background:#FFF;
+    display:grid;grid-template-columns:52mm 1fr;gap:4mm;align-items:start;}
+  .sym{font-size:10.5pt;font-weight:700;color:#0F2A5C;}
+  .fix{font-size:9.5pt;line-height:1.65;}
+  .fix b{color:#0F2A5C;}
+  .note{margin-top:5mm;border-radius:10px;background:#E8EFFC;padding:4mm 6mm;font-size:9.5pt;line-height:1.8;color:#0F2A5C;}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <p class="eyebrow">AI勉強会 第3回 体験シート（1/2）</p>
+  <h1>今日の4つのワーク</h1>
+  <p class="lead">前半2本は「直す力」、後半2本は「線引き」。点線の枠は打つかコピーして使い、〇〇はご自身の言葉に置き換えます。</p>
+
+  <div class="exp">
+    <div class="exp-head"><span class="chip">20分</span><span class="et">① 立て直し練習 ── いまいちだった返事を直す</span></div>
+    <p class="todo">ここ2回の会話履歴から「思っていたのと違った返事」を1つ選び、裏面の処方表で症状を特定して直します。直しても寄らないときは、新しい会話で仕切り直し。</p>
+    <div class="prompt">（例: 一般的すぎた場合）さっきの案は一般論に寄りすぎでした。相手は<b>〇〇（誰）</b>で、状況は<b>〇〇</b>です。この前提で書き直してください。</div>
+    <p class="memo">選んだ症状と効いた処方: <span class="line"></span></p>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head"><span class="chip">20分</span><span class="et">② 簡易テスト ── 過去の自分と勝負させる</span></div>
+    <p class="todo">過去に自分で書いたメールか資料を1つ用意（完成品は見せない）。当時の材料だけ渡して同じ仕事を頼み、自分の完成品と見比べます。</p>
+    <div class="prompt">私は〇〇の仕事をしています。次の材料から、〇〇（当時作ったもの）を作ってください。<br>【当時の材料を貼るか添付】</div>
+    <p class="todo">見比べる3点: 大事な情報を捉えたか／トーンは合うか／何が欠けたか。<b>欠けが直るなら頼み方に足す。直らないなら任せない。</b></p>
+    <p class="memo">結論（任せる・条件付きで任せる・任せない）: <span class="line"></span></p>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head"><span class="chip">25分</span><span class="et">③ 判定ワーク10題</span></div>
+    <p class="todo">別紙「入力可否 判定ケース10題」を、「判断フロー」A4を見ながら1問ずつ仕分けます。答え合わせは口頭で。</p>
+    <p class="memo">迷った問題の番号: <span class="line"></span></p>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head"><span class="chip">15分</span><span class="et">④ 私のAI利用ルール5行</span></div>
+    <p class="todo">別紙ひな形に5行を記入。持参した「判断に迷う書類」があれば、ここで一緒に判定します。今日からこの5行が約束3つの代わりです。</p>
+    <p class="memo">迷っている線: <span class="line"></span></p>
+  </div>
+
+  <div class="foot"><span>AI勉強会 第3回 体験シート｜株式会社ククルデザイン</span><span>演習データはすべて架空です</span></div>
+</div>
+
+<div class="page">
+  <p class="eyebrow">AI勉強会 第3回 体験シート（2/2）── 保存版</p>
+  <h1>つまずき処方表</h1>
+  <p class="lead">思い通りにいかない日に開く1枚。症状を見つけて、右の処方をそのまま試してください。</p>
+
+  <div class="rx"><p class="sym">一般的すぎる</p><p class="fix">文脈不足が原因。<b>相手・役割・制約を足す。</b>「プロジェクト遅延のメールを書いて」ではなく「取引先に、2度目の遅延を、お詫びが伝わる形で。プロフェッショナルなトーンで」</p></div>
+  <div class="rx"><p class="sym">長すぎる／短すぎる</p><p class="fix">長さを推測させている。<b>数字で指定する。</b>「2段落で要約して」「100語以内で」「長さは気にせず詳しく」</p></div>
+  <div class="rx"><p class="sym">形式に従わない</p><p class="fix">見せ方が伝わっていない。<b>お手本を1つ貼る</b>か、構造を書く。「各セクションは太字見出し＋箇条書きで」</p></div>
+  <div class="rx"><p class="sym">自信ありげに間違う</p><p class="fix">もっともらしい不正確が混ざることがある。<b>重要な事実は自分で確かめる。</b>出典を出させる・確信度を言わせる・ウェブ検索を有効にする</p></div>
+  <div class="rx"><p class="sym">トーンが合わない</p><p class="fix">既定は丁寧・プロ調。<b>具体的に言う</b>（「もっとカジュアルに」「権威があってフォーマルに」）か、求めるスタイルの文例を見せる</p></div>
+  <div class="rx"><p class="sym">会話が脱線した</p><p class="fix">軌道修正より<b>新しい会話</b>が早いことがある。今までの学びを1行にまとめて、より明確な頼み方で仕切り直す</p></div>
+
+  <div class="note"><b>直しの言い方6つ（第2回のおさらい）</b><br>
+  「もっと短くして」「もっとやわらかく／かたく」「2番目の案をベースに」「表に整理して」「ここだけ直して」「なぜそうしたか説明して」<br><br>
+  <b>宿題はありません。</b>利用ルール5行の範囲で、気が向いたときに1回使ってみてください。</div>
+
+  <div class="foot"><span>AI勉強会 第3回 体験シート｜株式会社ククルデザイン</span><span></span></div>
+</div>
+
+</body>
+</html>

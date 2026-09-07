@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page{size:A4;margin:0;}
+  *{margin:0;box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:#1D2940;width:210mm;padding:11mm 15mm 8mm;}
+  .eyebrow{font-size:9pt;letter-spacing:3px;color:#5E6A84;font-weight:700;}
+  h1{font-size:18pt;color:#0F2A5C;margin-top:2mm;}
+  h1::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#3466E8;margin-right:8px;vertical-align:middle;}
+  .lead{font-size:10pt;line-height:1.6;margin-top:3mm;}
+  .case{border:1.5px solid #DCE3EF;border-radius:10px;padding:3mm 5mm;margin-top:2.2mm;background:#FFF;
+    display:grid;grid-template-columns:9mm 1fr 62mm;gap:4mm;align-items:center;}
+  .cnum{font-size:14pt;font-weight:700;color:#B8CAF4;font-family:"Helvetica Neue",Arial,sans-serif;text-align:center;}
+  .ct{font-size:10.5pt;font-weight:700;color:#0F2A5C;}
+  .cd{font-size:9pt;color:#5E6A84;line-height:1.5;margin-top:0.8mm;}
+  .ans{font-size:9.5pt;color:#1D2940;line-height:1.9;}
+  .ans .fl{color:#5E6A84;}
+  .box{display:inline-block;width:3.4mm;height:3.4mm;border:1.5px solid #5E6A84;border-radius:1mm;
+    vertical-align:-0.5mm;margin-right:1.2mm;}
+  .foot{margin-top:3.5mm;padding-top:2.5mm;border-top:1px solid #DCE3EF;font-size:8.5pt;color:#5E6A84;
+    display:flex;justify-content:space-between;}
+</style>
+</head>
+<body>
+  <p class="eyebrow">AI勉強会 第3回 判定ワーク（すべて架空の設定です）</p>
+  <h1>入力可否 判定ケース10題</h1>
+  <p class="lead">それぞれの書類・情報をAIに入れてよいか、「判断フロー」の1〜6番のどこで止まるかを考え、3分類に○を付けてください。1問ずつ答え合わせをします。</p>
+
+  <div class="case"><div class="cnum">1</div><div><p class="ct">自社ホームページに載せている会社概要</p><p class="cd">所在地・事業内容・沿革。誰でも見られる状態で公開している</p></div><p class="ans"><span class="fl">止まった番号（　　）</span><br><span class="box"></span>そのまま　<span class="box"></span>伏せて　<span class="box"></span>入れない</p></div>
+  <div class="case"><div class="cnum">2</div><div><p class="ct">取引先から届いた見積依頼メール</p><p class="cd">先方の社名・図面番号・数量・希望単価が書かれている</p></div><p class="ans"><span class="fl">止まった番号（　　）</span><br><span class="box"></span>そのまま　<span class="box"></span>伏せて　<span class="box"></span>入れない</p></div>
+  <div class="case"><div class="cnum">3</div><div><p class="ct">求人に応募してきた人の履歴書PDF</p><p class="cd">氏名・住所・生年月日・顔写真・職歴が入っている</p></div><p class="ans"><span class="fl">止まった番号（　　）</span><br><span class="box"></span>そのまま　<span class="box"></span>伏せて　<span class="box"></span>入れない</p></div>
+  <div class="case"><div class="cnum">4</div><div><p class="ct">決算発表前の月次売上表（Excel）</p><p class="cd">今期のまだ公表していない売上と粗利の数字</p></div><p class="ans"><span class="fl">止まった番号（　　）</span><br><span class="box"></span>そのまま　<span class="box"></span>伏せて　<span class="box"></span>入れない</p></div>
+  <div class="case"><div class="cnum">5</div><div><p class="ct">社員全員の給与一覧</p><p class="cd">氏名と月給・賞与が並んだ表。集計を楽にしたい</p></div><p class="ans"><span class="fl">止まった番号（　　）</span><br><span class="box"></span>そのまま　<span class="box"></span>伏せて　<span class="box"></span>入れない</p></div>
+  <div class="case"><div class="cnum">6</div><div><p class="ct">お客様から届いたクレームのメール</p><p class="cd">氏名・住所・電話番号つき。返信の下書きを作らせたい</p></div><p class="ans"><span class="fl">止まった番号（　　）</span><br><span class="box"></span>そのまま　<span class="box"></span>伏せて　<span class="box"></span>入れない</p></div>
+  <div class="case"><div class="cnum">7</div><div><p class="ct">秘密保持契約を結んだ取引先から預かった図面</p><p class="cd">NDA（秘密保持契約）の対象。加工方法を相談したい</p></div><p class="ans"><span class="fl">止まった番号（　　）</span><br><span class="box"></span>そのまま　<span class="box"></span>伏せて　<span class="box"></span>入れない</p></div>
+  <div class="case"><div class="cnum">8</div><div><p class="ct">銀行に提出する事業計画書の下書き</p><p class="cd">未公表の売上見込みと借入希望額が入っている。文章を整えたい</p></div><p class="ans"><span class="fl">止まった番号（　　）</span><br><span class="box"></span>そのまま　<span class="box"></span>伏せて　<span class="box"></span>入れない</p></div>
+  <div class="case"><div class="cnum">9</div><div><p class="ct">朝礼で読む連絡事項のメモ</p><p class="cd">今週の予定と全体連絡。3行に整えさせたい</p></div><p class="ans"><span class="fl">止まった番号（　　）</span><br><span class="box"></span>そのまま　<span class="box"></span>伏せて　<span class="box"></span>入れない</p></div>
+  <div class="case"><div class="cnum">10</div><div><p class="ct">業界団体の会報に載っていた他社の値上げ発表</p><p class="cd">会員向けに公開済みの記事。自社の価格改定の参考にしたい</p></div><p class="ans"><span class="fl">止まった番号（　　）</span><br><span class="box"></span>そのまま　<span class="box"></span>伏せて　<span class="box"></span>入れない</p></div>
+
+  <div class="foot"><span>AI勉強会 第3回 配布資料｜演習用・架空の設定</span><span>株式会社ククルデザイン</span></div>
+</body>
+</html>

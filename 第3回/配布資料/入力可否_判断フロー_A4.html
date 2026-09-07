@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page{size:A4;margin:0;}
+  *{margin:0;box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:#1D2940;width:210mm;padding:16mm 15mm 12mm;}
+  .eyebrow{font-size:9pt;letter-spacing:3px;color:#5E6A84;font-weight:700;}
+  h1{font-size:19pt;color:#0F2A5C;margin-top:2mm;}
+  h1::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#3466E8;margin-right:8px;vertical-align:middle;}
+  .lead{font-size:10.5pt;line-height:1.7;margin-top:4mm;}
+  .rule{display:grid;grid-template-columns:11mm 1fr 8mm 42mm;gap:3mm;align-items:center;
+    border:1.5px solid #DCE3EF;border-radius:10px;padding:4.5mm 5mm;margin-top:3.5mm;background:#FFF;}
+  .num{font-size:16pt;font-weight:700;color:#B8CAF4;text-align:center;font-family:"Helvetica Neue",Arial,sans-serif;}
+  .q{font-size:11pt;font-weight:500;line-height:1.5;}
+  .arw{color:#5E6A84;font-size:12pt;text-align:center;}
+  .badge{font-size:10pt;font-weight:700;text-align:center;border-radius:999px;padding:2.2mm 0;}
+  .b-ok{color:#3466E8;border:2px solid #3466E8;background:#FFF;}
+  .b-mask{color:#0F2A5C;background:#E8EFFC;border:2px solid #E8EFFC;}
+  .b-ng{color:#FFF;background:#0F2A5C;border:2px solid #0F2A5C;}
+  .motto{margin-top:6mm;border-radius:10px;background:#E8EFFC;padding:5mm 6mm;text-align:center;
+    font-size:13pt;font-weight:700;color:#0F2A5C;}
+  .note{font-size:9.5pt;color:#5E6A84;line-height:1.7;margin-top:4mm;}
+  .foot{margin-top:6mm;padding-top:3mm;border-top:1px solid #DCE3EF;font-size:8.5pt;color:#5E6A84;
+    display:flex;justify-content:space-between;}
+</style>
+</head>
+<body>
+  <p class="eyebrow">AI勉強会 配布資料（最終回まで毎回持参）</p>
+  <h1>入力してよい情報の判断フロー</h1>
+  <p class="lead">AIに入れる前に、上から順に見る。1つでも該当したら、その行の扱いで止まる。下まで行かなくてよい。<br>行き先は3つだけ: <b>そのまま入力OK ／ 伏せて入力 ／ 入力しない</b></p>
+
+  <div class="rule"><div class="num">1</div><p class="q">社外の人に見せても困らない内容か</p><div class="arw">→</div><div class="badge b-ok">そのまま入力OK</div></div>
+  <div class="rule"><div class="num">2</div><p class="q">氏名・住所・電話番号・メールアドレス・顔写真が入っているか</p><div class="arw">→</div><div class="badge b-mask">伏せて入力</div></div>
+  <div class="rule"><div class="num">3</div><p class="q">取引先の社名と、条件（単価・納期・値引き）が結びついた形か</p><div class="arw">→</div><div class="badge b-mask">伏せて入力</div></div>
+  <div class="rule"><div class="num">4</div><p class="q">未公開の財務・人事の数字か（決算前の売上、給与、賞与、人事評価）</p><div class="arw">→</div><div class="badge b-ng">入力しない</div></div>
+  <div class="rule"><div class="num">5</div><p class="q">契約書・秘密保持契約の対象、または「社外秘」と書かれた文書か</p><div class="arw">→</div><div class="badge b-ng">入力しない</div></div>
+  <div class="rule"><div class="num">6</div><p class="q">1〜5で判断が付かないか</p><div class="arw">→</div><div class="badge b-ng">入力しない（相談）</div></div>
+
+  <p class="motto">困るのは、出た文章ではなく、入れた情報。</p>
+
+  <p class="note"><b>伏せ方の型（4つに統一）</b>　会社名→A社・B社　／　人の名前→役割で呼ぶ（例: 取引先の担当者）　／　金額→比率・倍率に変える（例: 前回の単価の1.2倍）　／　図面・製品番号→記号に置き換える（例: 図面X）<br>
+  伏せたら1回声に出して読む。意味が通れば使える。通らなければ、その書類はAIに向いていない。</p>
+
+  <div class="foot"><span>AI勉強会 第3回 配布資料｜株式会社ククルデザイン</span><span>入力可否の物差し（保存版）</span></div>
+</body>
+</html>
