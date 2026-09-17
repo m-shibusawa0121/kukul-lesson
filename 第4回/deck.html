@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+  <meta name="hz:canvas-width" content="1280">
+  <meta name="hz:canvas-height" content="720">
+  <meta name="hz:slide-selector" content=".slide">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#F7F9FC; --bg-white:#FFF; --bg-soft:#EEF2F8;
+      --text-body:#1D2940; --text-muted:#5E6A84; --border:#DCE3EF;
+      --font-jp:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+      --font-num:"Helvetica Neue",Inter,Arial,sans-serif;
+    }
+    [data-theme="blue"]{ --text-hd:#0F2A5C; --primary:#0F2A5C; --accent:#3466E8; --accent-soft:#B8CAF4; --bg-tint:#E8EFFC; }
+
+    *{margin:0;box-sizing:border-box;}
+    body{background:#888;}
+    .slide{
+      width:1280px;height:720px;position:relative;overflow:hidden;
+      background:var(--bg);color:var(--text-body);font-family:var(--font-jp);
+      padding:64px 72px;margin:0 auto 24px;
+    }
+    .eyebrow{font-family:var(--font-num);font-weight:700;font-size:15px;letter-spacing:4px;
+      text-transform:uppercase;color:var(--text-muted);}
+    .action-title{font-weight:700;font-size:34px;line-height:1.4;color:var(--text-hd);}
+    .display{font-weight:700;font-size:120px;line-height:1.05;color:var(--text-hd);letter-spacing:-2px;}
+    .body{font-size:19px;line-height:1.7;}
+    .metric{font-family:var(--font-num);font-weight:700;font-size:88px;color:var(--text-hd);line-height:1;}
+    .metric .unit{font-family:var(--font-jp);font-weight:400;font-size:34px;color:var(--text-muted);margin-left:6px;}
+    .source{font-size:13px;font-style:italic;color:var(--text-muted);position:absolute;left:72px;bottom:28px;}
+    .action-title::before{content:"";display:inline-block;width:11px;height:11px;border-radius:50%;
+      background:var(--accent);margin-right:14px;vertical-align:middle;}
+    table{border-collapse:collapse;width:100%;font-size:17px;} th,td{border:none;border-bottom:1px solid var(--border);
+      padding:12px 8px;text-align:left;} th{color:var(--text-hd);font-weight:700;}
+    .mesh{position:absolute;inset:0;z-index:0;background:
+      radial-gradient(60% 50% at 80% 10%, var(--bg-tint), transparent 70%),
+      radial-gradient(50% 40% at 10% 90%, var(--accent-soft), transparent 70%);opacity:.55;}
+    .card{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;
+      padding:28px;box-shadow:0 12px 32px rgba(15,42,92,.06);position:relative;z-index:1;}
+    .grad-accent{background:linear-gradient(90deg,var(--primary),var(--accent));
+      -webkit-background-clip:text;background-clip:text;color:transparent;}
+    .pagefoot{position:absolute;right:72px;bottom:26px;font-family:var(--font-num);
+      font-size:13px;color:var(--text-muted);letter-spacing:1px;}
+    .flowrow{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:20px;
+      padding:12px 0;border-bottom:1px solid var(--border);}
+    .stmt{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;}
+    .chip{display:inline-block;font-family:var(--font-num);font-weight:700;font-size:15px;
+      color:var(--accent);background:var(--bg-tint);border-radius:999px;padding:4px 14px;margin-right:10px;}
+    @media print{ .slide{page-break-after:always;margin:0;} body{background:#fff;} }
+  </style>
+</head>
+<body data-theme="blue">
+
+<!-- 1. 表紙 -->
+<section class="slide" data-intent="cover" style="padding:0;">
+  <img src="assets/cover_session4.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+  <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(247,249,252,.92) 0%,rgba(247,249,252,.78) 42%,rgba(247,249,252,0) 68%);"></div>
+  <div style="position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;padding:64px 72px;">
+    <p class="eyebrow">AI STUDY SESSION / DAY 4 OF 12</p>
+    <h1 class="display" style="font-size:68px;margin-top:20px;">1つのアプリに、<br><span class="grad-accent">3つの働き方</span></h1>
+    <p class="body" style="margin-top:30px;color:var(--text-muted);">Chat・Cowork・Code｜AI勉強会 第4回（全12回）<br>株式会社ククルデザイン</p>
+  </div>
+  <p class="pagefoot" style="color:#5E6A84;">v2.0</p>
+</section>
+
+<!-- 2. 今日のゴール -->
+<section class="slide" data-intent="goal">
+  <p class="eyebrow">TODAY'S GOAL</p>
+  <h2 class="action-title">今日のゴールは、この3つです</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;">
+    <div class="card">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 1</p>
+      <p class="body" style="margin-top:12px;font-weight:500;">3つのモード（Chat・Cowork・Code）が<b>何のために設計されているか</b>を説明できる</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 2</p>
+      <p class="body" style="margin-top:12px;font-weight:500;">クイックエントリー・スケジュールタスクなど、<b>各モード特有の機能</b>を説明できる</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 3</p>
+      <p class="body" style="margin-top:12px;font-weight:500;">やりたい仕事の種類から、<b>適切なモードを選べる</b></p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:36px;color:var(--text-muted);">ここまでの3回はずっとChatでした。今日、残り2つの扉を開けます。この回は「触る」より「見て、選べるようになる」が主眼です。</p>
+  <p class="pagefoot">01</p>
+</section>
+
+<!-- 3. 全体像 -->
+<section class="slide" data-intent="overview">
+  <p class="eyebrow">THE 3 MODES</p>
+  <h2 class="action-title">会話する、丸ごと任せる、作らせる。仕事の重さで使い分けます</h2>
+  <div style="display:flex;gap:20px;margin-top:40px;align-items:stretch;">
+    <div class="card" style="flex:1;border:2px solid var(--accent);">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">CHAT</p>
+      <h3 style="margin-top:10px;color:var(--text-hd);">会話する</h3>
+      <p class="body" style="margin-top:8px;font-size:17px;">質問・下書き・壁打ち。やり取りを重ねて進める。ここまで3回でやってきた場所</p>
+    </div>
+    <div class="card" style="flex:1;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--text-muted);">COWORK</p>
+      <h3 style="margin-top:10px;color:var(--text-hd);">丸ごと任せる</h3>
+      <p class="body" style="margin-top:8px;font-size:17px;">目標を渡すと、計画を立てて複数の資料をまたぐ重い仕事を最後までやり切る</p>
+    </div>
+    <div class="card" style="flex:1;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--text-muted);">CODE</p>
+      <h3 style="margin-top:10px;color:var(--text-hd);">作らせる</h3>
+      <p class="body" style="margin-top:8px;font-size:17px;">ソフトウェアの構築。書いて、動かして、確認しながら仕上げる</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:34px;color:var(--text-muted);">豆知識: CoworkとCodeは同じエンジンで動いています。「任せて完走させる」仕組みが共通で、向き先が資料か、ソフトかの違いです。</p>
+  <p class="pagefoot">02</p>
+</section>
+
+<!-- 4. Chat固有機能 -->
+<section class="slide" data-intent="chat">
+  <p class="eyebrow">CHAT ── デスクトップならでは ⚠️</p>
+  <h2 class="action-title">Chatには、アプリで使うからこその4つの便利があります</h2>
+  <div style="margin-top:26px;">
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">クイックエントリー</p>
+      <p class="body" style="font-size:17px;">キー操作ひとつで、作業中の画面の上にClaudeを呼び出せる（MacはOptionキー2回 ⚠️）。作業を中断せず質問できる</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">スクリーンショット共有</p>
+      <p class="body" style="font-size:17px;">いま見ている画面をそのまま渡す。「この画面の数字は何を意味する？」が言葉で説明するより速い（Mac ⚠️）</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">音声入力</p>
+      <p class="body" style="font-size:17px;">打つ代わりに話す。移動前の思いつきを吹き込んでアウトラインにさせる、が定番（Mac ⚠️）</p>
+    </div>
+    <div class="flowrow" style="border-bottom:none;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">デスクトップコネクタ</p>
+      <p class="body" style="font-size:17px;">PCの中のツール（メモアプリなど）とつないで、そこにある情報を使わせる。詳しくは第7回</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:22px;color:var(--text-muted);">Mac表記の機能はWindowsでは提供状況が異なる場合があります。当日、実機で一緒に確認します ⚠️</p>
+  <p class="pagefoot">03</p>
+</section>
+
+<!-- 5. Cowork -->
+<section class="slide" data-intent="cowork">
+  <p class="eyebrow">COWORK ⚠️</p>
+  <h2 class="action-title">Coworkは「重い仕事」のための設計です</h2>
+  <div style="margin-top:24px;">
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">フォルダごと渡せる</p>
+      <p class="body" style="font-size:17px;">PCのフォルダを指定すると、中身を読み、関連を判断し、完成品を同じ場所に保存する</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">計画を立てて、確認してくる</p>
+      <p class="body" style="font-size:17px;">始める前に範囲・形式を質問し、プランを見せながら進む。途中で方向付けできる</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">スケジュールタスク</p>
+      <p class="body" style="font-size:17px;">毎朝の受信箱の仕分けやデイリーブリーフィングなど、繰り返し作業を自動で回す</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">スマホから指示（Dispatch）</p>
+      <p class="body" style="font-size:17px;">外出先からモバイルアプリで、PC上のファイルやツールを使うタスクを任せられる</p>
+    </div>
+    <div class="flowrow" style="border-bottom:none;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">守られた作業場</p>
+      <p class="body" style="font-size:17px;">共有したフォルダの中だけで動く隔離された空間。それ以外の場所には触れない</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:20px;color:var(--text-muted);">ほかにブラウザ操作・プラグインなどの拡張もあります。本格的に触るのは第10回。今日は講師の実演で「任せるとどうなるか」を見ます。</p>
+  <p class="pagefoot">04</p>
+</section>
+
+<!-- 6. Code -->
+<section class="slide" data-intent="code">
+  <p class="eyebrow">CODE ⚠️</p>
+  <h2 class="action-title">Codeは「動くもの」を作る場所。手綱は3段階で握れます</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;">
+    <div class="card" style="padding:26px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">何ができるか</h3>
+      <p class="body" style="margin-top:10px;font-size:17px;">コードを書き、実行し、結果を確かめながらソフトを仕上げる。変更は差分で見え、履歴が残るのでいつでも戻せる。作業場所はPC内（ローカル）とクラウド（リモート）を選べる</p>
+    </div>
+    <div class="card" style="padding:26px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">自動で進む範囲を選べる</h3>
+      <p class="body" style="margin-top:10px;font-size:17px;"><b>Ask</b>＝全部確認を待つ／<b>Code</b>＝ファイル変更は自動、コマンドは確認／<b>Plan</b>＝着手前に計画を見せる。初心者はAskとPlanが安全弁</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:30px;">経営者にとってのCodeは「プログラミングを学ぶ場所」ではなく、<b>小さな業務ツールを日本語で発注する窓口</b>です。第11回で、実際に1本作る体験をします。</p>
+  <p class="pagefoot">05</p>
+</section>
+
+<!-- 7. 比較と選び方 -->
+<section class="slide" data-intent="compare">
+  <p class="eyebrow">WHICH MODE?</p>
+  <h2 class="action-title">選び方は「仕事の重さ」。この3行だけ覚えれば足ります</h2>
+  <div style="margin-top:32px;">
+    <table style="font-size:18px;">
+      <tr><th style="width:150px;">モード</th><th style="width:420px;">最適な用途（公式の整理）</th><th>見分けるひと言</th></tr>
+      <tr><td style="font-weight:700;color:var(--accent);">Chat</td><td>速いやり取り。アイデア検討・下書き・素早い回答</td><td>「ちょっと聞きたい・書きたい」</td></tr>
+      <tr><td style="font-weight:700;color:var(--accent);">Cowork</td><td>複雑または継続的な作業。調査・分析・ファイル整理・完成した文書づくり</td><td>「資料が多い・時間がかかる・毎回やってる」</td></tr>
+      <tr><td style="font-weight:700;color:var(--accent);">Code</td><td>ソフトウェアの構築。記述・テスト・実行・公開</td><td>「動く仕組みがほしい」</td></tr>
+    </table>
+  </div>
+  <p class="body" style="margin-top:30px;color:var(--text-muted);">迷ったらChatで始めて構いません。会話が「これ、毎回やってるな」「資料が多すぎるな」となった瞬間が、Coworkへ引っ越すサインです。</p>
+  <p class="pagefoot">06</p>
+</section>
+
+<!-- 8. ステートメント -->
+<section class="slide" data-intent="statement">
+  <div class="mesh"></div>
+  <div class="stmt">
+    <p class="eyebrow">PRINCIPLE</p>
+    <h2 class="display" style="font-size:84px;margin-top:20px;">仕事に、<br><span class="grad-accent">モードを合わせる。</span></h2>
+    <p class="body" style="margin-top:32px;font-size:22px;">道具に仕事を合わせるのではなく。<br>「どのモードに渡すか」を考えること自体が、仕事の棚卸しになります。</p>
+  </div>
+  <p class="pagefoot">07</p>
+</section>
+
+<!-- 9. ワーク -->
+<section class="slide" data-intent="handson">
+  <p class="eyebrow">HANDS-ON 70 MIN</p>
+  <h2 class="action-title">今日は「見る」が3本、「書く」が1本です</h2>
+  <div style="margin-top:26px;">
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">20<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">講師実演。同じ題材（秋フェアの振り返り資料づくり）をChatとCoworkの両方でやり、進み方の違いを見る ⚠️</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">10<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">クイックエントリーと音声入力を自分の手で試す（対応状況は実機で確認 ⚠️）</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">15<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">スケジュールタスクを1本仕込む（例: 平日朝に「今日の予定と天気をまとめて」）⚠️</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;border-bottom:none;">
+      <p class="metric" style="font-size:22px;">25<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">振り分けマップづくり。ご自身の業務を10個書き出し、Chat／Cowork／Codeに仮配置（体験シート）</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:24px;color:var(--text-muted);">CoworkとCodeの本格ハンズオンは第10回・第11回。今日の振り分けマップが、そのときの题材になります。</p>
+  <p class="pagefoot">08</p>
+</section>
+
+<!-- 10. 持ち帰り -->
+<section class="slide" data-intent="takeaway">
+  <p class="eyebrow">TAKEAWAY</p>
+  <h2 class="action-title">持ち帰りは「業務の振り分けマップ」。後半戦の設計図です</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;">
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">今日つくるもの</h3>
+      <p class="body" style="margin-top:12px;">自分の業務10個 × どのモードに渡すか。正解を当てるゲームではなく、仕事を「重さ」で見る練習です。</p>
+    </div>
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">これが後で効く場所</h3>
+      <p class="body" style="margin-top:12px;">第10回（Cowork）と第11回（Code）のハンズオンは、このマップから題材を選びます。第9回のユースケースづくりの下敷きにも。</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:36px;color:var(--text-muted);">宿題はありません。スケジュールタスクを仕込んだ人は、明朝の結果だけ見てみてください。</p>
+  <p class="pagefoot">09</p>
+</section>
+
+<!-- 11. 次回予告 -->
+<section class="slide" data-intent="cta">
+  <div class="mesh"></div>
+  <div class="stmt">
+    <p class="eyebrow">NEXT SESSION</p>
+    <h2 class="display" style="font-size:70px;margin-top:20px;">次回は、<br><span class="grad-accent">自分専用の作業場。</span></h2>
+    <p class="body" style="margin-top:30px;font-size:21px;">Projects（プロジェクト）。資料と指示を覚えさせた専用の作業場を作ると、<br>毎回ゼロから説明する手間が消えます。定型業務が一気に楽になる回です。</p>
+    <p class="body" style="margin-top:36px;color:var(--text-muted);">第5回 プロジェクト入門｜株式会社ククルデザイン</p>
+  </div>
+  <p class="pagefoot">10</p>
+</section>
+
+</body>
+</html>

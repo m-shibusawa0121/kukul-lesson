@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page{size:A4;margin:0;}
+  *{margin:0;box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:#1D2940;width:210mm;}
+  .page{width:210mm;height:296mm;padding:13mm 15mm 9mm;position:relative;page-break-after:always;}
+  .page:last-child{page-break-after:auto;}
+  .eyebrow{font-size:9pt;letter-spacing:3px;color:#5E6A84;font-weight:700;}
+  h1{font-size:18pt;color:#0F2A5C;margin-top:2mm;}
+  h1::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#3466E8;margin-right:8px;vertical-align:middle;}
+  .lead{font-size:10pt;line-height:1.6;margin-top:3mm;}
+  .exp{border:1.5px solid #DCE3EF;border-radius:10px;padding:4mm 5mm;margin-top:3.2mm;background:#FFF;}
+  .exp-head{display:flex;align-items:center;gap:3mm;}
+  .chip{font-size:8.5pt;font-weight:700;color:#3466E8;background:#E8EFFC;border-radius:999px;padding:1mm 3.5mm;}
+  .et{font-size:11pt;font-weight:700;color:#0F2A5C;margin-left:1mm;}
+  .todo{font-size:9.5pt;line-height:1.6;margin-top:2mm;}
+  .prompt{margin-top:2.2mm;background:#F7F9FC;border:1px dashed #B8CAF4;border-radius:6px;
+    padding:2.8mm 4mm;font-size:9.5pt;line-height:1.7;color:#1D2940;}
+  .prompt b{color:#0F2A5C;}
+  .memo{margin-top:2.2mm;font-size:9pt;color:#5E6A84;}
+  .memo .line{display:inline-block;border-bottom:1px solid #9AA5BC;min-width:118mm;height:4.5mm;vertical-align:-1mm;}
+  .foot{position:absolute;left:15mm;right:15mm;bottom:7mm;padding-top:2.5mm;border-top:1px solid #DCE3EF;
+    font-size:8.5pt;color:#5E6A84;display:flex;justify-content:space-between;}
+  .note{margin-top:4mm;border-radius:10px;background:#E8EFFC;padding:4mm 6mm;font-size:9.5pt;line-height:1.8;color:#0F2A5C;}
+  .hint{font-size:9pt;color:#5E6A84;line-height:1.7;margin-top:2mm;}
+  table.map{border-collapse:collapse;width:100%;margin-top:3mm;font-size:9.5pt;}
+  table.map th{background:#E8EFFC;color:#0F2A5C;font-weight:700;padding:2.2mm 3mm;text-align:left;border:1px solid #DCE3EF;}
+  table.map td{border:1px solid #DCE3EF;padding:0 3mm;height:9.2mm;}
+  table.map td.n{width:8mm;color:#5E6A84;text-align:center;font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700;}
+  table.map td.m{width:44mm;color:#9AA5BC;font-size:8pt;}
+  .legend{border-collapse:collapse;width:100%;margin-top:2.5mm;font-size:9pt;}
+  .legend th{color:#0F2A5C;font-weight:700;padding:1.6mm 3mm;text-align:left;border-bottom:1.5px solid #DCE3EF;}
+  .legend td{padding:1.6mm 3mm;border-bottom:1px solid #EEF2F8;vertical-align:top;}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <p class="eyebrow">AI勉強会 第4回 体験シート（1/2）</p>
+  <h1>今日のワーク ── 見る3本、書く1本</h1>
+  <p class="lead">前半は「任せるとどうなるか」を目に焼き付ける時間。メモ欄には感想ではなく「自分の仕事のどれに当たるか」を書きます。</p>
+
+  <div class="exp">
+    <div class="exp-head"><span class="chip">20分</span><span class="et">① 実演を観察 ── 同じ仕事をChatとCoworkで</span></div>
+    <p class="todo">講師が同じ題材（秋フェアの振り返り資料づくり）を2つのモードでやります。観察する3点にメモを。</p>
+    <p class="todo">・進め方の違い（往復で進む／計画を立てて勝手に進む）<br>・こちらがやること（指示を出し続ける／最初に目標を渡して途中で方向付け）<br>・出てくるもの（会話の中の文章／完成したファイル）</p>
+    <p class="memo">気づき: <span class="line"></span></p>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head"><span class="chip">10分</span><span class="et">② クイックエントリーと音声入力</span></div>
+    <p class="todo">別の作業画面を開いたまま、キー操作でClaudeを呼び出して1問聞く（操作は当日実機で確認）。続けて音声入力で、来週の予定の悩みをひとつ話してアウトラインにさせる。</p>
+    <p class="memo">使えそうな場面: <span class="line"></span></p>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head"><span class="chip">15分</span><span class="et">③ スケジュールタスクを1本仕込む</span></div>
+    <p class="todo">Coworkのスケジュールタスクに、軽い定期作業を1本登録します。まずは失敗しても困らないものから。</p>
+    <div class="prompt">（例）平日の朝8時: 今日の私のカレンダーの予定を一覧にして、準備が必要なものに印を付けてください。</div>
+    <p class="todo">明朝、結果を見るところまでが体験です。物足りなければ第10回で本格的に組み直します。</p>
+    <p class="memo">仕込んだタスク: <span class="line"></span></p>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head"><span class="chip">25分</span><span class="et">④ 業務の振り分けマップ（裏面）</span></div>
+    <p class="todo">ご自身の業務を10個書き出し、Chat／Cowork／Codeのどれに渡すかを仮置きします。裏面の目安表を見ながら。ここで作ったマップが第9〜11回の題材になります。</p>
+  </div>
+
+  <div class="foot"><span>AI勉強会 第4回 体験シート｜株式会社ククルデザイン</span><span></span></div>
+</div>
+
+<div class="page">
+  <p class="eyebrow">AI勉強会 第4回 体験シート（2/2）── 保存版</p>
+  <h1>業務の振り分けマップ</h1>
+  <p class="lead">日々の業務を10個書き出し、渡す先を仮置きします。正解探しではなく、仕事を「重さ」で見る練習です。迷ったらChatに置いて構いません。</p>
+
+  <table class="legend">
+    <tr><th style="width:24mm;">モード</th><th>こんな仕事を渡す</th><th style="width:52mm;">見分けるひと言</th></tr>
+    <tr><td><b>Chat</b></td><td>速いやり取り。質問・下書き・壁打ち・ちょっとした整理</td><td>「ちょっと聞きたい・書きたい」</td></tr>
+    <tr><td><b>Cowork</b></td><td>資料が多い・時間がかかる・繰り返す仕事。調査・分析・文書の仕上げ</td><td>「重い・長い・毎回やってる」</td></tr>
+    <tr><td><b>Code</b></td><td>動く仕組みづくり。集計の自動化・チェックツール・小さな業務アプリ</td><td>「動くものがほしい」</td></tr>
+  </table>
+
+  <table class="map">
+    <tr><th style="width:8mm;"></th><th>業務（名前で書く。例: 月初の請求書チェック）</th><th style="width:44mm;">渡す先（Chat / Cowork / Code）</th></tr>
+    <tr><td class="n">1</td><td></td><td class="m">Chat ・ Cowork ・ Code</td></tr>
+    <tr><td class="n">2</td><td></td><td class="m">Chat ・ Cowork ・ Code</td></tr>
+    <tr><td class="n">3</td><td></td><td class="m">Chat ・ Cowork ・ Code</td></tr>
+    <tr><td class="n">4</td><td></td><td class="m">Chat ・ Cowork ・ Code</td></tr>
+    <tr><td class="n">5</td><td></td><td class="m">Chat ・ Cowork ・ Code</td></tr>
+    <tr><td class="n">6</td><td></td><td class="m">Chat ・ Cowork ・ Code</td></tr>
+    <tr><td class="n">7</td><td></td><td class="m">Chat ・ Cowork ・ Code</td></tr>
+    <tr><td class="n">8</td><td></td><td class="m">Chat ・ Cowork ・ Code</td></tr>
+    <tr><td class="n">9</td><td></td><td class="m">Chat ・ Cowork ・ Code</td></tr>
+    <tr><td class="n">10</td><td></td><td class="m">Chat ・ Cowork ・ Code</td></tr>
+  </table>
+
+  <p class="hint">書き終えたら、Coworkに置いた仕事の中から「一番時間が浮きそうなもの」に★を1つ。第10回のハンズオンはそこから始めます。Codeに置いた仕事があれば、第11回の題材候補です。</p>
+
+  <div class="note"><b>宿題はありません。</b>スケジュールタスクを仕込んだ人は、明日の朝に結果だけ見てみてください。動いていなくても大丈夫。次回、一緒に直します。</div>
+
+  <div class="foot"><span>AI勉強会 第4回 体験シート｜株式会社ククルデザイン</span><span>第9〜11回の設計図</span></div>
+</div>
+
+</body>
+</html>
