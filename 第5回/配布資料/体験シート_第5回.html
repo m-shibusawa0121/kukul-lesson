@@ -7,105 +7,146 @@
   @page{size:A4;margin:0;}
   *{margin:0;box-sizing:border-box;}
   body{font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:#1D2940;width:210mm;}
-  .page{width:210mm;height:296mm;padding:12mm 15mm 9mm;position:relative;page-break-after:always;}
+  .page{width:210mm;height:296mm;padding:11mm 15mm 9mm;position:relative;page-break-after:always;}
   .page:last-child{page-break-after:auto;}
   .eyebrow{font-size:9pt;letter-spacing:3px;color:#5E6A84;font-weight:700;}
-  h1{font-size:18pt;color:#0F2A5C;margin-top:2mm;}
+  h1{font-size:18pt;color:#0F2A5C;margin-top:1.5mm;}
   h1::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#3466E8;margin-right:8px;vertical-align:middle;}
-  .lead{font-size:10pt;line-height:1.6;margin-top:3mm;}
-  .exp{border:1.5px solid #DCE3EF;border-radius:10px;padding:3.6mm 5mm;margin-top:3mm;background:#FFF;}
-  .exp-head{display:flex;align-items:center;gap:3mm;}
-  .chip{font-size:8.5pt;font-weight:700;color:#3466E8;background:#E8EFFC;border-radius:999px;padding:1mm 3.5mm;}
-  .et{font-size:11pt;font-weight:700;color:#0F2A5C;margin-left:1mm;}
-  .todo{font-size:9.5pt;line-height:1.6;margin-top:2mm;}
-  .todo b{color:#0F2A5C;}
-  .prompt{margin-top:2.2mm;background:#F7F9FC;border:1px dashed #B8CAF4;border-radius:6px;
-    padding:2.8mm 4mm;font-size:9.5pt;line-height:1.7;color:#1D2940;}
+  h2{font-size:12.5pt;color:#0F2A5C;margin-top:3.2mm;display:flex;align-items:center;gap:3mm;}
+  .badge{font-size:9pt;font-weight:700;color:#FFF;background:#3466E8;border-radius:999px;padding:1.2mm 4mm;white-space:nowrap;}
+  .lead{font-size:10.5pt;line-height:1.7;margin-top:2.5mm;}
+  .lead b{color:#0F2A5C;}
+  .box{border:1.5px solid #DCE3EF;border-radius:10px;padding:3.2mm 5.5mm;margin-top:2.2mm;background:#FFF;}
+  .stepline{display:grid;grid-template-columns:8mm 1fr;gap:3mm;align-items:start;
+    padding:1.7mm 0;border-bottom:1px dashed #DCE3EF;font-size:10.3pt;line-height:1.55;}
+  .stepline:last-child{border-bottom:none;}
+  .cb{display:inline-block;width:4.2mm;height:4.2mm;border:1.8px solid #3466E8;border-radius:1.2mm;margin-top:1.6mm;}
+  .stepline b{color:#0F2A5C;}
+  .place{background:#E8EFFC;border-radius:4px;padding:0 2mm;font-weight:700;color:#0F2A5C;white-space:nowrap;}
+  .prompt{margin-top:2mm;background:#F7F9FC;border:1.5px dashed #B8CAF4;border-radius:8px;
+    padding:2.6mm 4.5mm;font-size:10pt;line-height:1.7;color:#1D2940;}
+  .prompt::before{content:"そのまま打ち込む（コピーでもOK） ";display:block;font-size:8pt;font-weight:700;color:#3466E8;margin-bottom:1mm;}
   .prompt b{color:#0F2A5C;}
-  .memo{margin-top:2.2mm;font-size:9pt;color:#5E6A84;}
-  .memo .line{display:inline-block;border-bottom:1px solid #9AA5BC;min-width:118mm;height:4.5mm;vertical-align:-1mm;}
+  .memo{margin-top:2.5mm;font-size:10pt;color:#5E6A84;}
+  .memo .line{display:inline-block;border-bottom:1px solid #9AA5BC;min-width:110mm;height:5mm;vertical-align:-1mm;}
+  .hint{font-size:9.5pt;color:#5E6A84;line-height:1.7;margin-top:2mm;}
   .foot{position:absolute;left:15mm;right:15mm;bottom:7mm;padding-top:2.5mm;border-top:1px solid #DCE3EF;
     font-size:8.5pt;color:#5E6A84;display:flex;justify-content:space-between;}
-  .note{margin-top:4mm;border-radius:10px;background:#E8EFFC;padding:4mm 6mm;font-size:9.5pt;line-height:1.8;color:#0F2A5C;}
-  .tmpl{border:1.5px solid #DCE3EF;border-radius:10px;padding:4mm 5mm;margin-top:3mm;background:#FFF;}
-  .lbl{font-size:9.5pt;font-weight:700;color:#3466E8;margin-top:2.5mm;}
-  .ex{font-size:8.5pt;color:#5E6A84;line-height:1.55;margin-top:0.8mm;}
-  .fill{border-bottom:1px solid #9AA5BC;height:6.5mm;margin-top:1.5mm;}
-  .fill2{border-bottom:1px solid #9AA5BC;height:6.5mm;margin-top:3.5mm;}
+  .note{margin-top:2.8mm;border-radius:10px;background:#E8EFFC;padding:3mm 5.5mm;font-size:10pt;line-height:1.7;color:#0F2A5C;}
+  .tmpl{border:1.5px solid #DCE3EF;border-radius:10px;padding:3mm 5mm;margin-top:2.4mm;background:#FFF;}
+  .lbl{font-size:10.5pt;font-weight:700;color:#3466E8;}
+  .ex{font-size:9pt;color:#5E6A84;line-height:1.6;margin-top:1mm;}
+  .fill{border-bottom:1px solid #9AA5BC;height:6.2mm;margin-top:1.6mm;}
+  table.sos{border-collapse:collapse;width:100%;margin-top:2.5mm;font-size:10pt;}
+  table.sos th{background:#E8EFFC;color:#0F2A5C;font-weight:700;padding:2mm 3mm;text-align:left;border:1px solid #DCE3EF;}
+  table.sos td{border:1px solid #DCE3EF;padding:1.6mm 3mm;line-height:1.5;vertical-align:top;}
 </style>
 </head>
 <body>
 
+<!-- ============ 1ページ目 ============ -->
 <div class="page">
-  <p class="eyebrow">AI勉強会 第5回 体験シート（1/2）</p>
-  <h1>今日のワーク ── 動くプロジェクトを1つ作る</h1>
-  <p class="lead">前置きなしで通じる「自分専用の作業場」を作って帰ります。指示文の下書きは裏面のひな形で。</p>
+  <p class="eyebrow">AI勉強会 第5回 体験シート（1/3）</p>
+  <h1>きょう作るもの: 「覚えてくれるClaude」</h1>
+  <p class="lead">ふだんのチャットは、会話が終わると<b>毎回はじめまして</b>に戻ります。だから毎回「私は建設会社の代表で…」と説明して、同じ資料を付け直していました。<br>
+  きょう作る<b>プロジェクト</b>は、あなたの説明と資料を<b>覚えたままにできる専用の部屋</b>です。一度作れば、部屋に入るだけで話が通じます。</p>
 
-  <div class="exp">
-    <div class="exp-head"><span class="chip">15分</span><span class="et">① 講師デモを観察 ── 赤城建設「施主対応」プロジェクト</span></div>
-    <p class="todo">ゼロから作る様子を見ます。観察する3点: <b>指示のどの一文が効いているか</b>／<b>資料のファイル名の付け方</b>／<b>試運転で前置きなしに通じる瞬間</b>。</p>
-    <p class="memo">気づき: <span class="line"></span></p>
+  <h2><span class="badge">ワーク1</span>講師のお手本を見る（15分）</h2>
+  <div class="box">
+    <p class="lead" style="margin-top:0;font-size:10.5pt;">講師が、架空の建設会社「赤城建設」の<b>施主様への連絡文をつくる部屋</b>をゼロから作ります。手は動かさなくてOK。次の3つだけ見ていてください。</p>
+    <div class="stepline"><span class="cb"></span><p>部屋づくりは<b>「箱 → 指示 → 資料」の順番</b>で進むこと</p></div>
+    <div class="stepline"><span class="cb"></span><p>最後の試運転で、<b>会社の説明をひとことも書かずに</b>話が通じること</p></div>
+    <div class="stepline"><span class="cb"></span><p>資料のファイル名を、<b>中身がわかる名前</b>に直してから入れていること</p></div>
+    <p class="memo">気づいたこと: <span class="line"></span></p>
   </div>
 
-  <div class="exp">
-    <div class="exp-head"><span class="chip">10分</span><span class="et">② 題材を選ぶ</span></div>
-    <p class="todo">第4回の振り分けマップから、<b>「繰り返し使う資料がある」×「毎回同じ要件を言っている」</b>業務を1つ選びます。建設業の定番: 施主対応／見積の下ごしらえ／安全書類／協力会社への連絡。</p>
-    <p class="memo">選んだ業務: <span class="line"></span></p>
-    <p class="memo">入れる資料2〜3点（伏せ版が必要なものに☆）: <span class="line"></span></p>
+  <h2><span class="badge">ワーク2</span>自分の部屋のテーマを決める（10分）</h2>
+  <div class="box">
+    <p class="lead" style="margin-top:0;font-size:10.5pt;">前回の「振り分けマップ」を見ながら、<b>毎回同じ説明をしている仕事</b>を1つ選びます。迷ったら講師と相談。建設業でよくあるのは、施主様への連絡文／見積の下ごしらえ／協力会社への連絡です。</p>
+    <p class="memo">部屋のテーマ（仕事の名前）: <span class="line" style="min-width:100mm;"></span></p>
+    <p class="memo">部屋に入れる資料 2〜3点: <span class="line" style="min-width:104mm;"></span></p>
+    <p class="hint">※資料に人の名前・電話番号・単価が入っているものは、判断フローの「伏せて入力」。伏せた版を作ってから入れます（講師と一緒にやるので大丈夫です）。</p>
   </div>
 
-  <div class="exp">
-    <div class="exp-head"><span class="chip">25分</span><span class="et">③ 作る ── 箱 → 指示 → 資料</span></div>
-    <p class="todo">1. サイドバー「プロジェクト」→ 新規作成。名前は業務がわかるもの（例: 施主対応・連絡文）<br>
-    2. 裏面のひな形で下書きした<b>指示（4要素）</b>を貼り付けて保存<br>
-    3. 資料をアップロード。<b>ファイル名は中身がわかる名前に直してから</b>（例: 「document1.pdf」→「見積ひな形_2026.pdf」）。個人情報や単価が入るものは伏せ版にしてから入れる（判断フローの2・3番）</p>
-  </div>
+  <div class="note"><b>きょうのゴールはひとつだけ。</b>「前置きなしで話が通じる部屋」が1つでき上がれば合格です。速さは関係ありません。ゆっくりで大丈夫。</div>
 
-  <div class="exp">
-    <div class="exp-head"><span class="chip">20分</span><span class="et">④ 試運転 ── 前置きなしで通じたら合格</span></div>
-    <p class="todo">プロジェクトの中で、実際の頼みごとを2本投げます。<b>会社の説明を一切書かずに</b>。</p>
-    <div class="prompt">（例・施主対応なら）来週の工程変更を〇〇様にお知らせする文面を作ってください。変更内容: 【要点だけ書く】</div>
-    <p class="todo">ズレたら、会話で直すのではなく<b>指示を直して</b>もう一度。ここが普通のチャットとの違いです。</p>
-    <p class="memo">直した指示: <span class="line"></span></p>
-  </div>
-
-  <div class="note"><b>宿題はありません。</b>今日のプロジェクトで、実際の仕事を1回だけ流してみてください。ズレに気づいたら指示を1行直す。それが「育てる」です。</div>
-
-  <div class="foot"><span>AI勉強会 第5回 体験シート｜株式会社ククルデザイン</span><span></span></div>
+  <div class="foot"><span>AI勉強会 第5回 体験シート｜株式会社ククルデザイン</span><span>1/3</span></div>
 </div>
 
+<!-- ============ 2ページ目 ============ -->
 <div class="page">
-  <p class="eyebrow">AI勉強会 第5回 体験シート（2/2）── 保存版</p>
-  <h1>プロジェクト指示文ひな形（4要素）</h1>
-  <p class="lead">埋めて、つなげて、指示欄に貼るだけ。2つ目・3つ目のプロジェクトもこの1枚で作れます。灰色は建設業の記入例です。</p>
+  <p class="eyebrow">AI勉強会 第5回 体験シート（2/3）</p>
+  <h1>部屋をつくる ── 10個のチェックを上から順に</h1>
+  <p class="lead" style="font-size:10.5pt;">1行ずつ、終わったら□にチェック。ボタンの名前や場所は画面の更新で変わることがあります。見つからなかったら手を挙げてください、それが正解です。</p>
+
+  <h2><span class="badge">ワーク3</span>箱 → 指示 → 資料（25分）</h2>
+  <div class="box">
+    <p class="lead" style="margin-top:0;font-size:10pt;color:#5E6A84;">【箱をつくる】</p>
+    <div class="stepline"><span class="cb"></span><p><b>1.</b> 画面の<span class="place">左端の縦のメニュー（サイドバー）</span>から<span class="place">プロジェクト</span>を押す</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>2.</b> <span class="place">新規プロジェクト（＋）</span>のボタンを押す</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>3.</b> 名前を入れる。あとで見てわかる名前に（例: <b>施主様への連絡文</b>）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>4.</b> 「作成」を押す。これで箱ができました</p></div>
+    <p class="lead" style="font-size:10pt;color:#5E6A84;margin-top:3mm;">【指示を書く ── Claudeへの「この部屋での決まりごと」】</p>
+    <div class="stepline"><span class="cb"></span><p><b>5.</b> プロジェクトの画面で<span class="place">指示（Instructions）</span>を押す</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>6.</b> 3ページ目のひな形で下書きした文を、そのまま打ち込む（またはコピーして貼る）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>7.</b> <span class="place">保存</span>を押す。※保存を押し忘れると効きません</p></div>
+    <p class="lead" style="font-size:10pt;color:#5E6A84;margin-top:3mm;">【資料を入れる ── 部屋に覚えさせる書類】</p>
+    <div class="stepline"><span class="cb"></span><p><b>8.</b> ファイルの名前を、中身がわかる名前に直す（例: 「document1.pdf」→「見積ひな形.pdf」）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>9.</b> プロジェクト画面の<span class="place">ファイル（＋）</span>を押して、資料を2〜3点選ぶ。ファイルを画面へ引っぱって落としてもOK</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>10.</b> 資料の名前が一覧に並んだら完成。おつかれさまでした</p></div>
+  </div>
+
+  <h2><span class="badge">ワーク4</span>試運転 ── 前置きなしで通じるか（20分）</h2>
+  <div class="box">
+    <p class="lead" style="margin-top:0;font-size:10.5pt;"><b>この部屋の中で</b>新しい会話を始めて、いつもの頼みごとを投げます。会社の説明は書かないのがポイント。</p>
+    <div class="prompt">来週の工程変更を〇〇様にお知らせする文面を作ってください。変更の内容: <b>【要点をひとこと】</b></div>
+    <p class="lead" style="font-size:10.5pt;">返事がズレていたら、会話の中で直すのではなく、<b>指示（手順5〜7）に1行足して</b>もう一度。ここが普通のチャットとのいちばんの違いです。</p>
+    <p class="memo">足した1行: <span class="line"></span></p>
+  </div>
+
+  <div class="foot"><span>AI勉強会 第5回 体験シート｜株式会社ククルデザイン</span><span>2/3</span></div>
+</div>
+
+<!-- ============ 3ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第5回 体験シート（3/3）── 保存版</p>
+  <h1>指示文ひな形 ── 4つの穴を埋めるだけ</h1>
+  <p class="lead" style="font-size:10.5pt;">灰色の例文は建設業向け。<b>例文をほぼそのまま使って、社名や言葉だけ変えるのが一番の近道です。</b>埋めたら4つをつなげて、手順6で打ち込みます。</p>
 
   <div class="tmpl">
-    <p class="lbl">① 何のための場所か（このプロジェクトは…）</p>
-    <p class="ex">例: このプロジェクトは、リフォーム工事の施主様への連絡文（進捗報告・日程調整・お詫び・お知らせ）を作るための場所です。私は群馬県の建設会社の代表です。</p>
-    <div class="fill"></div><div class="fill2"></div>
+    <p class="lbl">① この部屋は何をする場所？</p>
+    <p class="ex">例: このプロジェクトは、リフォーム工事の施主様への連絡文（進捗報告・日程調整・お知らせ）を作る場所です。私は群馬県の建設会社の代表です。</p>
+    <div class="fill"></div><div class="fill"></div>
   </div>
 
   <div class="tmpl">
-    <p class="lbl">② 進め方の手順（まず…、次に…）</p>
-    <p class="ex">例: まず、工期または金額に関わる内容かを確認してください。関わる場合は、文面を作る前に必ず私に事実確認をしてください。文面は2案作り、違いを一言添えてください。</p>
-    <div class="fill"></div><div class="fill2"></div>
+    <p class="lbl">② どんな順番で仕事してほしい？</p>
+    <p class="ex">例: まず、工期またはお金に関わる内容かを確認してください。関わる場合は、文面を作る前に必ず私に確認してください。文面は2案作ってください。</p>
+    <div class="fill"></div><div class="fill"></div>
   </div>
 
   <div class="tmpl">
-    <p class="lbl">③ トーンとスタイル（言葉づかい）</p>
-    <p class="ex">例: 丁寧で、安心感のある言葉で。工事の専門用語には一言説明を添えてください。過度なお詫びの繰り返しはしないでください。</p>
-    <div class="fill"></div><div class="fill2"></div>
+    <p class="lbl">③ どんな言葉づかいで？</p>
+    <p class="ex">例: 丁寧で、安心感のある言葉で。工事の専門用語には、ひとこと説明を添えてください。</p>
+    <div class="fill"></div>
   </div>
 
   <div class="tmpl">
-    <p class="lbl">④ 毎回の決まりごと（必ず…してください）</p>
-    <p class="ex">例: 文末には必ず「次のご連絡予定」を1行入れてください。日付は「10月8日（水）」の形式で書いてください。</p>
-    <div class="fill"></div><div class="fill2"></div>
+    <p class="lbl">④ 毎回必ずやってほしいことは？</p>
+    <p class="ex">例: 文末には必ず「次のご連絡予定」を1行入れてください。</p>
+    <div class="fill"></div>
   </div>
 
-  <div class="note"><b>覚えておく2つの仕組み</b><br>
-  ・プロジェクト内でも、<b>別々の会話の中身は共有されません</b>。共通になるのは「指示」と「資料」だけ。会話で出た大事な結論は、テキストにして資料へ昇格させる<br>
-  ・資料が増えると、関連部分だけ探して読む方式（RAG）に自動で切り替わり、容量は最大10倍まで広がります。ファイル名が検索の手がかりになるので、名前は具体的に</div>
+  <h2 style="margin-top:6mm;">困ったときは、この表</h2>
+  <table class="sos">
+    <tr><th style="width:64mm;">こうなったら</th><th>こうする</th></tr>
+    <tr><td>指示を書いたのに効いていない</td><td>保存を押したか確認（手順7）。押していても効かなければ、指示の文を短く言い切りに直す</td></tr>
+    <tr><td>資料の中身を見てくれない</td><td>ファイル名を中身がわかる名前に（手順8）。「〇〇.pdfを見て」と名前で頼むのも効く</td></tr>
+    <tr><td>作った部屋が見つからない</td><td>左端のメニューの「プロジェクト」の中にあります。星マークを付けると上に固定できます</td></tr>
+    <tr><td>ふつうのチャットと部屋の中、どっちにいるか分からない</td><td>画面の上（タイトルのあたり）にプロジェクト名が出ていれば部屋の中です</td></tr>
+  </table>
+
+  <div class="note"><b>宿題はありません。</b>今日作った部屋で、実際の仕事をひとつだけ流してみてください。ズレたら指示に1行足す。それだけで部屋は育ちます。</div>
 
   <div class="foot"><span>AI勉強会 第5回 体験シート｜株式会社ククルデザイン</span><span>指示文ひな形（保存版）</span></div>
 </div>
