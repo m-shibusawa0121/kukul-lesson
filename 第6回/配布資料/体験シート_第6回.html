@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page{size:A4;margin:0;}
+  *{margin:0;box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:#1D2940;width:210mm;}
+  .page{width:210mm;height:296mm;padding:11mm 15mm 9mm;position:relative;page-break-after:always;}
+  .page:last-child{page-break-after:auto;}
+  .eyebrow{font-size:9pt;letter-spacing:3px;color:#5E6A84;font-weight:700;}
+  h1{font-size:18pt;color:#0F2A5C;margin-top:1.5mm;}
+  h1::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#3466E8;margin-right:8px;vertical-align:middle;}
+  h2{font-size:12pt;color:#0F2A5C;margin-top:2.6mm;display:flex;align-items:center;gap:3mm;}
+  .badge{font-size:9pt;font-weight:700;color:#FFF;background:#3466E8;border-radius:999px;padding:1.2mm 4mm;white-space:nowrap;}
+  .lead{font-size:10.3pt;line-height:1.65;margin-top:2mm;}
+  .lead b{color:#0F2A5C;}
+  .box{border:1.5px solid #DCE3EF;border-radius:10px;padding:2.5mm 5mm;margin-top:1.8mm;background:#FFF;}
+  .stepline{display:grid;grid-template-columns:8mm 1fr;gap:3mm;align-items:start;
+    padding:1.3mm 0;border-bottom:1px dashed #DCE3EF;font-size:10.2pt;line-height:1.5;}
+  .stepline:last-child{border-bottom:none;}
+  .cb{display:inline-block;width:4.2mm;height:4.2mm;border:1.8px solid #3466E8;border-radius:1.2mm;margin-top:1.6mm;}
+  .stepline b{color:#0F2A5C;}
+  .place{background:#E8EFFC;border-radius:4px;padding:0 2mm;font-weight:700;color:#0F2A5C;white-space:nowrap;}
+  .prompt{margin-top:1.6mm;background:#F7F9FC;border:1.5px dashed #B8CAF4;border-radius:8px;
+    padding:2.1mm 4.5mm;font-size:9.8pt;line-height:1.6;color:#1D2940;}
+  .prompt::before{content:"そのまま打ち込む（コピーでもOK） ";display:block;font-size:8pt;font-weight:700;color:#3466E8;margin-bottom:1mm;}
+  .prompt b{color:#0F2A5C;}
+  .memo{margin-top:2.5mm;font-size:10pt;color:#5E6A84;}
+  .memo .line{display:inline-block;border-bottom:1px solid #9AA5BC;min-width:110mm;height:5mm;vertical-align:-1mm;}
+  .hint{font-size:9.3pt;color:#5E6A84;line-height:1.6;margin-top:1.5mm;}
+  .foot{position:absolute;left:15mm;right:15mm;bottom:7mm;padding-top:2.5mm;border-top:1px solid #DCE3EF;
+    font-size:8.5pt;color:#5E6A84;display:flex;justify-content:space-between;}
+  .note{margin-top:2.2mm;border-radius:10px;background:#E8EFFC;padding:2.4mm 5mm;font-size:9.8pt;line-height:1.6;color:#0F2A5C;}
+  .tmpl{border:1.5px solid #DCE3EF;border-radius:10px;padding:2.4mm 5mm;margin-top:2mm;background:#FFF;}
+  .lbl{font-size:10.5pt;font-weight:700;color:#3466E8;}
+  .ex{font-size:9pt;color:#5E6A84;line-height:1.6;margin-top:1mm;}
+  .fill{border-bottom:1px solid #9AA5BC;height:5.6mm;margin-top:1.4mm;}
+  table.sos{border-collapse:collapse;width:100%;margin-top:2.5mm;font-size:10pt;}
+  table.sos th{background:#E8EFFC;color:#0F2A5C;font-weight:700;padding:1.6mm 3mm;text-align:left;border:1px solid #DCE3EF;}
+  table.sos td{border:1px solid #DCE3EF;padding:1.3mm 3mm;line-height:1.45;vertical-align:top;}
+</style>
+</head>
+<body>
+
+<!-- ============ 1ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第6回 体験シート（1/3）</p>
+  <h1>きょう作るもの: 「配れるチラシ」</h1>
+  <p class="lead">今までのClaudeの返事は、チャットの中の文章でした。きょうの<b>アーティファクト</b>は、会話の横に<b>もう1枚の画面</b>が開いて、そこにチラシや資料の<b>実物</b>ができていく仕組みです。できたものはリンクで人に配れます。第1回に講師がやって見せたチラシ作り、きょうは自分の手でやります。</p>
+
+  <h2><span class="badge">ワーク1</span>講師のお手本を見る（15分）</h2>
+  <div class="box">
+    <p class="lead" style="margin-top:0;font-size:10.5pt;">講師が、現場監督の走り書きメモから<b>施主様向けの工事進捗スライド</b>を作ります。手は動かさなくてOK。次の3つだけ見ていてください。</p>
+    <div class="stepline"><span class="cb"></span><p>返事が<b>チャットの文章ではなく、横の画面の「作品」</b>で出てくること</p></div>
+    <div class="stepline"><span class="cb"></span><p>走り書きのメモでも、<b>構成と見た目はClaudeが考える</b>こと</p></div>
+    <div class="stepline"><span class="cb"></span><p>最後に「このスライドを1枚の資料にして」と頼むと、<b>作品から別の作品が作れる</b>こと</p></div>
+    <p class="memo">気づいたこと: <span class="line"></span></p>
+  </div>
+
+  <h2><span class="badge">ワーク2</span>完成見学会のチラシを作る（20分）</h2>
+  <div class="box">
+    <div class="stepline"><span class="cb"></span><p><b>1.</b> <span class="place">新しいチャット（＋）</span>を押して、まっさらな会話を開く</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>2.</b> 演習データ<span class="place">チラシ素材_完成見学会.txt</span>を開いて、中身を全部コピーする</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>3.</b> 下の文を打ち込み、続けてコピーした素材を貼り付けて、送信する</p></div>
+  </div>
+  <div class="prompt">次の素材をもとに、リフォーム完成見学会のチラシを<b>デザインのアーティファクトとして</b>作ってください。読む人は、築20年以上の家にお住まいで寒さや使いにくさに悩んでいる方。A4たて1枚。日付と電話番号は大きく、売り込みをしない安心感のある雰囲気で。<br>（ここに素材を貼り付け）</div>
+  <div class="box" style="margin-top:2mm;">
+    <div class="stepline"><span class="cb"></span><p><b>4.</b> 会話の横にチラシの画面が開くまで待つ（1〜2分かかることがあります）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>5.</b> できたチラシを素材と見比べる。<b>日付（11/7・8）・時間・電話番号</b>が合っているか、指さし確認</p></div>
+  </div>
+  <p class="hint">※横の画面が開かず、チャットの文章で返ってきたら:「これをアーティファクトとして作成して」と送るとやり直せます。<br>※自社で近々イベントや配りものの予定があれば、素材をそちらに替えてOKです（講師と相談）。</p>
+
+  <div class="foot"><span>AI勉強会 第6回 体験シート｜株式会社ククルデザイン</span><span>1/3</span></div>
+</div>
+
+<!-- ============ 2ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第6回 体験シート（2/3）</p>
+  <h1>直して、動かして、配る</h1>
+  <p class="lead" style="font-size:10.5pt;">ボタンの名前や場所は画面の更新で変わることがあります。見つからなかったら手を挙げてください、それが正解です。</p>
+
+  <h2><span class="badge">ワーク3</span>直し方3つを、全部試す（15分）</h2>
+  <div class="box">
+    <div class="stepline"><span class="cb"></span><p><b>1.【直接さわる】</b>チラシの<b>見出しの文字</b>をクリックして選び、引っぱって少し動かす（戻せなくても大丈夫。「元に戻して」と頼めます）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>2.【コメント】</b>電話番号のあたりを選んで<span class="place">コメント</span>を付け、「ここをもう少し大きく」と送る → <b>その場所だけ</b>直るのを確認</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>3.【会話で頼む】</b>いつもの会話の欄に戻って、こう送る</p></div>
+  </div>
+  <div class="prompt">開始時間を10:00から9:30に変えてください。注意書きの「写真撮影はご遠慮ください」は残してください。</div>
+  <div class="box" style="margin-top:2mm;">
+    <div class="stepline"><span class="cb"></span><p><b>4.</b> 変わった場所を確認。<b>誤字1つなら直接、場所を指させるならコメント、言葉で説明するなら会話</b>。と覚えれば使い分けは十分です</p></div>
+  </div>
+
+  <h2><span class="badge">ワーク4</span>動く計算ページを作って、チラシを配る（20分）</h2>
+  <div class="box">
+    <p class="lead" style="margin-top:0;font-size:10pt;color:#5E6A84;">【動くページ ── 文章やチラシだけでなく「道具」も作れます】</p>
+    <div class="stepline"><span class="cb"></span><p><b>1.</b> <span class="place">新しいチャット（＋）</span>を開き、演習データ<span class="place">経費メモ_9月分.txt</span>の中身をコピー。下の文を打ち込み、続けて貼り付けて送信する</p></div>
+  </div>
+  <div class="prompt">この経費メモを整理して、<b>月の経費を科目別に集計して円グラフで見られるページ</b>をアーティファクトとして作ってください。金額を打ち直すと、グラフも変わるようにしてください。</div>
+  <div class="box" style="margin-top:2mm;">
+    <div class="stepline"><span class="cb"></span><p><b>2.</b> できたページで、金額を1つ打ち直してみる。グラフが動けば成功</p></div>
+    <p class="lead" style="font-size:10pt;color:#5E6A84;margin-top:2mm;">【共有リンク ── きょうの仕上げ】</p>
+    <div class="stepline"><span class="cb"></span><p><b>3.</b> 左端のメニューの<span class="place">アーティファクト</span>を押し、一覧からさっきのチラシを開く</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>4.</b> チラシ画面の<span class="place">共有</span>ボタン →「リンクを知っている人が見られる」→<span class="place">リンクをコピー</span></p></div>
+    <div class="stepline"><span class="cb"></span><p><b>5.</b> リンクを講師に送る → 講師のスマホで開けたら、きょうの合格です</p></div>
+  </div>
+  <p class="hint">※共有する前にひと呼吸: このチラシは架空データなのでそのまま配れますが、実物を共有するときは<b>第3回の線引き</b>（施主名・金額など）を先に確認します。</p>
+
+  <div class="foot"><span>AI勉強会 第6回 体験シート｜株式会社ククルデザイン</span><span>2/3</span></div>
+</div>
+
+<!-- ============ 3ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第6回 体験シート（3/3）── 保存版</p>
+  <h1>頼み方ひな形 ── 4つの穴を埋めるだけ</h1>
+  <p class="lead" style="font-size:10.5pt;">コツは「<b>内容ではなく、成果物を頼む</b>」。「要約して」ではなく「1枚の資料にして」。灰色の例文は建設業向けです。埋めたら4つをつなげて、ひとつの文で頼みます。</p>
+
+  <div class="tmpl">
+    <p class="lbl">① 何を作ってほしい？（モノの名前で）</p>
+    <p class="ex">例: 完成見学会のチラシ／施主様向けの工事進捗スライド（5枚まで）／経費の集計ページ</p>
+    <div class="fill"></div>
+  </div>
+
+  <div class="tmpl">
+    <p class="lbl">② 誰が見る・使う？</p>
+    <p class="ex">例: 築20年以上の家にお住まいの方／工事中の施主様／自分（社内の数字確認用）</p>
+    <div class="fill"></div>
+  </div>
+
+  <div class="tmpl">
+    <p class="lbl">③ どんな形で？</p>
+    <p class="ex">例: A4たて1枚のデザイン／あとでPowerPointにできるスライド／金額を打ち直せる動くページ</p>
+    <div class="fill"></div>
+  </div>
+
+  <div class="tmpl">
+    <p class="lbl">④ 細かい注文をひとつふたつ</p>
+    <p class="ex">例: 日付と電話番号は大きく／売り込みをしない雰囲気で／専門用語にはひとこと説明を</p>
+    <div class="fill"></div><div class="fill"></div>
+  </div>
+
+  <div class="note" style="margin-top:3mm;"><b>材料もいっしょに渡すのを忘れずに。</b>素材のメモや数字を貼り付けてから頼むと、でき上がりがまるで違います。すでに相談した会話の続きで「これを1枚にして」と頼むのがいちばんの近道です。</div>
+
+  <h2 style="margin-top:5mm;">困ったときは、この表</h2>
+  <table class="sos">
+    <tr><th style="width:64mm;">こうなったら</th><th>こうする</th></tr>
+    <tr><td>横の画面が開かず、チャットの文章で返ってくる</td><td>「これをアーティファクトとして作成して」と送る。それでも出なければ手を挙げる</td></tr>
+    <tr><td>文字を直接さわれない・動かせない</td><td>スマホでは直接編集はできません。パソコンのアプリかブラウザで開く</td></tr>
+    <tr><td>前に作ったチラシが見つからない</td><td>左端のメニューの「アーティファクト」に、作ったものが全部しまってあります</td></tr>
+    <tr><td>リンクを送った相手が開けない</td><td>相手もClaudeのアカウント（無料でOK）でログインが必要。急ぎならPDFに書き出して渡す</td></tr>
+    <tr><td>グラフの数字が古いまま</td><td>グラフは自動では更新されません。「最新の数字でグラフを更新して」と頼む</td></tr>
+  </table>
+
+  <div class="note"><b>宿題はありません。</b>今週、人に見せるものを1つだけアーティファクトで作ってみてください。社内の貼り紙1枚でも十分です。</div>
+
+  <div class="foot"><span>AI勉強会 第6回 体験シート｜株式会社ククルデザイン</span><span>3/3</span></div>
+</div>
+
+</body>
+</html>
