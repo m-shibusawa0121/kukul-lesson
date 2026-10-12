@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page{size:A4;margin:0;}
+  *{margin:0;box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:#1D2940;width:210mm;}
+  .page{width:210mm;height:296mm;padding:11mm 15mm 9mm;position:relative;page-break-after:always;}
+  .page:last-child{page-break-after:auto;}
+  .eyebrow{font-size:9pt;letter-spacing:3px;color:#5E6A84;font-weight:700;}
+  h1{font-size:18pt;color:#0F2A5C;margin-top:1.5mm;}
+  h1::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#3466E8;margin-right:8px;vertical-align:middle;}
+  h2{font-size:12pt;color:#0F2A5C;margin-top:2.6mm;display:flex;align-items:center;gap:3mm;}
+  .badge{font-size:9pt;font-weight:700;color:#FFF;background:#3466E8;border-radius:999px;padding:1.2mm 4mm;white-space:nowrap;}
+  .lead{font-size:10.3pt;line-height:1.65;margin-top:2mm;}
+  .lead b{color:#0F2A5C;}
+  .box{border:1.5px solid #DCE3EF;border-radius:10px;padding:2.5mm 5mm;margin-top:1.8mm;background:#FFF;}
+  .stepline{display:grid;grid-template-columns:8mm 1fr;gap:3mm;align-items:start;
+    padding:1.3mm 0;border-bottom:1px dashed #DCE3EF;font-size:10.2pt;line-height:1.5;}
+  .stepline:last-child{border-bottom:none;}
+  .cb{display:inline-block;width:4.2mm;height:4.2mm;border:1.8px solid #3466E8;border-radius:1.2mm;margin-top:1.6mm;}
+  .stepline b{color:#0F2A5C;}
+  .place{background:#E8EFFC;border-radius:4px;padding:0 2mm;font-weight:700;color:#0F2A5C;white-space:nowrap;}
+  .prompt{margin-top:1.6mm;background:#F7F9FC;border:1.5px dashed #B8CAF4;border-radius:8px;
+    padding:2.1mm 4.5mm;font-size:9.8pt;line-height:1.6;color:#1D2940;}
+  .prompt::before{content:"そのまま打ち込む（コピーでもOK） ";display:block;font-size:8pt;font-weight:700;color:#3466E8;margin-bottom:1mm;}
+  .prompt b{color:#0F2A5C;}
+  .memo{margin-top:2.5mm;font-size:10pt;color:#5E6A84;}
+  .memo .line{display:inline-block;border-bottom:1px solid #9AA5BC;min-width:110mm;height:5mm;vertical-align:-1mm;}
+  .hint{font-size:9.3pt;color:#5E6A84;line-height:1.6;margin-top:1.5mm;}
+  .foot{position:absolute;left:15mm;right:15mm;bottom:7mm;padding-top:2.5mm;border-top:1px solid #DCE3EF;
+    font-size:8.5pt;color:#5E6A84;display:flex;justify-content:space-between;}
+  .note{margin-top:2.2mm;border-radius:10px;background:#E8EFFC;padding:2.4mm 5mm;font-size:9.8pt;line-height:1.6;color:#0F2A5C;}
+  table.sos{border-collapse:collapse;width:100%;margin-top:2.5mm;font-size:10pt;}
+  table.sos th{background:#E8EFFC;color:#0F2A5C;font-weight:700;padding:1.6mm 3mm;text-align:left;border:1px solid #DCE3EF;}
+  table.sos td{border:1px solid #DCE3EF;padding:1.3mm 3mm;line-height:1.45;vertical-align:top;}
+</style>
+</head>
+<body>
+
+<!-- ============ 1ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第7回 体験シート（1/3）</p>
+  <h1>きょう作るもの: 「ExcelとWordで返ってくるClaude」</h1>
+  <p class="lead">きょうの前半は<b>スキル</b>。Claudeに入っている「手順書のパッケージ」で、頼むだけで<b>本物のExcel・Wordファイル</b>が返ってきます。後半は<b>コネクタ</b>。自分のカレンダーをClaudeにつないで、コピペせずに予定の相談ができるようにします。</p>
+
+  <h2><span class="badge">ワーク1</span>講師のお手本を見る（15分）</h2>
+  <div class="box">
+    <p class="lead" style="margin-top:0;font-size:10.3pt;">講師が、スイッチの場所 → Excel作成 → カレンダー接続の順でやって見せます。次の3つだけ見ていてください。</p>
+    <div class="stepline"><span class="cb"></span><p>スキルの一覧がどこにあるか（<span class="place">カスタマイズ &gt; スキル</span>）</p></div>
+    <div class="stepline"><span class="cb"></span><p>「Excelにして」だけで、<b>数式入りのファイル</b>がダウンロードできる形で返ること</p></div>
+    <div class="stepline"><span class="cb"></span><p>カレンダーをつないだあとも、<b>頼んだときにしか見に行かない</b>こと</p></div>
+    <p class="memo">気づいたこと: <span class="line"></span></p>
+  </div>
+
+  <h2><span class="badge">ワーク2</span>ExcelとWordを1本ずつ作る（20分）</h2>
+  <div class="box">
+    <p class="lead" style="margin-top:0;font-size:10pt;color:#5E6A84;">【1本目: 経費の集計Excel】</p>
+    <div class="stepline"><span class="cb"></span><p><b>1.</b> <span class="place">新しいチャット（＋）</span>を開き、演習データ<span class="place">経費メモ_9月分.txt</span>の中身をコピーする</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>2.</b> 下の文を打ち込み、経費メモを貼り付けて送信する</p></div>
+  </div>
+  <div class="prompt">この経費メモを、<b>科目別に集計したExcelファイル</b>にしてください。明細のシートと集計のシートに分けて、合計は数式で入れてください。</div>
+  <div class="box" style="margin-top:1.8mm;">
+    <div class="stepline"><span class="cb"></span><p><b>3.</b> できたファイルを<span class="place">ダウンロード</span>して、<b>Excelで開く</b>。合計のマス目をクリックして、数式（=SUM…）が入っているか見る</p></div>
+    <p class="lead" style="font-size:10pt;color:#5E6A84;margin-top:2mm;">【2本目: 近隣様への工事のお知らせWord】</p>
+    <div class="stepline"><span class="cb"></span><p><b>4.</b> 演習データ<span class="place">工事のお知らせ_素材.txt</span>の中身をコピーして、下の文と一緒に送信する</p></div>
+  </div>
+  <div class="prompt">この素材から、ご近所様に配る「工事のお知らせ」の<b>Word文書</b>を作ってください。A4たて1枚。お詫びの気持ちが伝わる、丁寧で感じのよい文面で。</div>
+  <div class="box" style="margin-top:1.8mm;">
+    <div class="stepline"><span class="cb"></span><p><b>5.</b> ダウンロードしてWordで開き、<b>期間・時間・電話番号</b>を素材と指さし照合する</p></div>
+  </div>
+  <p class="hint">※スキルの名前を言う必要はありません。「Excelにして」「Wordにして」で自動で選ばれます。途中で「制限付きネットワークアクセスを許可」と出たらオンにします。</p>
+
+  <div class="foot"><span>AI勉強会 第7回 体験シート｜株式会社ククルデザイン</span><span>1/3</span></div>
+</div>
+
+<!-- ============ 2ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第7回 体験シート（2/3）</p>
+  <h1>手持ちのファイルを直させて、カレンダーをつなぐ</h1>
+  <p class="lead" style="font-size:10.3pt;">ボタンの名前や場所は画面の更新で変わることがあります。見つからなかったら手を挙げてください、それが正解です。</p>
+
+  <h2><span class="badge">ワーク3</span>未完成のExcelを手直しさせる（15分）</h2>
+  <div class="box">
+    <div class="stepline"><span class="cb"></span><p><b>1.</b> <span class="place">新しいチャット（＋）</span>を開き、演習データ<span class="place">工事台帳_9月_未完成.xlsx</span>を<b>クリップ（添付）で付ける</b>か、画面へ引っぱって落とす</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>2.</b> 下の文を送信する</p></div>
+  </div>
+  <div class="prompt">この工事台帳の<b>合計行に請負金額の合計を数式で</b>入れてください。あわせて、見出し行に色を付けて、金額は3桁区切りの表示に整えてください。</div>
+  <div class="box" style="margin-top:1.8mm;">
+    <div class="stepline"><span class="cb"></span><p><b>3.</b> 返ってきた<b>新しい版</b>をダウンロードしてExcelで開く（元のファイルはそのまま残っています）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>4.</b> 合計が<b>13,695,000円</b>になっているか指さし確認。違ったら「合計が合いません。確認してください」と返す</p></div>
+  </div>
+  <p class="hint">※ここが今日いちばん仕事に効くところ。請求書・台帳・名簿、<b>途中まで作った手持ちのExcelの続き</b>を頼めます。</p>
+
+  <h2><span class="badge">ワーク4</span>Googleカレンダーをつなぐ（20分）</h2>
+  <div class="box">
+    <p class="lead" style="margin-top:0;font-size:10pt;color:#5E6A84;">【つなぐ ── 自分個人のカレンダーで練習します】</p>
+    <div class="stepline"><span class="cb"></span><p><b>1.</b> チャット入力欄のそばの<span class="place">＋</span>を押して<span class="place">コネクタ</span>を選ぶ（なければ左端メニューの<span class="place">カスタマイズ &gt; コネクタ</span>）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>2.</b> 一覧から<b>Googleカレンダー</b>を探して<span class="place">連携する</span>を押す</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>3.</b> Googleのログイン画面が出たら、<b>いつものIDでログイン</b>する</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>4.</b> 「Claudeが求めている権限」の画面を<b>一度読んでから</b>承認する</p></div>
+    <p class="lead" style="font-size:10pt;color:#5E6A84;margin-top:2mm;">【テスト ── きょうの仕上げ】</p>
+    <div class="stepline"><span class="cb"></span><p><b>5.</b> チャットに戻って、こう送る</p></div>
+  </div>
+  <div class="prompt">私のカレンダーにアクセスできますか？ できたら、<b>今週の予定を箇条書き</b>にしてください。</div>
+  <div class="box" style="margin-top:1.8mm;">
+    <div class="stepline"><span class="cb"></span><p><b>6.</b> 自分の予定が出てきたら合格。仕上げに<span class="place">カスタマイズ &gt; コネクタ</span>を開いて、<b>切断ボタンの場所だけ</b>確認しておく（切断はしなくてOK）</p></div>
+  </div>
+  <p class="hint">※つなぐのは<b>自分個人のカレンダー</b>。会社の共有アカウントや他人の情報が入る道具は、第3回の線引きで考えてから（きょうはやりません）。</p>
+
+  <div class="foot"><span>AI勉強会 第7回 体験シート｜株式会社ククルデザイン</span><span>2/3</span></div>
+</div>
+
+<!-- ============ 3ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第7回 体験シート（3/3）── 保存版</p>
+  <h1>部屋と技とつなぎ口 ── 使い分け早見表</h1>
+  <p class="lead" style="font-size:10.3pt;">第5回からの3点セットがそろいました。迷ったらこの表に戻ってください。</p>
+
+  <table class="sos">
+    <tr><th style="width:30mm;">仕組み</th><th style="width:52mm;">ひとことで言うと</th><th>出番のサイン</th></tr>
+    <tr><td><b>プロジェクト</b><br>（第5回の部屋）</td><td>知識を覚える＝「<b>何を</b>」。資料と前置きを常備する場所</td><td>毎回同じ説明・同じ資料を使っている</td></tr>
+    <tr><td><b>スキル</b><br>（きょうの技)</td><td>手順を覚える＝「<b>どのように</b>」。毎回同じやり方で仕事させる</td><td>「この書式で」「この手順で」を毎回言っている。Excel・Word・PDFを作らせたい</td></tr>
+    <tr><td><b>コネクタ</b><br>（きょうのつなぎ口）</td><td>道具とつなぐ＝「<b>どこを見て</b>」。コピペをなくす</td><td>カレンダーやメールの中身を毎回貼り付けている</td></tr>
+  </table>
+  <p class="hint">※3つは組み合わせられます。例:「見積の部屋」で、単価表（部屋の資料）を見ながら、見積スキル（手順）で、Excelファイルに仕上げる。</p>
+
+  <h2 style="margin-top:4mm;">ファイルを作らせる頼み方の型</h2>
+  <div class="note"><b>「〇〇（材料）を、△△（用途）の Excel／Word／PDF にして」</b>＋細かい注文をひとつ（「合計は数式で」「A4たて1枚で」）。材料のメモや数字をいっしょに貼るのを忘れずに。できたファイルは<b>必ず開いて数字を指さし確認</b>。ここだけはAIに任せられません。</div>
+
+  <h2 style="margin-top:4mm;">困ったときは、この表</h2>
+  <table class="sos">
+    <tr><th style="width:64mm;">こうなったら</th><th>こうする</th></tr>
+    <tr><td>ファイルではなく画面の作品（アーティファクト）で返ってきた</td><td>どちらでも正解。ファイルが欲しければ「Excelファイルとしてダウンロードできる形にして」と言い直す</td></tr>
+    <tr><td>「コード実行」や「ファイル作成」がオフだと言われた</td><td>設定 &gt; 機能でスイッチをオンにする（左下の自分の名前から入れます）</td></tr>
+    <tr><td>スキルの一覧が見つからない</td><td>左端メニューの「カスタマイズ」の中の「スキル」。なければ手を挙げる</td></tr>
+    <tr><td>カレンダーの連携でログイン画面が進まない</td><td>いったん閉じて、カスタマイズ &gt; コネクタからやり直す。それでもダメなら手を挙げる</td></tr>
+    <tr><td>つないだ道具をやめたい</td><td>カスタマイズ &gt; コネクタで、その道具の「切断」。いつでも戻せます</td></tr>
+    <tr><td>数字が合わない・変な数字が出る</td><td>鵜呑みにせず「〇〇が合いません。確認してください」と返す。直らなければ自分で直すほうが早いこともあります</td></tr>
+  </table>
+
+  <div class="note"><b>宿題はありません。</b>今週、集計か書類をひとつだけ「Excelにして」「Wordにして」で頼んでみてください。</div>
+
+  <div class="foot"><span>AI勉強会 第7回 体験シート｜株式会社ククルデザイン</span><span>3/3</span></div>
+</div>
+
+</body>
+</html>

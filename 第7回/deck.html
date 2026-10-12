@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+  <meta name="hz:canvas-width" content="1280">
+  <meta name="hz:canvas-height" content="720">
+  <meta name="hz:slide-selector" content=".slide">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#F7F9FC; --bg-white:#FFF; --bg-soft:#EEF2F8;
+      --text-body:#1D2940; --text-muted:#5E6A84; --border:#DCE3EF;
+      --font-jp:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+      --font-num:"Helvetica Neue",Inter,Arial,sans-serif;
+    }
+    [data-theme="blue"]{ --text-hd:#0F2A5C; --primary:#0F2A5C; --accent:#3466E8; --accent-soft:#B8CAF4; --bg-tint:#E8EFFC; }
+
+    *{margin:0;box-sizing:border-box;}
+    body{background:#888;}
+    .slide{
+      width:1280px;height:720px;position:relative;overflow:hidden;
+      background:var(--bg);color:var(--text-body);font-family:var(--font-jp);
+      padding:64px 72px;margin:0 auto 24px;
+    }
+    .eyebrow{font-family:var(--font-num);font-weight:700;font-size:15px;letter-spacing:4px;
+      text-transform:uppercase;color:var(--text-muted);}
+    .action-title{font-weight:700;font-size:34px;line-height:1.4;color:var(--text-hd);}
+    .display{font-weight:700;font-size:120px;line-height:1.05;color:var(--text-hd);letter-spacing:-2px;}
+    .body{font-size:19px;line-height:1.7;}
+    .metric{font-family:var(--font-num);font-weight:700;font-size:88px;color:var(--text-hd);line-height:1;}
+    .metric .unit{font-family:var(--font-jp);font-weight:400;font-size:34px;color:var(--text-muted);margin-left:6px;}
+    .source{font-size:13px;font-style:italic;color:var(--text-muted);position:absolute;left:72px;bottom:28px;}
+    .action-title::before{content:"";display:inline-block;width:11px;height:11px;border-radius:50%;
+      background:var(--accent);margin-right:14px;vertical-align:middle;}
+    table{border-collapse:collapse;width:100%;font-size:17px;} th,td{border:none;border-bottom:1px solid var(--border);
+      padding:12px 8px;text-align:left;} th{color:var(--text-hd);font-weight:700;}
+    .mesh{position:absolute;inset:0;z-index:0;background:
+      radial-gradient(60% 50% at 80% 10%, var(--bg-tint), transparent 70%),
+      radial-gradient(50% 40% at 10% 90%, var(--accent-soft), transparent 70%);opacity:.55;}
+    .card{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;
+      padding:28px;box-shadow:0 12px 32px rgba(15,42,92,.06);position:relative;z-index:1;}
+    .grad-accent{background:linear-gradient(90deg,var(--primary),var(--accent));
+      -webkit-background-clip:text;background-clip:text;color:transparent;}
+    .pagefoot{position:absolute;right:72px;bottom:26px;font-family:var(--font-num);
+      font-size:13px;color:var(--text-muted);letter-spacing:1px;}
+    .flowrow{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:20px;
+      padding:12px 0;border-bottom:1px solid var(--border);}
+    .stmt{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;}
+    @media print{ .slide{page-break-after:always;margin:0;} body{background:#fff;} }
+  </style>
+</head>
+<body data-theme="blue">
+
+<!-- 1. 表紙 -->
+<section class="slide" data-intent="cover" style="padding:0;">
+  <img src="assets/cover_session7.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+  <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(247,249,252,.92) 0%,rgba(247,249,252,.78) 42%,rgba(247,249,252,0) 68%);"></div>
+  <div style="position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;padding:64px 72px;">
+    <p class="eyebrow">AI STUDY SESSION / DAY 7 OF 12</p>
+    <h1 class="display" style="font-size:64px;margin-top:20px;">技を仕込み、道具とつなぐ。<br><span class="grad-accent">Skills &amp; Connectors</span></h1>
+    <p class="body" style="margin-top:30px;color:var(--text-muted);">スキルとコネクタ｜AI勉強会 第7回（全12回）<br>株式会社ククルデザイン</p>
+  </div>
+  <p class="pagefoot" style="color:#5E6A84;">v2.0</p>
+</section>
+
+<!-- 2. 今日のゴール -->
+<section class="slide" data-intent="goal">
+  <p class="eyebrow">TODAY'S GOAL</p>
+  <h2 class="action-title">今日のゴールは、この4つです</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px;">
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 1</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">スキルとは何かを説明でき、<b>Word・Excel・PowerPoint・PDFを作る組み込みスキル</b>を把握する</p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 2</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">設定画面で<b>スキルを有効化・管理できる</b></p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 3</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">コネクタとは何か、<b>なぜ便利か</b>を説明できる</p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 4</p>
+      <p class="body" style="margin-top:10px;font-weight:500;"><b>最初の接続を1つ設定して</b>、会話の中から使える</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:28px;color:var(--text-muted);">今日の合格ラインは「頼みごとがExcelファイルで返ってきた」と「自分のカレンダーをClaudeが読めた」の2つです。</p>
+  <p class="pagefoot">01</p>
+</section>
+
+<!-- 3. スキルとは -->
+<section class="slide" data-intent="what-skill">
+  <p class="eyebrow">WHAT IS A SKILL</p>
+  <h2 class="action-title">スキルは、Claudeに教え込む「手順書のパッケージ」です</h2>
+  <div style="margin-top:26px;">
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">手順を毎回同じに</p>
+      <p class="body" style="font-size:17px;">指示・道具・参考資料をひとまとめにしたフォルダ。関係する頼みごとのとき、Claudeが自動で取り出して<b>毎回同じ手順</b>で仕事をする</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">2種類ある</p>
+      <p class="body" style="font-size:17px;"><b>組み込みスキル</b>（Anthropic製。Word・Excel等のファイル作成）と、<b>カスタムスキル</b>（自分の仕事の手順を教え込む自作の技）</p>
+    </div>
+    <div class="flowrow" style="border-bottom:none;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">部屋との違い</p>
+      <p class="body" style="font-size:17px;">第5回のプロジェクト（部屋）は<b>知識を覚える</b>＝「何を」。スキルは<b>手順を覚える</b>＝「どのように」。組み合わせて使える</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:26px;">実は、もう体験しています。これまでの回でファイルが作られたとき、裏で動いていたのがスキルです。今日は正体を知って、自分で管理できるようになります。</p>
+  <p class="pagefoot">02</p>
+</section>
+
+<!-- 4. 組み込みスキル -->
+<section class="slide" data-intent="builtin">
+  <p class="eyebrow">BUILT-IN SKILLS</p>
+  <h2 class="action-title">頼むだけで、Word・Excel・PowerPoint・PDFのファイルが返ってきます</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px;">
+    <div class="card" style="padding:26px;">
+      <h3 style="font-size:20px;color:var(--text-hd);">頼み方はいつも通り</h3>
+      <p class="body" style="margin-top:10px;font-size:17px;">「経費を科目別に集計して、<b>合計の数式入りのExcel</b>にして」「このメモを<b>近隣様への工事のお知らせのWord文書</b>にして」。スキルの名前を言う必要はない。Claudeが自動で選ぶ</p>
+    </div>
+    <div class="card" style="padding:26px;">
+      <h3 style="font-size:20px;color:var(--text-hd);">返ってくるのはファイル</h3>
+      <p class="body" style="margin-top:10px;font-size:17px;">ダウンロードして、<b>ExcelやWordでそのまま開ける</b>。数式も効いている。相手がClaudeを使っていなくても渡せる</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:30px;">先週のアーティファクトとの使い分けは前回の通り: <b>こちらで直し続けて見せるならアーティファクト、相手がExcelやWordで続きを触るならファイル</b>。プレゼンや文書を頼むと、アーティファクトのほうで返ってくることもあります（どちらでも正解）。</p>
+  <p class="pagefoot">03</p>
+</section>
+
+<!-- 5. 有効化とファイル実行 -->
+<section class="slide" data-intent="enable">
+  <p class="eyebrow">SETTINGS &amp; FILE EDITING ⚠️</p>
+  <h2 class="action-title">スイッチの場所と、「持ち込んだファイルを直させる」話</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;">
+    <div class="card" style="padding:28px;">
+      <h3 style="font-size:20px;color:var(--text-hd);">スイッチは2段階</h3>
+      <p class="body" style="margin-top:12px;font-size:17px;">① 設定 &gt; 機能で<b>「コード実行」と「ファイル作成」</b>をオン（安全な作業部屋でスキルが動くため）<br>② サイドバーの<b>カスタマイズ &gt; スキル</b>に一覧が出る。1つずつオン・オフできる</p>
+    </div>
+    <div class="card" style="padding:28px;">
+      <h3 style="font-size:20px;color:var(--text-hd);">手持ちのファイルも直せる</h3>
+      <p class="body" style="margin-top:12px;font-size:17px;">Excel・Word・PDFを<b>アップロードして</b>「合計の列を足して」「この書式に直して」と頼める。<b>元のファイルは触らず、新しい版</b>を作って返してくる</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:30px;color:var(--text-muted);">途中で「制限付きネットワークアクセスを許可」という確認が出たらオンにします ⚠️。どのスキルにも共通の作法がひとつ: 自作や他人製のスキルは、<b>信頼できる出どころのものだけ</b>入れる（第3回の線引きと同じ考え方です）。</p>
+  <p class="pagefoot">04</p>
+</section>
+
+<!-- 6. ステートメント -->
+<section class="slide" data-intent="statement">
+  <div class="mesh"></div>
+  <div class="stmt">
+    <p class="eyebrow">PRINCIPLE</p>
+    <h2 class="display" style="font-size:84px;margin-top:20px;">知識は部屋に、<br><span class="grad-accent">手順は技に。</span></h2>
+    <p class="body" style="margin-top:32px;font-size:22px;">単価表や過去事例は、プロジェクト（部屋）に覚えさせる。<br>「見積はこの手順・この書式で」は、スキル（技）に教え込む。</p>
+  </div>
+  <p class="pagefoot">05</p>
+</section>
+
+<!-- 7. カスタムスキル -->
+<section class="slide" data-intent="custom">
+  <p class="eyebrow">CUSTOM SKILLS</p>
+  <h2 class="action-title">自分の技は、会話で作れます。コードは書きません</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px;">
+    <div class="card" style="padding:22px;">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">1</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">作りたい技を伝える</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">「見積書を作るスキルを作りたい」と言うだけ</p>
+    </div>
+    <div class="card" style="padding:22px;">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">2</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">質問に答える</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">手順・良い仕上がりの条件・使う場面を聞かれる</p>
+    </div>
+    <div class="card" style="padding:22px;">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">3</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">お手本を渡す</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">ひな形や自信作があれば添付。精度が段違いに上がる</p>
+    </div>
+    <div class="card" style="padding:22px;">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">4</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">保存する</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">以後は自動で発動。直したくなったら会話で編集を頼む</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:32px;color:var(--text-muted);">建設業の候補: 見積の手順（単価×1.2・端数は百円単位切り上げ等）、週報の書式、安全書類のチェック手順。今日は仕組みの紹介まで。実際に作るのは、題材を決めて後半の回でやります。</p>
+  <p class="pagefoot">06</p>
+</section>
+
+<!-- 8. コネクタとは -->
+<section class="slide" data-intent="what-connector">
+  <p class="eyebrow">WHAT IS A CONNECTOR</p>
+  <h2 class="action-title">コネクタは、いつもの道具とClaudeをつなぐ「差し込み口」です</h2>
+  <div style="margin-top:26px;">
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">読めて、動ける</p>
+      <p class="body" style="font-size:17px;">カレンダー・メール・クラウドの資料をClaudeが直接見られる。権限しだいで、<b>予定の作成や下書きの作成</b>まで会話の中で頼める</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">コピペが消える</p>
+      <p class="body" style="font-size:17px;">今まで「予定を貼り付けて」「メールを貼り付けて」やっていた手作業が、「カレンダーを見て」のひとことになる</p>
+    </div>
+    <div class="flowrow" style="border-bottom:none;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">勝手には見ない</p>
+      <p class="body" style="font-size:17px;">つないだだけでは何も起きない。<b>頼んだときに、見られる場所が増える</b>だけ。主導権はいつもこちら側にある</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:26px;color:var(--text-muted);">仕組みの名前はMCP（AIにとってのUSB-Cのような共通規格）。種類は2つ、クラウドの道具をつなぐ<b>ウェブコネクタ</b>と、パソコンの中の道具をつなぐ<b>デスクトップ拡張機能</b>。今日使うのはウェブコネクタです。</p>
+  <p class="pagefoot">07</p>
+</section>
+
+<!-- 9. つなぎ方と安心 -->
+<section class="slide" data-intent="connect-steps">
+  <p class="eyebrow">HOW TO CONNECT ⚠️</p>
+  <h2 class="action-title">つなぎ方は5ステップ。安心の仕組みも3つ覚えておきます</h2>
+  <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:28px;margin-top:30px;">
+    <div class="card" style="padding:26px;">
+      <h3 style="font-size:20px;color:var(--text-hd);">つなぐ（5分で終わる）</h3>
+      <p class="body" style="margin-top:12px;font-size:16.5px;line-height:1.9;">① チャット入力欄の<b>＋ &gt; コネクタ</b>（またはカスタマイズ &gt; コネクタ）で一覧を開く<br>② 使う道具の<b>「連携する」</b>を押す<br>③ そのサービスに<b>いつものIDでログイン</b><br>④ 求められている権限を読んで<b>承認</b><br>⑤ テスト:「私のカレンダーにアクセスできますか？」</p>
+    </div>
+    <div class="card" style="padding:26px;">
+      <h3 style="font-size:20px;color:var(--text-hd);">安心の仕組み3つ</h3>
+      <p class="body" style="margin-top:12px;font-size:16.5px;line-height:1.9;">① <b>自分が見られるものだけ</b>。自分のアカウントの範囲を超えない<br>② 権限は<b>道具ごとに絞れる</b>（読み取りだけ、など）<br>③ <b>いつでも切断できる</b>（カスタマイズ &gt; コネクタから）</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:28px;color:var(--text-muted);">会社の共有アカウントをつなぐときは一段慎重に。まずは自分個人のカレンダーで練習します（第3回の線引きの実践です）。</p>
+  <p class="pagefoot">08</p>
+</section>
+
+<!-- 10. ワーク -->
+<section class="slide" data-intent="handson">
+  <p class="eyebrow">HANDS-ON 70 MIN</p>
+  <h2 class="action-title">今日は、Excelを作らせて、カレンダーをつないで帰ります</h2>
+  <div style="margin-top:26px;">
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">15<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">講師デモ。スイッチの場所ツアー → 経費メモから数式入りExcel → カレンダーをつないで「来週の予定から段取りメモ」⚠️</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">20<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ワーク1。組み込みスキルで2本: 経費メモ→集計Excel、お知らせ素材→近隣様向けWord文書</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">15<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ワーク2。手持ちファイルの手直し: 未完成の工事台帳Excelを渡して、合計と見た目を整えさせる</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;border-bottom:none;">
+      <p class="metric" style="font-size:22px;">20<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ワーク3。Googleカレンダーを接続 → テスト →「今週の予定を箇条書きにして」で読めたら合格</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:24px;color:var(--text-muted);">手順は体験シートに1クリックずつ書いてあります。ダウンロードしたファイルは必ずExcel・Wordで開いて、数字を指さし確認します。</p>
+  <p class="pagefoot">09</p>
+</section>
+
+<!-- 11. 持ち帰り -->
+<section class="slide" data-intent="takeaway">
+  <p class="eyebrow">TAKEAWAY</p>
+  <h2 class="action-title">持ち帰りは「ファイルを作らせる型」と「つながったカレンダー」</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;">
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">ファイルを作らせる型</h3>
+      <p class="body" style="margin-top:12px;">「〇〇を△△のExcel（Word）にして」。明日からの集計もの・書類ものは、まずこの型で頼んでみてください。手持ちファイルの手直しも頼めます。</p>
+    </div>
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">つながったカレンダー</h3>
+      <p class="body" style="margin-top:12px;">「来週の現場予定を見て、段取りの抜けがないか見て」が今日から使えます。要らなくなったら、いつでも切断できます。</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:36px;color:var(--text-muted);">宿題はありません。今週、集計か書類をひとつだけ「Excelにして」で頼んでみてください。</p>
+  <p class="pagefoot">10</p>
+</section>
+
+<!-- 12. 次回予告 -->
+<section class="slide" data-intent="cta">
+  <div class="mesh"></div>
+  <div class="stmt">
+    <p class="eyebrow">NEXT SESSION</p>
+    <h2 class="display" style="font-size:70px;margin-top:20px;">次回は、調べものを<br><span class="grad-accent">丸ごと任せる。</span></h2>
+    <p class="body" style="margin-top:30px;font-size:21px;">リサーチ機能。ふつうのWeb検索との違いを同じ質問で見比べて、<br>自社の商圏・競合の調査を1本、出典つきで回します。</p>
+    <p class="body" style="margin-top:36px;color:var(--text-muted);">第8回 深掘りのためのリサーチ｜株式会社ククルデザイン</p>
+  </div>
+  <p class="pagefoot">11</p>
+</section>
+
+</body>
+</html>
