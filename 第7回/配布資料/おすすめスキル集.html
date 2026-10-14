@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page{size:A4;margin:0;}
+  *{margin:0;box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:#1D2940;width:210mm;}
+  .page{width:210mm;height:296mm;padding:11mm 15mm 9mm;position:relative;page-break-after:always;}
+  .page:last-child{page-break-after:auto;}
+  .eyebrow{font-size:9pt;letter-spacing:3px;color:#5E6A84;font-weight:700;}
+  h1{font-size:17pt;color:#0F2A5C;margin-top:1.2mm;}
+  h1::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#3466E8;margin-right:8px;vertical-align:middle;}
+  h2{font-size:12pt;color:#0F2A5C;margin-top:2.6mm;display:flex;align-items:center;gap:3mm;}
+  .badge{font-size:9pt;font-weight:700;color:#FFF;background:#3466E8;border-radius:999px;padding:1.2mm 4mm;white-space:nowrap;}
+  .lead{font-size:10.1pt;line-height:1.58;margin-top:1.5mm;}
+  .lead b{color:#0F2A5C;}
+  .recipe{border:1.5px solid #DCE3EF;border-radius:10px;padding:1.9mm 5mm;margin-top:1.4mm;background:#FFF;}
+  .rhead{display:flex;align-items:center;gap:3mm;}
+  .rtag{font-size:8.5pt;font-weight:700;color:#0F2A5C;background:#E8EFFC;border-radius:4px;padding:0.6mm 2.5mm;white-space:nowrap;}
+  .rtitle{font-size:10.5pt;font-weight:700;color:#0F2A5C;}
+  .prompt{margin-top:1.1mm;background:#F7F9FC;border:1.5px dashed #B8CAF4;border-radius:8px;
+    padding:1.5mm 4.5mm;font-size:9.4pt;line-height:1.55;color:#1D2940;}
+  .prompt::before{content:"そのまま使える指示 ";display:block;font-size:8pt;font-weight:700;color:#3466E8;margin-bottom:0.8mm;}
+  .prompt b{color:#0F2A5C;}
+  .tip{font-size:9pt;color:#5E6A84;line-height:1.5;margin-top:0.9mm;}
+  .tip b{color:#0F2A5C;}
+  .hint{font-size:9.3pt;color:#5E6A84;line-height:1.6;margin-top:1.5mm;}
+  .foot{position:absolute;left:15mm;right:15mm;bottom:7mm;padding-top:2.5mm;border-top:1px solid #DCE3EF;
+    font-size:8.5pt;color:#5E6A84;display:flex;justify-content:space-between;}
+  .note{margin-top:2.2mm;border-radius:10px;background:#E8EFFC;padding:2.4mm 5mm;font-size:9.8pt;line-height:1.6;color:#0F2A5C;}
+  table.tb{border-collapse:collapse;width:100%;margin-top:2.2mm;font-size:9.6pt;}
+  table.tb th{background:#E8EFFC;color:#0F2A5C;font-weight:700;padding:1.6mm 3mm;text-align:left;border:1px solid #DCE3EF;}
+  table.tb td{border:1px solid #DCE3EF;padding:1.5mm 3mm;line-height:1.5;vertical-align:top;}
+  table.tb td b{color:#0F2A5C;}
+</style>
+</head>
+<body>
+
+<!-- ============ 1ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第7回 おすすめスキル集（1/2）── 保存版</p>
+  <h1>組み込みスキルの実務レシピ 6本</h1>
+  <p class="lead">第7回で使った「技」の、建設業の実務での使いどころ集です。どれも<b>材料（メモ・数字・既存ファイル）をいっしょに渡す</b>のが成功のコツ。でき上がったファイルは必ず開いて、数字を指さし確認してから使います。</p>
+
+  <div class="recipe">
+    <div class="rhead"><span class="rtag">Excel</span><span class="rtitle">① 見積の下ごしらえ</span></div>
+    <div class="prompt">この内訳メモを見積用のExcelにしてください。<b>数量×単価の列と、小計・消費税・合計の数式</b>を入れて、項目は工種ごとにまとめてください。（内訳メモを貼り付け）</div>
+    <p class="tip">最後の単価調整と提出判断は自分の仕事。たたき台づくりの30分を5分にする使い方です。</p>
+  </div>
+
+  <div class="recipe">
+    <div class="rhead"><span class="rtag">Excel</span><span class="rtitle">② 工事台帳・入金管理の手直し</span></div>
+    <div class="prompt">（台帳のExcelを添付して）この台帳に<b>入金状況別の集計シート</b>を足してください。未請求と請求済みの合計がひと目でわかるように。</div>
+    <p class="tip">第7回ワーク3の型。途中まで自分で作った手持ちファイルの「続き」を頼めるのがスキルの強みです。</p>
+  </div>
+
+  <div class="recipe">
+    <div class="rhead"><span class="rtag">Word</span><span class="rtitle">③ 近隣様へのお知らせ・挨拶状</span></div>
+    <div class="prompt">この素材から、ご近所様に配る「工事のお知らせ」の<b>Word文書</b>を作ってください。A4たて1枚、お詫びの気持ちが伝わる丁寧な文面で。（工期・時間・連絡先のメモを貼り付け）</div>
+    <p class="tip">現場ごとに素材のメモだけ差し替えれば数分で1枚。印刷前に期間と電話番号の指さし照合を。</p>
+  </div>
+
+  <div class="recipe">
+    <div class="rhead"><span class="rtag">PowerPoint</span><span class="rtitle">④ 着工前説明・完工報告の資料</span></div>
+    <div class="prompt">この工程メモから、施主様への<b>着工前説明のPowerPoint（5枚まで）</b>を作ってください。工事の流れ・お願いごと・連絡先の順で、専門用語にはひとこと説明を。</div>
+    <p class="tip">画面の作品（アーティファクト）で返ってきたら、それも正解。印刷や送付が要るときだけ「PowerPointファイルで」と言い直します。</p>
+  </div>
+
+  <div class="recipe">
+    <div class="rhead"><span class="rtag">PDF</span><span class="rtitle">⑤ 提出用の1枚レポート</span></div>
+    <div class="prompt">この月次の数字を、取引先に送れる<b>A4縦1枚のPDFレポート</b>にまとめてください。表とグラフを1つずつ、結論を先頭に。</div>
+    <p class="tip">PDFは相手が開けないことがほぼ無いのが利点。社外に送る完成版の定番です。</p>
+  </div>
+
+  <div class="recipe">
+    <div class="rhead"><span class="rtag">Excel</span><span class="rtitle">⑥ 月次経費の集計（毎月の定番）</span></div>
+    <div class="prompt">この経費メモを、<b>明細シートと科目別集計シート</b>に分けたExcelにしてください。合計は数式で。先月と同じ形式でお願いします。</div>
+    <p class="tip">「先月と同じ形式で」が効くのは同じ会話やプロジェクト（部屋）の中だけ。毎月やるなら「経費集計の部屋」を1つ作るのが近道です。</p>
+  </div>
+
+  <div class="foot"><span>AI勉強会 第7回 おすすめスキル集｜株式会社ククルデザイン</span><span>1/2</span></div>
+</div>
+
+<!-- ============ 2ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第7回 おすすめスキル集（2/2）── 保存版</p>
+  <h1>自分の「技」にする候補 5本</h1>
+  <p class="lead">カスタムスキルは「<b>毎回同じ手順・同じ書式でやってほしい仕事</b>」から作ると外れません。おすすめ順に5本。まずは★★★をひとつ、次回以降の講座でいっしょに作りましょう。</p>
+
+  <table class="tb">
+    <tr><th style="width:8mm;">優先</th><th style="width:34mm;">スキル候補</th><th>教え込む手順（例）</th><th style="width:44mm;">用意する材料</th></tr>
+    <tr><td><b>★★★</b></td><td><b>見積づくり</b></td><td>仕入単価×掛け率で売価を出す。端数は百円単位で切り上げ。運賃・諸経費の扱い。いつもの書式に流し込む</td><td>過去の見積2〜3本、見積ひな形、単価の決めごとメモ</td></tr>
+    <tr><td><b>★★★</b></td><td><b>週報・月報</b></td><td>現場ごとの進捗・翌週予定・懸案の3段構成。数字は台帳から拾う。A4で1枚に収める</td><td>自信作の週報1〜2本</td></tr>
+    <tr><td><b>★★</b></td><td><b>請求前チェック</b></td><td>台帳と見積を突き合わせ、追加工事の請求漏れ・金額違いを一覧にする。判断はせず指摘だけ</td><td>台帳、見積、過去の請求書の例</td></tr>
+    <tr><td><b>★★</b></td><td><b>安全書類の点検</b></td><td>提出前の書類をチェックリストと突き合わせ、記入漏れ・日付の矛盾を指摘する</td><td>チェックリスト、記入済みの見本</td></tr>
+    <tr><td><b>★</b></td><td><b>現場写真の整理札</b></td><td>写真の一覧から、工種別の整理番号と報告書用のキャプション案を作る</td><td>いつもの整理ルールのメモ</td></tr>
+  </table>
+
+  <p class="hint">※「施主様への連絡文」は第5回に作ったプロジェクト（部屋）が既に担当しています。文面の<b>書式や手順まで毎回同じ</b>に固まってきたら、スキルに昇格させる、の順番で。</p>
+
+  <h2><span class="badge">復習</span>作り方は会話で4ステップ</h2>
+  <div class="note">① 新しいチャットで「<b>見積書を作るスキルを作りたい</b>」と伝える → ② 手順・良い仕上がりの条件・使う場面の質問に答える → ③ ひな形や自信作を添付する → ④ できたスキルを保存する（以後は頼むだけで自動で発動。直したければ会話で編集を頼む）</div>
+
+  <h2 style="margin-top:4mm;">気をつけること 3つ</h2>
+  <table class="tb">
+    <tr><td style="width:40mm;"><b>出どころを選ぶ</b></td><td>他人が作ったスキルは、信頼できる出どころのものだけ入れる。中身に何が書いてあるか確認してから（第3回の線引きと同じ考え方）</td></tr>
+    <tr><td><b>材料の伏せ字</b></td><td>スキルに添付するひな形・過去事例に施主名や個別単価が入っているときは、伏せ版を作ってから渡す（判断フローの2・3番）</td></tr>
+    <tr><td><b>検品は人間の仕事</b></td><td>スキルで作っても、金額・日付・宛名の指さし確認は変わらずあなたの仕事。ここだけは任せない</td></tr>
+  </table>
+
+  <div class="note"><b>迷ったらこの基準。</b>月に3回以上やっていて、やり方を人に説明できる仕事は、スキルにする価値があります。説明できないほど毎回違う仕事は、まだ会話とプロジェクト（部屋）で。</div>
+
+  <div class="foot"><span>AI勉強会 第7回 おすすめスキル集｜株式会社ククルデザイン</span><span>2/2</span></div>
+</div>
+
+</body>
+</html>
