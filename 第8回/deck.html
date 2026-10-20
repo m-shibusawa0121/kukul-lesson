@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+  <meta name="hz:canvas-width" content="1280">
+  <meta name="hz:canvas-height" content="720">
+  <meta name="hz:slide-selector" content=".slide">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#F7F9FC; --bg-white:#FFF; --bg-soft:#EEF2F8;
+      --text-body:#1D2940; --text-muted:#5E6A84; --border:#DCE3EF;
+      --font-jp:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+      --font-num:"Helvetica Neue",Inter,Arial,sans-serif;
+    }
+    [data-theme="blue"]{ --text-hd:#0F2A5C; --primary:#0F2A5C; --accent:#3466E8; --accent-soft:#B8CAF4; --bg-tint:#E8EFFC; }
+
+    *{margin:0;box-sizing:border-box;}
+    body{background:#888;}
+    .slide{
+      width:1280px;height:720px;position:relative;overflow:hidden;
+      background:var(--bg);color:var(--text-body);font-family:var(--font-jp);
+      padding:64px 72px;margin:0 auto 24px;
+    }
+    .eyebrow{font-family:var(--font-num);font-weight:700;font-size:15px;letter-spacing:4px;
+      text-transform:uppercase;color:var(--text-muted);}
+    .action-title{font-weight:700;font-size:34px;line-height:1.4;color:var(--text-hd);}
+    .display{font-weight:700;font-size:120px;line-height:1.05;color:var(--text-hd);letter-spacing:-2px;}
+    .body{font-size:19px;line-height:1.7;}
+    .metric{font-family:var(--font-num);font-weight:700;font-size:88px;color:var(--text-hd);line-height:1;}
+    .metric .unit{font-family:var(--font-jp);font-weight:400;font-size:34px;color:var(--text-muted);margin-left:6px;}
+    .source{font-size:13px;font-style:italic;color:var(--text-muted);position:absolute;left:72px;bottom:28px;}
+    .action-title::before{content:"";display:inline-block;width:11px;height:11px;border-radius:50%;
+      background:var(--accent);margin-right:14px;vertical-align:middle;}
+    table{border-collapse:collapse;width:100%;font-size:17px;} th,td{border:none;border-bottom:1px solid var(--border);
+      padding:12px 8px;text-align:left;} th{color:var(--text-hd);font-weight:700;}
+    .mesh{position:absolute;inset:0;z-index:0;background:
+      radial-gradient(60% 50% at 80% 10%, var(--bg-tint), transparent 70%),
+      radial-gradient(50% 40% at 10% 90%, var(--accent-soft), transparent 70%);opacity:.55;}
+    .card{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;
+      padding:28px;box-shadow:0 12px 32px rgba(15,42,92,.06);position:relative;z-index:1;}
+    .grad-accent{background:linear-gradient(90deg,var(--primary),var(--accent));
+      -webkit-background-clip:text;background-clip:text;color:transparent;}
+    .pagefoot{position:absolute;right:72px;bottom:26px;font-family:var(--font-num);
+      font-size:13px;color:var(--text-muted);letter-spacing:1px;}
+    .flowrow{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:20px;
+      padding:12px 0;border-bottom:1px solid var(--border);}
+    .stmt{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;}
+    @media print{ .slide{page-break-after:always;margin:0;} body{background:#fff;} }
+  </style>
+</head>
+<body data-theme="blue">
+
+<!-- 1. 表紙 -->
+<section class="slide" data-intent="cover" style="padding:0;">
+  <img src="assets/cover_session8.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+  <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(247,249,252,.92) 0%,rgba(247,249,252,.78) 42%,rgba(247,249,252,0) 68%);"></div>
+  <div style="position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;padding:64px 72px;">
+    <p class="eyebrow">AI STUDY SESSION / DAY 8 OF 12</p>
+    <h1 class="display" style="font-size:66px;margin-top:20px;">調べものを、丸ごと任せる。<br><span class="grad-accent">Research</span></h1>
+    <p class="body" style="margin-top:30px;color:var(--text-muted);">深掘りのためのリサーチ｜AI勉強会 第8回（全12回）<br>株式会社ククルデザイン</p>
+  </div>
+  <p class="pagefoot" style="color:#5E6A84;">v2.0</p>
+</section>
+
+<!-- 2. 今日のゴール -->
+<section class="slide" data-intent="goal">
+  <p class="eyebrow">TODAY'S GOAL</p>
+  <h2 class="action-title">今日のゴールは、この4つです</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px;">
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 1</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">リサーチが何をするか（<b>複数ソースの体系的な調査</b>）を説明できる</p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 2</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">ふつうの質問・ウェブ検索と<b>使い分けるタイミング</b>がわかる</p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 3</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">検索の前に<b>計画を立てて動く仕組み</b>（拡張思考との連携）を理解する</p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 4</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">自社の調べものに<b>効くリサーチ指示文を書ける</b></p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:28px;color:var(--text-muted);">今日の合格ラインは「自社に関わる調査レポートを1本、出典を確かめた状態で持ち帰れた」です。</p>
+  <p class="pagefoot">01</p>
+</section>
+
+<!-- 3. リサーチとは -->
+<section class="slide" data-intent="what">
+  <p class="eyebrow">WHAT IS RESEARCH</p>
+  <h2 class="action-title">リサーチは、「調べる係」を丸ごと雇う機能です</h2>
+  <div style="margin-top:26px;">
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">検索を積み重ねる</p>
+      <p class="body" style="font-size:17px;">1回の検索ではなく、見つけた内容をもとに<b>次に何を調べるかを自分で決めて</b>検索を重ねる。数百のソースに及ぶこともある</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">数分かかる</p>
+      <p class="body" style="font-size:17px;">瞬時には終わらない。<b>数分かそれ以上</b>。その間こちらは別の仕事をしていてよい（何時間もの手作業の調べものが、数分の待ち時間になる）</p>
+    </div>
+    <div class="flowrow" style="border-bottom:none;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">出典つきで返る</p>
+      <p class="body" style="font-size:17px;">レポート内の主張には<b>元のソースへのリンク（引用）</b>が付く。確かめながら使えるのが最大の違い</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:26px;">動く前に<b>段取りを考える</b>のも特徴です。依頼を分解し、どの角度から調べるか計画してから検索を始めます（第3回で触れた「じっくり考える」仕組みとの連携です）。</p>
+  <p class="pagefoot">02</p>
+</section>
+
+<!-- 4. 使い分け -->
+<section class="slide" data-intent="when">
+  <p class="eyebrow">WHEN TO USE</p>
+  <h2 class="action-title">「どれで聞くか」は、この3択で決めます</h2>
+  <div style="margin-top:24px;">
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">ふつうに聞く＋ウェブ検索</p>
+      <p class="body" style="font-size:17px;">素早い事実がほしいとき。会社の住所・今日のニュース・用語の意味。<b>出典が1〜2個で足りて、速さが大事</b>な質問</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">リサーチ</p>
+      <p class="body" style="font-size:17px;"><b>比較・一覧・レポートがほしいとき</b>。競合の調査、補助金の比較、仕入先の選択肢の評価。手作業なら何時間かかる調べもの</p>
+    </div>
+    <div class="flowrow" style="border-bottom:none;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">じっくり考える（拡張思考）</p>
+      <p class="body" style="font-size:17px;">外の情報は要らず、<b>考える力がほしいとき</b>。見積の検算、段取りの矛盾チェック、判断の整理</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:26px;color:var(--text-muted);">目安はひとつ、「<b>答えを表にしたいか？</b>」。表やレポートの形で欲しい調べものはリサーチ向きです。もうひとつ、社内資料の検索（Enterprise Search）という機能もありますが、組織プラン向けなので名前だけ。</p>
+  <p class="pagefoot">03</p>
+</section>
+
+<!-- 5. 仕組み4ステップ -->
+<section class="slide" data-intent="how">
+  <p class="eyebrow">HOW IT WORKS</p>
+  <h2 class="action-title">中で起きているのは、調査員と同じ4ステップです</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px;">
+    <div class="card" style="padding:22px;">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">1</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">計画する</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">依頼を分解し、どの角度から調べるか段取りを組む</p>
+    </div>
+    <div class="card" style="padding:22px;">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">2</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">検索を重ねる</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">見つけた内容から次を決め、手がかりを追って穴を埋める</p>
+    </div>
+    <div class="card" style="padding:22px;">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">3</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">まとめる</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">集めた情報を整理して、1本のレポートに統合する</p>
+    </div>
+    <div class="card" style="padding:22px;">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">4</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">出典を付ける</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">主張ごとに元ソースへのリンクが付き、あとから確かめられる</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:32px;color:var(--text-muted);">使い方は簡単です。チャット入力欄の<b>＋ボタン → リサーチを選ぶ</b> → 指示文を送る。前提として<b>ウェブ検索がオン</b>になっている必要があります（同じ＋メニューにあります）⚠️。</p>
+  <p class="pagefoot">04</p>
+</section>
+
+<!-- 6. ステートメント -->
+<section class="slide" data-intent="statement">
+  <div class="mesh"></div>
+  <div class="stmt">
+    <p class="eyebrow">PRINCIPLE</p>
+    <h2 class="display" style="font-size:80px;margin-top:20px;">答えの速さより、<br><span class="grad-accent">出典の確かさ。</span></h2>
+    <p class="body" style="margin-top:32px;font-size:22px;">リサーチの価値は「すぐ出る」ことではなく「確かめられる」こと。<br>補助金の金額も建材の価格も、リンクの先の一次情報で裏が取れます。</p>
+  </div>
+  <p class="pagefoot">05</p>
+</section>
+
+<!-- 7. 指示文の型 -->
+<section class="slide" data-intent="prompt">
+  <p class="eyebrow">RESEARCH PROMPT</p>
+  <h2 class="action-title">数分かかるからこそ、指示文に1分かけます。型は4つ</h2>
+  <div style="margin-top:24px;">
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">① 目標を具体的に</p>
+      <p class="body" style="font-size:17px;">「リフォーム市場について教えて」ではなく「群馬県の住宅リフォーム需要を、世帯動向と公的統計から分析して」</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">② 欲しい構成を指定</p>
+      <p class="body" style="font-size:17px;">「対象工事・補助額・申請時期・問い合わせ先の4項目で比較表に」。指定した構成どおりに整理される</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">③ 条件で絞る</p>
+      <p class="body" style="font-size:17px;">予算・期間・地域。「伊勢崎市と前橋市で」「2026年度に申請できるもの」。絞るほど狙いが定まる</p>
+    </div>
+    <div class="flowrow" style="border-bottom:none;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">④ 迷ったら改善を頼む</p>
+      <p class="body" style="font-size:17px;">回す前に「この調べものの指示文を、もっと良くして」とClaude自身に相談できる</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:24px;color:var(--text-muted);">第2回の「舞台・タスク・ルール」の調査版です。読者（自分か、施主様か、銀行か）も一言添えると、まとめ方が変わります。</p>
+  <p class="pagefoot">06</p>
+</section>
+
+<!-- 8. 待ち時間と出典確認 -->
+<section class="slide" data-intent="verify">
+  <p class="eyebrow">WHILE YOU WAIT</p>
+  <h2 class="action-title">待ち時間と、届いたあと。レポートの受け取り方</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;">
+    <div class="card" style="padding:28px;">
+      <h3 style="font-size:20px;color:var(--text-hd);">待っている数分にやること</h3>
+      <p class="body" style="margin-top:12px;font-size:17px;">進み具合の表示は眺めなくてよい。<b>別の仕事に戻る</b>か、次の調べものの指示文を下書きする。「任せて席を外す」が正しい使い方</p>
+    </div>
+    <div class="card" style="padding:28px;">
+      <h3 style="font-size:20px;color:var(--text-hd);">届いたら、出典を3つ開く</h3>
+      <p class="body" style="margin-top:12px;font-size:17px;">結論を読む → 気になる主張の<b>引用リンクを3つ開いて</b>中身と合っているか見る → 仕事に使う数字は<b>一次情報（公式サイト・官公庁）</b>で確かめる</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:30px;color:var(--text-muted);">第3回の「鵜呑みにしない」の実践編です。とくに補助金・法令・価格は年度や時期で変わるので、出典の日付まで見る癖をつけます。</p>
+  <p class="pagefoot">07</p>
+</section>
+
+<!-- 9. コネクタとの連携 -->
+<section class="slide" data-intent="integrations">
+  <p class="eyebrow">WITH CONNECTORS</p>
+  <h2 class="action-title">前回つないだ道具と組むと、「社内×世間」の調査ができます</h2>
+  <div style="margin-top:26px;">
+    <div class="flowrow" style="grid-template-columns:280px 1fr;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">カレンダー × リサーチ</p>
+      <p class="body" style="font-size:17px;">「来週の予定を確認して、打ち合わせ先の会社をそれぞれ調べておいて」</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:280px 1fr;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">メール × リサーチ</p>
+      <p class="body" style="font-size:17px;">「この案件のやり取りを要約した上で、同種の工事の相場感を調べて比べて」</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:280px 1fr;border-bottom:none;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">資料 × リサーチ</p>
+      <p class="body" style="font-size:17px;">「うちの価格表を踏まえて、近隣の競合の打ち出し方と比較して」</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:28px;color:var(--text-muted);">「メールからも情報を拾って」「ドライブの資料も見て」と一言添えるだけで、見に行く範囲が広がります。つないでいない道具は見に行きません（主導権はこちら、は前回と同じです）。</p>
+  <p class="pagefoot">08</p>
+</section>
+
+<!-- 10. ワーク -->
+<section class="slide" data-intent="handson">
+  <p class="eyebrow">HANDS-ON 70 MIN</p>
+  <h2 class="action-title">今日は、自社の調べものを1本回して帰ります</h2>
+  <div style="margin-top:26px;">
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">15<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">講師デモ。同じ質問を「ふつうに聞く」と「リサーチ」で二本立て比較。待ち時間に出典確認の作法も ⚠️</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">15<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ワーク1。題材を決めて、型の4つで指示文を下書き → Claudeに「この指示文を良くして」と磨かせる</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">20<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ワーク2。リサーチを実行。待ち時間に2本目の指示文を下書き（回すのは1本目だけでOK）</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;border-bottom:none;">
+      <p class="metric" style="font-size:22px;">20<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ワーク3。レポートを受け取り、出典リンクを3つ開いて照合。仕事に使う数字を1つ、一次情報で確かめる</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:24px;color:var(--text-muted);">題材に迷ったら演習データの「リサーチ題材集」から。補助金・競合・建材価格など、建設業の定番を10本用意してあります。</p>
+  <p class="pagefoot">09</p>
+</section>
+
+<!-- 11. 持ち帰り -->
+<section class="slide" data-intent="takeaway">
+  <p class="eyebrow">TAKEAWAY</p>
+  <h2 class="action-title">持ち帰りは「出典を確かめたレポート1本」と「指示文の型」</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;">
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">今日のレポート</h3>
+      <p class="body" style="margin-top:12px;">自社の商圏・競合・制度のどれかが、出典つきで1本手元に残ります。会話に残っているので、「この部分を深掘りして」と続きも頼めます。</p>
+    </div>
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">指示文の型（体験シート）</h3>
+      <p class="body" style="margin-top:12px;">目標・構成・条件・読者の記入式。月に1本、「気になっていたが手が回らない調べもの」をこの型で回すだけで元が取れます。</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:36px;color:var(--text-muted);">宿題はありません。次に「調べなきゃ」と思ったとき、ブラウザを開く前にリサーチを思い出してください。</p>
+  <p class="pagefoot">10</p>
+</section>
+
+<!-- 12. 次回予告 -->
+<section class="slide" data-intent="cta">
+  <div class="mesh"></div>
+  <div class="stmt">
+    <p class="eyebrow">NEXT SESSION</p>
+    <h2 class="display" style="font-size:70px;margin-top:20px;">次回は、全部を<br><span class="grad-accent">自分の仕事に組む。</span></h2>
+    <p class="body" style="margin-top:30px;font-size:21px;">職種別の活用例から経営者向けを3本選び、ここまでの道具（部屋・技・つなぎ口・リサーチ）を<br>自分の業務に組み合わせて、明日からの定番をつくります。</p>
+    <p class="body" style="margin-top:36px;color:var(--text-muted);">第9回 職種別ユースケースを組む｜株式会社ククルデザイン</p>
+  </div>
+  <p class="pagefoot">11</p>
+</section>
+
+</body>
+</html>
