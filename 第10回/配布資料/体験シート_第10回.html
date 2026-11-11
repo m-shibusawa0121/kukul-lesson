@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page{size:A4;margin:0;}
+  *{margin:0;box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:#1D2940;width:210mm;}
+  .page{width:210mm;height:296mm;padding:11mm 15mm 9mm;position:relative;page-break-after:always;}
+  .page:last-child{page-break-after:auto;}
+  .eyebrow{font-size:9pt;letter-spacing:3px;color:#5E6A84;font-weight:700;}
+  h1{font-size:18pt;color:#0F2A5C;margin-top:1.5mm;}
+  h1::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#3466E8;margin-right:8px;vertical-align:middle;}
+  h2{font-size:12pt;color:#0F2A5C;margin-top:2.6mm;display:flex;align-items:center;gap:3mm;}
+  .badge{font-size:9pt;font-weight:700;color:#FFF;background:#3466E8;border-radius:999px;padding:1.2mm 4mm;white-space:nowrap;}
+  .lead{font-size:10.3pt;line-height:1.65;margin-top:2mm;}
+  .lead b{color:#0F2A5C;}
+  .box{border:1.5px solid #DCE3EF;border-radius:10px;padding:2.5mm 5mm;margin-top:1.8mm;background:#FFF;}
+  .stepline{display:grid;grid-template-columns:8mm 1fr;gap:3mm;align-items:start;
+    padding:1.3mm 0;border-bottom:1px dashed #DCE3EF;font-size:10.2pt;line-height:1.5;}
+  .stepline:last-child{border-bottom:none;}
+  .cb{display:inline-block;width:4.2mm;height:4.2mm;border:1.8px solid #3466E8;border-radius:1.2mm;margin-top:1.6mm;}
+  .stepline b{color:#0F2A5C;}
+  .place{background:#E8EFFC;border-radius:4px;padding:0 2mm;font-weight:700;color:#0F2A5C;white-space:nowrap;}
+  .prompt{margin-top:1.6mm;background:#F7F9FC;border:1.5px dashed #B8CAF4;border-radius:8px;
+    padding:2.1mm 4.5mm;font-size:9.8pt;line-height:1.6;color:#1D2940;}
+  .prompt::before{content:"そのまま打ち込む（コピーでもOK） ";display:block;font-size:8pt;font-weight:700;color:#3466E8;margin-bottom:1mm;}
+  .prompt b{color:#0F2A5C;}
+  .memo{margin-top:2.5mm;font-size:10pt;color:#5E6A84;}
+  .memo .line{display:inline-block;border-bottom:1px solid #9AA5BC;min-width:110mm;height:5mm;vertical-align:-1mm;}
+  .hint{font-size:9.3pt;color:#5E6A84;line-height:1.6;margin-top:1.5mm;}
+  .foot{position:absolute;left:15mm;right:15mm;bottom:7mm;padding-top:2.5mm;border-top:1px solid #DCE3EF;
+    font-size:8.5pt;color:#5E6A84;display:flex;justify-content:space-between;}
+  .note{margin-top:2.2mm;border-radius:10px;background:#E8EFFC;padding:2.4mm 5mm;font-size:9.8pt;line-height:1.6;color:#0F2A5C;}
+  .tmpl{border:1.5px solid #DCE3EF;border-radius:10px;padding:2.4mm 5mm;margin-top:2mm;background:#FFF;}
+  .lbl{font-size:10.5pt;font-weight:700;color:#3466E8;}
+  .ex{font-size:9pt;color:#5E6A84;line-height:1.6;margin-top:1mm;}
+  .fill{border-bottom:1px solid #9AA5BC;height:5.6mm;margin-top:1.4mm;}
+  table.sos{border-collapse:collapse;width:100%;margin-top:2.5mm;font-size:10pt;}
+  table.sos th{background:#E8EFFC;color:#0F2A5C;font-weight:700;padding:1.6mm 3mm;text-align:left;border:1px solid #DCE3EF;}
+  table.sos td{border:1px solid #DCE3EF;padding:1.3mm 3mm;line-height:1.45;vertical-align:top;}
+</style>
+</head>
+<body>
+
+<!-- ============ 1ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第10回 体験シート（1/3）</p>
+  <h1>きょう作るもの: 「任せて作らせた月次報告書」</h1>
+  <p class="lead">これまでは、聞いて・読んで・また聞く、の繰り返しでした。きょうは<b>フォルダごと渡して、仕事を丸ごと任せます</b>。Claudeが自分で計画を立て、ファイルを読み、報告書を作って、フォルダに保存します。こちらの役目は、頼むこと・途中で舵を取ること・最後に確かめることです。</p>
+
+  <h2><span class="badge">見る</span>講師のお手本（15分）</h2>
+  <div class="box">
+    <div class="stepline"><span class="cb"></span><p>フォルダを渡す場所（入力欄のそばの<span class="place">プロジェクトまたはフォルダで作業する</span>）</p></div>
+    <div class="stepline"><span class="cb"></span><p>Claudeが<b>計画と進み具合を見せながら</b>作業すること</p></div>
+    <div class="stepline"><span class="cb"></span><p>外に出る操作の前に止まって聞く設定（<span class="place">実行前に確認する</span>）になっていること</p></div>
+    <p class="memo">気づいたこと: <span class="line"></span></p>
+  </div>
+
+  <h2><span class="badge">ワーク1</span>準備と肩ならし（15分）</h2>
+  <div class="box">
+    <div class="stepline"><span class="cb"></span><p><b>1.</b> 講師と一緒に、演習フォルダ<span class="place">任せるフォルダ_10月月次</span>を<b>デスクトップに置く</b>（中にファイルが6つ入っています）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>2.</b> Claudeの<b>デスクトップアプリ</b>で<span class="place">新しいチャット（＋）</span>を開く</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>3.</b> 入力欄のそばの<span class="place">プロジェクトまたはフォルダで作業する</span>を押し、デスクトップの演習フォルダを選ぶ。<b>「書類」全体ではなく、このフォルダだけ</b>を選ぶのがコツ</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>4.</b> 確認の設定が<span class="place">実行前に確認する</span>になっているか見る（なっていればそのまま）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>5.</b> 下の文を送る。これが肩ならしです</p></div>
+  </div>
+  <div class="prompt">このフォルダの中身を全部読んで、概要を書いてください。何が入っているか、資料どうしがどうつながっているか、<b>気になった点や食い違い</b>があればそれも教えてください。</div>
+  <div class="box" style="margin-top:1.8mm;">
+    <div class="stepline"><span class="cb"></span><p><b>6.</b> 返ってきた概要を読む。<b>添付していないのに</b>6つのファイルを読めていることを確かめる</p></div>
+  </div>
+  <p class="hint">※画面によっては「フォルダを選ぶ」入口の名前や場所が違います。第4回で見た専用の入口がある場合は、そこからでも同じことができます。見つからなければ手を挙げてください。</p>
+
+  <div class="note"><b>きょうのゴールはひとつだけ。</b>「任せて作らせた報告書を、自分の目で検品した」。ここまでできれば合格です。</div>
+
+  <div class="foot"><span>AI勉強会 第10回 体験シート｜株式会社ククルデザイン</span><span>1/3</span></div>
+</div>
+
+<!-- ============ 2ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第10回 体験シート（2/3）</p>
+  <h1>任せて、舵を取って、検品する</h1>
+  <p class="lead" style="font-size:10.3pt;">ボタンの名前や場所は画面の更新で変わることがあります。見つからなかったら手を挙げてください、それが正解です。</p>
+
+  <h2><span class="badge">ワーク2</span>月次報告書を丸ごと任せる（25分）</h2>
+  <div class="box">
+    <div class="stepline"><span class="cb"></span><p><b>1.</b> 同じ会話のまま（フォルダを渡した状態で）、下の文を送る。<b>成果物・材料・事情</b>の3点が入っています</p></div>
+  </div>
+  <div class="prompt">このフォルダの資料から、<b>赤城建設の10月の月次報告書をWordで作り、このフォルダに保存</b>してください。A4で2枚以内。<br>材料はフォルダ内の工事台帳・経費メモ・会議メモ2回分・施主様メールです。<b>形式は「06_月次報告_9月分_見本」に合わせて</b>ください。<br>この報告書は銀行の担当者にも見せます。入金がまだのもの・請求がまだのものは別枠で目立たせてください。資料どうしで食い違う点は、どちらかに決めつけず「要確認」と書いてください。資料にない数字は作らないでください。</div>
+  <div class="box" style="margin-top:1.8mm;">
+    <div class="stepline"><span class="cb"></span><p><b>2.</b> 始める前に<b>質問が来たら</b>、選択肢から選ぶか、自分の言葉で答える（来なければそのまま進みます）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>3.</b> 計画と進み具合が出たら、ながめる。<b>途中で1回、舵を取る練習</b>として下を送る（終わるのを待たずに送ってOK）</p></div>
+  </div>
+  <div class="prompt">追加です。最後に「社長が今週やること」を、期限つきで3つまで書いてください。</div>
+  <div class="box" style="margin-top:1.8mm;">
+    <div class="stepline"><span class="cb"></span><p><b>4.</b> 完成の知らせが出たら、デスクトップの演習フォルダを開く。<b>Wordのファイルが増えていれば成功</b></p></div>
+  </div>
+
+  <h2><span class="badge">ワーク3</span>検品する ── きょうの仕上げ（15分）</h2>
+  <div class="box">
+    <div class="stepline"><span class="cb"></span><p><b>1.</b> できたWordを開き、数字を3つ指さし確認: 請負金額の合計<b>13,695,000円</b>／入金済み<b>8,536,000円</b>／経費の合計<b>858,800円（税別）</b></p></div>
+    <div class="stepline"><span class="cb"></span><p><b>2.</b> Claudeに聞く:「<b>未入金の金額は、どのファイルのどこから計算しましたか</b>」。答えの場所を自分で開いて確かめる</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>3.</b> 課題が3つ拾えているか: □ T商店の<b>請求書がまだ</b>　□ M様邸の<b>完工日の食い違い</b>（台帳は10/30、会議メモは11/4）　□ M様への<b>書面での回答</b>（11/8に引っ越し）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>4.</b> 入っていてはいけないもの: 会議メモの雑談（運動会・弁当屋・忘年会）、資料にない金額</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>5.</b> 直したい所があれば、やり直さずに「ここをこう変えて」と伝える</p></div>
+  </div>
+
+  <div class="foot"><span>AI勉強会 第10回 体験シート｜株式会社ククルデザイン</span><span>2/3</span></div>
+</div>
+
+<!-- ============ 3ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第10回 体験シート（3/3）── 保存版</p>
+  <h1>任せる頼み方ひな形と、検品の3点</h1>
+  <p class="lead" style="font-size:10.3pt;">自社の仕事を任せるときは、フォルダを1つ用意して、この3つを埋めます。</p>
+
+  <div class="tmpl">
+    <p class="lbl">① 成果物（何を・どんな形で・どこに保存）</p>
+    <p class="ex">例: 10月の月次報告書をWordで、A4で2枚以内。このフォルダに保存</p>
+    <div class="fill"></div>
+  </div>
+  <div class="tmpl">
+    <p class="lbl">② 材料（どのファイル・どの期間・お手本）</p>
+    <p class="ex">例: フォルダ内の台帳・経費・会議メモ・メール。形式は先月の報告書に合わせる</p>
+    <div class="fill"></div>
+  </div>
+  <div class="tmpl">
+    <p class="lbl">③ 事情（Claudeには見えない、こちらの都合）</p>
+    <p class="ex">例: 銀行にも見せる／入金遅れは目立たせる／食い違いは「要確認」と書く／資料にない数字は作らない</p>
+    <div class="fill"></div><div class="fill"></div>
+  </div>
+
+  <h2 style="margin-top:3mm;">検品の3点</h2>
+  <table class="sos">
+    <tr><th style="width:44mm;">見るところ</th><th>確かめ方</th></tr>
+    <tr><td><b>目的に合っているか</b></td><td>頼んだものと少しずれた別物になっていないか。読む相手にそのまま出せるか</td></tr>
+    <tr><td><b>数字と事実</b></td><td>「この数字はどのファイルのどこから？」と聞く → その場所を自分で開いて照合する</td></tr>
+    <tr><td><b>作り話</b></td><td>材料にたどれない日付・名前・金額は警告のサイン。「根拠がなければ削って」と返す</td></tr>
+  </table>
+
+  <h2 style="margin-top:3mm;">安全に任せるための決まりごと</h2>
+  <table class="sos">
+    <tr><td style="width:44mm;"><b>渡すのは小さいフォルダ</b></td><td>「書類」全体ではなく、その仕事のフォルダだけ。本番が不安ならコピーを渡す</td></tr>
+    <tr><td><b>確認の設定</b></td><td>最初は「実行前に確認する」のまま。送信・共有の前に止まって聞いてくる。完全な削除は必ず確認される</td></tr>
+    <tr><td><b>中身の線引き</b></td><td>施主名・単価・個人情報の扱いは第3回の判断フローどおり。フォルダに入れる前に見直す</td></tr>
+  </table>
+
+  <h2 style="margin-top:3mm;">困ったときは、この表</h2>
+  <table class="sos">
+    <tr><th style="width:64mm;">こうなったら</th><th>こうする</th></tr>
+    <tr><td>フォルダを選ぶ入口が見つからない</td><td>デスクトップアプリで開いているか確認（ブラウザやスマホではパソコンのフォルダは渡せません）</td></tr>
+    <tr><td>途中で「許可しますか」と聞かれた</td><td>内容を読んでから答える。フォルダ内の読み書きなら許可でOK。迷ったら手を挙げる</td></tr>
+    <tr><td>違う方向に進んでいる</td><td>終わりを待たずに、入力欄から「そうではなく〇〇で」と送る</td></tr>
+  </table>
+
+  <div class="foot"><span>AI勉強会 第10回 体験シート｜株式会社ククルデザイン</span><span>3/3</span></div>
+</div>
+
+</body>
+</html>

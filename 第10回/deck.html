@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+  <meta name="hz:canvas-width" content="1280">
+  <meta name="hz:canvas-height" content="720">
+  <meta name="hz:slide-selector" content=".slide">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#F7F9FC; --bg-white:#FFF; --bg-soft:#EEF2F8;
+      --text-body:#1D2940; --text-muted:#5E6A84; --border:#DCE3EF;
+      --font-jp:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+      --font-num:"Helvetica Neue",Inter,Arial,sans-serif;
+    }
+    [data-theme="blue"]{ --text-hd:#0F2A5C; --primary:#0F2A5C; --accent:#3466E8; --accent-soft:#B8CAF4; --bg-tint:#E8EFFC; }
+
+    *{margin:0;box-sizing:border-box;}
+    body{background:#888;}
+    .slide{
+      width:1280px;height:720px;position:relative;overflow:hidden;
+      background:var(--bg);color:var(--text-body);font-family:var(--font-jp);
+      padding:64px 72px;margin:0 auto 24px;
+    }
+    .eyebrow{font-family:var(--font-num);font-weight:700;font-size:15px;letter-spacing:4px;
+      text-transform:uppercase;color:var(--text-muted);}
+    .action-title{font-weight:700;font-size:34px;line-height:1.4;color:var(--text-hd);}
+    .display{font-weight:700;font-size:120px;line-height:1.05;color:var(--text-hd);letter-spacing:-2px;}
+    .body{font-size:19px;line-height:1.7;}
+    .metric{font-family:var(--font-num);font-weight:700;font-size:88px;color:var(--text-hd);line-height:1;}
+    .metric .unit{font-family:var(--font-jp);font-weight:400;font-size:34px;color:var(--text-muted);margin-left:6px;}
+    .source{font-size:13px;font-style:italic;color:var(--text-muted);position:absolute;left:72px;bottom:28px;}
+    .action-title::before{content:"";display:inline-block;width:11px;height:11px;border-radius:50%;
+      background:var(--accent);margin-right:14px;vertical-align:middle;}
+    table{border-collapse:collapse;width:100%;font-size:17px;} th,td{border:none;border-bottom:1px solid var(--border);
+      padding:12px 8px;text-align:left;} th{color:var(--text-hd);font-weight:700;}
+    .mesh{position:absolute;inset:0;z-index:0;background:
+      radial-gradient(60% 50% at 80% 10%, var(--bg-tint), transparent 70%),
+      radial-gradient(50% 40% at 10% 90%, var(--accent-soft), transparent 70%);opacity:.55;}
+    .card{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;
+      padding:28px;box-shadow:0 12px 32px rgba(15,42,92,.06);position:relative;z-index:1;}
+    .grad-accent{background:linear-gradient(90deg,var(--primary),var(--accent));
+      -webkit-background-clip:text;background-clip:text;color:transparent;}
+    .pagefoot{position:absolute;right:72px;bottom:26px;font-family:var(--font-num);
+      font-size:13px;color:var(--text-muted);letter-spacing:1px;}
+    .flowrow{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:20px;
+      padding:12px 0;border-bottom:1px solid var(--border);}
+    .stmt{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;}
+    @media print{ .slide{page-break-after:always;margin:0;} body{background:#fff;} }
+  </style>
+</head>
+<body data-theme="blue">
+
+<!-- 1. 表紙 -->
+<section class="slide" data-intent="cover" style="padding:0;">
+  <img src="assets/cover_session10.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+  <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(247,249,252,.92) 0%,rgba(247,249,252,.78) 42%,rgba(247,249,252,0) 68%);"></div>
+  <div style="position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;padding:64px 72px;">
+    <p class="eyebrow">AI STUDY SESSION / DAY 10 OF 12</p>
+    <h1 class="display" style="font-size:68px;margin-top:20px;">作業を、丸ごと任せる。<br><span class="grad-accent">Delegate</span></h1>
+    <p class="body" style="margin-top:30px;color:var(--text-muted);">フォルダを渡して、仕事を任せる｜AI勉強会 第10回（全12回）<br>株式会社ククルデザイン</p>
+  </div>
+  <p class="pagefoot" style="color:#5E6A84;">v2.0</p>
+</section>
+
+<!-- 2. 今日のゴール -->
+<section class="slide" data-intent="goal">
+  <p class="eyebrow">TODAY'S GOAL</p>
+  <h2 class="action-title">今日のゴールは、この4つです</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px;">
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 1</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">「任せる」が会話と何が違い、<b>どんな仕事に向くか</b>を説明できる</p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 2</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">作業フォルダ・つなぎ口・確認の設定をして、<b>安全に任せられる</b></p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 3</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">1本の仕事を<b>最初から最後まで任せられる</b>（頼む・質問に答える・途中で舵を取る・検品）</p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 4</p>
+      <p class="body" style="margin-top:10px;font-weight:500;"><b>定期実行</b>と、スマホからの確認ができることを知る</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:28px;color:var(--text-muted);">今日の合格ラインは「フォルダを渡して頼んだ月次報告書が、自分で検品した状態でフォルダに保存されている」です。</p>
+  <p class="pagefoot">01</p>
+</section>
+
+<!-- 3. 任せるとは -->
+<section class="slide" data-intent="what">
+  <p class="eyebrow">CHAT vs DELEGATE</p>
+  <h2 class="action-title">会話は「一緒に考える」。任せるは「成果を伝えて、納品まで」</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px;">
+    <div class="card" style="padding:28px;">
+      <h3 style="font-size:20px;color:var(--text-hd);">会話（これまでの9回）</h3>
+      <p class="body" style="margin-top:12px;font-size:17px;">聞く → 返事を読む → また聞く。1回ごとのやり取り。<b>手順をつなぐのは自分</b>。相談・下書き・アイデア出しは今後もこちら</p>
+    </div>
+    <div class="card" style="padding:28px;border-color:var(--accent);">
+      <h3 style="font-size:20px;color:var(--text-hd);">任せる（今日）</h3>
+      <p class="body" style="margin-top:12px;font-size:17px;">ほしい成果を伝える → Claudeが<b>計画を立て、ファイルを読み、手順を進め、成果物を保存</b>する。こちらは途中で舵を取り、最後に検品する</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:28px;">第4回で「Cowork」と紹介した使い方です。その後、<b>ふつうのClaudeに統合</b>されました ⚠️。専用の入口がある画面と、いつもの会話からそのまま頼める画面があります。<b>やることは同じ</b>なので、今日は見えている画面で進めます。</p>
+  <p class="pagefoot">02</p>
+</section>
+
+<!-- 4. 向いている仕事 -->
+<section class="slide" data-intent="patterns">
+  <p class="eyebrow">WHAT TO DELEGATE</p>
+  <h2 class="action-title">任せどきのサインは3つ。当てはまるほど向いています</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px;">
+    <div class="card" style="padding:24px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">手順がいくつもある</h3>
+      <p class="body" style="margin-top:10px;font-size:16px;">集める → 見比べる → まとめる → 形を整える。<b>1つの頼みごとで最後まで</b>進めてくれる</p>
+      <p class="body" style="margin-top:10px;font-size:14px;color:var(--text-muted);">例: 月次報告、週報</p>
+    </div>
+    <div class="card" style="padding:24px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">パソコンの中のファイルを使う</h3>
+      <p class="body" style="margin-top:10px;font-size:16px;">フォルダの中身を読み、<b>でき上がったファイルを同じフォルダに保存</b>する。添付し直す手間がない</p>
+      <p class="body" style="margin-top:10px;font-size:14px;color:var(--text-muted);">例: 見積の束から比較表、ひな形から提案書</p>
+    </div>
+    <div class="card" style="padding:24px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">道具をまたぐ</h3>
+      <p class="body" style="margin-top:10px;font-size:16px;">メール・カレンダー・資料をまたいで情報を集め、<b>ひとつの成果物にする</b></p>
+      <p class="body" style="margin-top:10px;font-size:14px;color:var(--text-muted);">例: 打ち合わせ後のお礼メールの下書き</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:28px;color:var(--text-muted);">目安は「ふだん質問していること」ではなく「<b>ふだん自分の手でやっていること</b>」。頭の中で手順・ファイル・道具をやりくりしていた仕事が、任せる候補です。</p>
+  <p class="pagefoot">03</p>
+</section>
+
+<!-- 5. 準備3つ -->
+<section class="slide" data-intent="setup">
+  <p class="eyebrow">SETUP ⚠️</p>
+  <h2 class="action-title">任せる前の準備は3つ。ここが安全の土台です</h2>
+  <div style="margin-top:24px;">
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">① 作業フォルダを渡す</p>
+      <p class="body" style="font-size:17px;">Claudeが<b>読み書きできる場所</b>。必要なファイルが入った<b>いちばん小さいフォルダ</b>を選ぶ（「書類」全体ではなく「10月月次」だけ）</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">② つなぎ口を選ぶ</p>
+      <p class="body" style="font-size:17px;">第7回のコネクタ。<b>その仕事に要るものだけオン</b>にする。今日はフォルダだけで足りるので全部オフでよい</p>
+    </div>
+    <div class="flowrow" style="border-bottom:none;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">③ 確認の設定を見る</p>
+      <p class="body" style="font-size:17px;">最初は<b>「実行前に確認する」</b>のまま。メール送信や共有など外に出る操作の前に止まって聞いてくる。<b>ファイルの完全な削除は、どの設定でも必ず確認</b>される</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:24px;color:var(--text-muted);">パソコンの中のフォルダを使えるのは<b>デスクトップアプリ</b>です。本番のフォルダを渡すのが不安なら、コピーを作ってそちらを渡します。今日は演習用のフォルダで練習します。</p>
+  <p class="pagefoot">04</p>
+</section>
+
+<!-- 6. ステートメント -->
+<section class="slide" data-intent="statement">
+  <div class="mesh"></div>
+  <div class="stmt">
+    <p class="eyebrow">PRINCIPLE</p>
+    <h2 class="display" style="font-size:78px;margin-top:20px;">聞く仕事ではなく、<br><span class="grad-accent">やっていた仕事を渡す。</span></h2>
+    <p class="body" style="margin-top:32px;font-size:22px;">できる同僚に頼むときと同じです。仕上がりの形と材料の場所を伝え、<br>途中で様子を見て、でき上がりを自分の目で確かめる。</p>
+  </div>
+  <p class="pagefoot">05</p>
+</section>
+
+<!-- 7. 頼み方3点 -->
+<section class="slide" data-intent="prompt">
+  <p class="eyebrow">HOW TO BRIEF</p>
+  <h2 class="action-title">任せる頼み方は3点。最初に手間をかけた分、やり直しが減ります</h2>
+  <div style="margin-top:24px;">
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">① 成果物</p>
+      <p class="body" style="font-size:17px;">何を・どんな形で。「10月の月次報告書を<b>Wordで、A4で2枚以内</b>。このフォルダに保存して」</p>
+    </div>
+    <div class="flowrow">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">② 材料</p>
+      <p class="body" style="font-size:17px;">どのファイルを・どの期間。「このフォルダの台帳・経費・会議メモ・メールを全部。<b>形式は9月分の見本に合わせて</b>」</p>
+    </div>
+    <div class="flowrow" style="border-bottom:none;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:18px;">③ 事情（ニュアンス）</p>
+      <p class="body" style="font-size:17px;">Claudeには見えない、こちらの都合。「<b>銀行の担当者にも見せる</b>。入金が遅れているものは別枠で目立たせて。根拠のない数字は書かないで」</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:24px;color:var(--text-muted);">会話なら後から足せば済みますが、任せる仕事は<b>Claudeが離れて作業する</b>ので、入口で伝えきるほうが早い。第2回の「舞台・タスク・ルール」の、任せる版です。</p>
+  <p class="pagefoot">06</p>
+</section>
+
+<!-- 8. タスクの流れ -->
+<section class="slide" data-intent="loop">
+  <p class="eyebrow">THE TASK LOOP</p>
+  <h2 class="action-title">任せた仕事は、この4場面で進みます</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px;">
+    <div class="card" style="padding:22px;">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">1</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">頼む</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">フォルダを選び、成果物・材料・事情の3点を書いて送る</p>
+    </div>
+    <div class="card" style="padding:22px;">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">2</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">質問に答える</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">始める前に1〜2問聞いてくることがある。選択肢を選ぶだけ。邪魔ではなく、ズレの予防</p>
+    </div>
+    <div class="card" style="padding:22px;">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">3</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">途中で舵を取る</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">計画と進み具合が見える。違う方向なら<b>終わりを待たずに割り込む</b></p>
+    </div>
+    <div class="card" style="padding:22px;">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">4</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">検品する</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">フォルダに保存されたファイルを開いて、同僚の仕事を見るように確かめる</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:32px;color:var(--text-muted);">会話に慣れていると「終わってからやり直し」と考えがちですが、任せる仕事は<b>途中の方向転換が安い</b>つくりです。気づいたらその場で言います。</p>
+  <p class="pagefoot">07</p>
+</section>
+
+<!-- 9. 検品 -->
+<section class="slide" data-intent="review">
+  <p class="eyebrow">REVIEW</p>
+  <h2 class="action-title">検品は3点。「どのファイルから？」と聞いてから、自分で確かめます</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px;">
+    <div class="card" style="padding:24px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">目的に合っているか</h3>
+      <p class="body" style="margin-top:10px;font-size:16px;">頼んだものと、少しずれた別のものになっていないか。読む相手（銀行）に出せる形か</p>
+    </div>
+    <div class="card" style="padding:24px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">数字と事実は正しいか</h3>
+      <p class="body" style="margin-top:10px;font-size:16px;">「この金額はどのファイルのどこから？」と聞く → <b>答えの場所を自分で開いて照合</b>する</p>
+    </div>
+    <div class="card" style="padding:24px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">作り話が混ざっていないか</h3>
+      <p class="body" style="margin-top:10px;font-size:16px;">材料にたどれない日付・名前・金額は、気が利いているのではなく<b>警告のサイン</b></p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:28px;">直すときは最初からやり直さず、<b>「ここをこう変えて」と伝える</b>ほうが速い。根本からずれていたら、入口で伝えそびれた事情があった合図です。第3回の「鵜呑みにしない」が、任せる仕事ではいちばん効いてきます。</p>
+  <p class="pagefoot">08</p>
+</section>
+
+<!-- 10. 定期実行とスマホ -->
+<section class="slide" data-intent="schedule">
+  <p class="eyebrow">SCHEDULE &amp; MOBILE ⚠️</p>
+  <h2 class="action-title">うまくいった仕事は、定期実行にできます</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px;">
+    <div class="card" style="padding:28px;">
+      <h3 style="font-size:20px;color:var(--text-hd);">決まった日時に自動で回す</h3>
+      <p class="body" style="margin-top:12px;font-size:17px;">まず一度ふつうに任せて、<b>でき上がりに納得してから</b>定期実行にする（入力欄で「/schedule」）。毎月1日の月次まとめ、金曜午後の週のふり返りなど</p>
+    </div>
+    <div class="card" style="padding:28px;">
+      <h3 style="font-size:20px;color:var(--text-hd);">知っておく決まりごと</h3>
+      <p class="body" style="margin-top:12px;font-size:17px;">パソコンの中のフォルダを使う仕事は、<b>その時刻にアプリを開いておく</b>必要がある。スマホやブラウザから頼んだ仕事は、つなぎ口は使えるが<b>パソコンのフォルダには触れない</b></p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:28px;color:var(--text-muted);">今日は講師が設定画面を見せるところまで。先週書いた「定番カード」の1本が、定期実行のいちばんの候補です。</p>
+  <p class="pagefoot">09</p>
+</section>
+
+<!-- 11. ワーク -->
+<section class="slide" data-intent="handson">
+  <p class="eyebrow">HANDS-ON 70 MIN</p>
+  <h2 class="action-title">今日は、10月の月次報告を丸ごと任せて帰ります</h2>
+  <div style="margin-top:26px;">
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">15<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">講師デモ。フォルダを渡す → 「このフォルダを読んで概要を」→ 確認の設定の場所 → 定期実行の画面 ⚠️</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">15<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ワーク1。準備と肩ならし。演習フォルダを渡して、中身の概要を書かせる。自分の理解と見比べる</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">25<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ワーク2。月次報告書を任せる。3点で頼む → 質問に答える → 途中で1回、舵を取る</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;border-bottom:none;">
+      <p class="metric" style="font-size:22px;">15<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ワーク3。検品。数字3つを照合、「どのファイルから？」と聞く、課題が3つ拾えているか確かめる</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:24px;color:var(--text-muted);">演習フォルダには、台帳と会議メモで食い違っている点がわざと1つ入っています。Claudeが気づくか、自分が気づくか。</p>
+  <p class="pagefoot">10</p>
+</section>
+
+<!-- 12. 持ち帰り -->
+<section class="slide" data-intent="takeaway">
+  <p class="eyebrow">TAKEAWAY</p>
+  <h2 class="action-title">持ち帰りは「任せる頼み方の3点」と「検品の3点」</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;">
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">頼み方: 成果物・材料・事情</h3>
+      <p class="body" style="margin-top:12px;">体験シートの記入式ひな形。自社の月次や週報で使うときは、フォルダを1つ用意して、この3点を埋めるだけです。</p>
+    </div>
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">検品: 目的・事実・作り話</h3>
+      <p class="body" style="margin-top:12px;">任せるほど、最後のひと確認の値打ちが上がります。「どのファイルから？」のひとことを口ぐせに。</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:36px;color:var(--text-muted);">宿題はありません。自社の仕事で試すときは、本番フォルダのコピーを作ってから。施主名や単価の扱いは第3回の線引きどおりです。</p>
+  <p class="pagefoot">11</p>
+</section>
+
+<!-- 13. 次回予告 -->
+<section class="slide" data-intent="cta">
+  <div class="mesh"></div>
+  <div class="stmt">
+    <p class="eyebrow">NEXT SESSION</p>
+    <h2 class="display" style="font-size:70px;margin-top:20px;">次回は、Claudeの<br><span class="grad-accent">ほかの働き場所。</span></h2>
+    <p class="body" style="margin-top:30px;font-size:21px;">ブラウザの中、WordやExcelの中、そして開発者向けのClaude Code。<br>「こんな場所でも働ける」を一通り見て、自社に要るものだけ選びます。</p>
+    <p class="body" style="margin-top:36px;color:var(--text-muted);">第11回 Claudeを活用するその他の方法｜株式会社ククルデザイン</p>
+  </div>
+  <p class="pagefoot">12</p>
+</section>
+
+</body>
+</html>
