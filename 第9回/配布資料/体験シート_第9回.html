@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page{size:A4;margin:0;}
+  *{margin:0;box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:#1D2940;width:210mm;}
+  .page{width:210mm;height:296mm;padding:11mm 15mm 9mm;position:relative;page-break-after:always;}
+  .page:last-child{page-break-after:auto;}
+  .eyebrow{font-size:9pt;letter-spacing:3px;color:#5E6A84;font-weight:700;}
+  h1{font-size:18pt;color:#0F2A5C;margin-top:1.5mm;}
+  h1::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#3466E8;margin-right:8px;vertical-align:middle;}
+  h2{font-size:12pt;color:#0F2A5C;margin-top:2.6mm;display:flex;align-items:center;gap:3mm;}
+  .badge{font-size:9pt;font-weight:700;color:#FFF;background:#3466E8;border-radius:999px;padding:1.2mm 4mm;white-space:nowrap;}
+  .lead{font-size:10.3pt;line-height:1.65;margin-top:2mm;}
+  .lead b{color:#0F2A5C;}
+  .box{border:1.5px solid #DCE3EF;border-radius:10px;padding:2.5mm 5mm;margin-top:1.8mm;background:#FFF;}
+  .stepline{display:grid;grid-template-columns:8mm 1fr;gap:3mm;align-items:start;
+    padding:1.3mm 0;border-bottom:1px dashed #DCE3EF;font-size:10.2pt;line-height:1.5;}
+  .stepline:last-child{border-bottom:none;}
+  .cb{display:inline-block;width:4.2mm;height:4.2mm;border:1.8px solid #3466E8;border-radius:1.2mm;margin-top:1.6mm;}
+  .stepline b{color:#0F2A5C;}
+  .place{background:#E8EFFC;border-radius:4px;padding:0 2mm;font-weight:700;color:#0F2A5C;white-space:nowrap;}
+  .prompt{margin-top:1.6mm;background:#F7F9FC;border:1.5px dashed #B8CAF4;border-radius:8px;
+    padding:2.1mm 4.5mm;font-size:9.8pt;line-height:1.6;color:#1D2940;}
+  .prompt::before{content:"そのまま打ち込む（コピーでもOK） ";display:block;font-size:8pt;font-weight:700;color:#3466E8;margin-bottom:1mm;}
+  .prompt b{color:#0F2A5C;}
+  .memo{margin-top:2.5mm;font-size:10pt;color:#5E6A84;}
+  .memo .line{display:inline-block;border-bottom:1px solid #9AA5BC;min-width:110mm;height:5mm;vertical-align:-1mm;}
+  .hint{font-size:9.3pt;color:#5E6A84;line-height:1.6;margin-top:1.5mm;}
+  .foot{position:absolute;left:15mm;right:15mm;bottom:7mm;padding-top:2.5mm;border-top:1px solid #DCE3EF;
+    font-size:8.5pt;color:#5E6A84;display:flex;justify-content:space-between;}
+  .note{margin-top:2.2mm;border-radius:10px;background:#E8EFFC;padding:2.4mm 5mm;font-size:9.8pt;line-height:1.6;color:#0F2A5C;}
+  .tmpl{border:1.5px solid #DCE3EF;border-radius:10px;padding:2.4mm 5mm;margin-top:2mm;background:#FFF;}
+  .lbl{font-size:10.5pt;font-weight:700;color:#3466E8;}
+  .ex{font-size:9pt;color:#5E6A84;line-height:1.6;margin-top:1mm;}
+  .fill{border-bottom:1px solid #9AA5BC;height:5.6mm;margin-top:1.4mm;}
+  table.sos{border-collapse:collapse;width:100%;margin-top:2.5mm;font-size:10pt;}
+  table.sos th{background:#E8EFFC;color:#0F2A5C;font-weight:700;padding:1.6mm 3mm;text-align:left;border:1px solid #DCE3EF;}
+  table.sos td{border:1px solid #DCE3EF;padding:1.3mm 3mm;line-height:1.45;vertical-align:top;}
+</style>
+</head>
+<body>
+
+<!-- ============ 1ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第9回 体験シート（1/3）</p>
+  <h1>きょう作るもの: 「自分の定番の頼みごと」</h1>
+  <p class="lead">新しい機能は出てきません。ここまで覚えた<b>部屋・作品・技・つなぎ口・調べる係</b>を組み合わせて、ひとつの仕事を片づける練習です。お手本はClaude公式の活用例。ほかの職種向けの例を、<b>建設業の仕事に置き換えて</b>使います。</p>
+
+  <h2><span class="badge">見る</span>講師のお手本: 現場の状況まとめ（15分）</h2>
+  <div class="box">
+    <p class="lead" style="margin-top:0;font-size:10.3pt;">講師が、現場フォルダの5つのファイルから状況管理表のExcelを作ります。次の3つだけ見ていてください。</p>
+    <div class="stepline"><span class="cb"></span><p>指示文が<b>長め</b>で、「どこから・何を・どんな形で」が全部書いてあること</p></div>
+    <div class="stepline"><span class="cb"></span><p>「記録がなければ推測で埋めず『記録なし』と書いて」の一行が入っていること</p></div>
+    <div class="stepline"><span class="cb"></span><p>表ができたあと「施主様に伝える内容だけ抜き出して」と<b>追いかけて頼んでいる</b>こと</p></div>
+    <p class="memo">気づいたこと: <span class="line"></span></p>
+  </div>
+
+  <h2><span class="badge">ワーク1</span>前任の見積Excelを読み解く（20分）</h2>
+  <div class="box">
+    <div class="stepline"><span class="cb"></span><p><b>1.</b> <span class="place">新しいチャット（＋）</span>を開き、演習データ<span class="place">見積計算_引き継ぎ版.xlsx</span>をクリップで付ける（画面へ引っぱって落としてもOK）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>2.</b> 下の文を送る。<b>まず説明だけ</b>させるのがコツ</p></div>
+  </div>
+  <div class="prompt">前任の事務担当が作った見積計算のExcelを引き継ぎました。説明シートはありますが、ほとんど書き残されていません。<b>まず仕組みを教えてください</b>。<br>・3つのシートがどうつながっているか<br>・売単価と諸経費と消費税の数式が、実際に何をしているか<br>・説明シートに<b>書かれていない決まりごと</b>（掛け率・端数の扱いなど）</div>
+  <div class="box" style="margin-top:1.8mm;">
+    <div class="stepline"><span class="cb"></span><p><b>3.</b> 説明を読んだら、続けて送る</p></div>
+  </div>
+  <div class="prompt">ありがとうございます。いまの決まりを<b>セルのコメントとしてファイルに書き込んで</b>ください。そのうえで、同じ決まりに沿って、洗面の水栓をタッチレス水栓（コードS03）に変えた<b>「変更見積」シートを追加</b>し、元の見積との差額を出してください。</div>
+  <div class="box" style="margin-top:1.8mm;">
+    <div class="stepline"><span class="cb"></span><p><b>4.</b> ダウンロードしてExcelで開く。タッチレス水栓の売単価が<b>51,400円</b>、変更見積の合計が<b>1,049,125円（税込）</b>なら正解</p></div>
+  </div>
+
+  <div class="foot"><span>AI勉強会 第9回 体験シート｜株式会社ククルデザイン</span><span>1/3</span></div>
+</div>
+
+<!-- ============ 2ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第9回 体験シート（2/3）</p>
+  <h1>打ち合わせの準備と、自分の仕事への置き換え</h1>
+  <p class="lead" style="font-size:10.3pt;">ボタンの名前や場所は画面の更新で変わることがあります。見つからなかったら手を挙げてください、それが正解です。</p>
+
+  <h2><span class="badge">ワーク2</span>現地調査の準備シートを作る（15分）</h2>
+  <div class="box">
+    <div class="stepline"><span class="cb"></span><p><b>1.</b> <span class="place">新しいチャット（＋）</span>を開き、演習データ<span class="place">新規相談メモ_N様.txt</span>と<span class="place">見積の過去事例_3件.txt</span>の2つを付ける</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>2.</b> 下の文を送る</p></div>
+  </div>
+  <div class="prompt">来週土曜にN様宅の現地調査に行きます。添付の相談メモと、うちの過去事例を見比べて、<b>打ち合わせ前に目を通す準備シート</b>をアーティファクトで作ってください。<br>・N様が気にしていること4つそれぞれに、過去事例の事実で答える材料<br>・その場で確認すべきこと<br>・過去事例に根拠がない数字は「目安なし」と書き、推測で作らないでください</div>
+  <div class="box" style="margin-top:1.8mm;">
+    <div class="stepline"><span class="cb"></span><p><b>3.</b> 準備シートができたら、追いかけて送る:「当日<b>話す要点を5つ</b>、台本ではなく話し言葉で」</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>4.</b> 確かめる: 予算150万円の<b>税込・税別が確認事項</b>に入っているか。床下の追加費用の話に<b>A様邸の事例（+6万円・別途と明記）</b>が使われているか</p></div>
+  </div>
+
+  <h2><span class="badge">ワーク3</span>自分の仕事に置き換える（20分）</h2>
+  <div class="box">
+    <div class="stepline"><span class="cb"></span><p><b>1.</b> 3ページ目の<b>「定番カード」</b>を1本だけ埋める。題材は、今日の3本のどれかを自社の実際の仕事に置き換えたものでOK</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>2.</b> 思いつかなければ、Claudeに聞く（下の文をそのまま）</p></div>
+  </div>
+  <div class="prompt">私は群馬県の工務店（従業員18名・住宅リフォームと小規模土木）の代表です。毎週やっている仕事は、定例会議・見積づくり・施主様との打ち合わせ・協力会社への連絡・経費の確認です。<b>Claudeに任せられそうな仕事を5つ</b>、ファイルや道具の組み合わせ方つきで挙げてください。</div>
+  <div class="box" style="margin-top:1.8mm;">
+    <div class="stepline"><span class="cb"></span><p><b>3.</b> 定番カードに書いた「頼む一言」を、その場で<b>1回だけ実際に回す</b>（自分の資料を使うときは第3回の線引きを先に）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>4.</b> 講師と一緒に、公式の活用例集をブラウザに<b>ブックマーク</b>する</p></div>
+  </div>
+
+  <div class="note"><b>きょうのゴールはひとつだけ。</b>「来週も同じように頼む仕事」が1本、定番カードに書けたら合格です。</div>
+
+  <div class="foot"><span>AI勉強会 第9回 体験シート｜株式会社ククルデザイン</span><span>2/3</span></div>
+</div>
+
+<!-- ============ 3ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第9回 体験シート（3/3）── 保存版</p>
+  <h1>定番カード ── 仕事の名前で覚える</h1>
+  <p class="lead" style="font-size:10.3pt;">1本書けたら、あとは決めた曜日に回すだけ。2本目・3本目も、この形で増やしていきます。</p>
+
+  <div class="tmpl">
+    <p class="lbl">① 仕事の名前（道具の名前ではなく）</p>
+    <p class="ex">例: 月曜朝の「現場の状況まとめ」／見積の「変更見積づくり」／現地調査の「準備シート」</p>
+    <div class="fill"></div>
+  </div>
+  <div class="tmpl">
+    <p class="lbl">② 渡す材料</p>
+    <p class="ex">例: 定例会議メモ・協力会社のメール・現場日報（ファイル添付、またはつないだメール・カレンダー）</p>
+    <div class="fill"></div>
+  </div>
+  <div class="tmpl">
+    <p class="lbl">③ 使う道具（○をつける）</p>
+    <p class="ex" style="font-size:9.8pt;color:#1D2940;margin-top:1.6mm;">部屋（プロジェクト） ／ 作品（アーティファクト） ／ 技（スキル: Excel・Word・PDF） ／ つなぎ口（コネクタ） ／ 調べる係（リサーチ）</p>
+  </div>
+  <div class="tmpl">
+    <p class="lbl">④ 頼む一言（コツの一行も入れて）</p>
+    <p class="ex">例: 「この5つのファイルから状況管理表のExcelを。止まっている行は色付き、記録がない項目は『記録なし』と書いて」</p>
+    <div class="fill"></div><div class="fill"></div>
+  </div>
+  <div class="tmpl">
+    <p class="lbl">⑤ いつ回す？</p>
+    <p class="ex">例: 毎週月曜 8:30／見積の依頼が来たとき／現地調査の前日</p>
+    <div class="fill"></div>
+  </div>
+  <p class="hint">※毎週同じ材料・同じ頼み方になったら、部屋（第5回）にしまうか、技（第7回・skill-creatorで自作）にして、頼む一言をもっと短くできます。</p>
+
+  <h2 style="margin-top:3mm;">困ったときは、この表</h2>
+  <table class="sos">
+    <tr><th style="width:64mm;">こうなったら</th><th>こうする</th></tr>
+    <tr><td>Excelではなくチャットの文章で返ってきた</td><td>「Excelファイルとしてダウンロードできる形にして」と言い直す</td></tr>
+    <tr><td>見積の説明と、変更見積の追加が一度に混ざって混乱した</td><td>新しいチャットでやり直し、「まず説明だけ」→「次に追加」と2回に分けて頼む</td></tr>
+    <tr><td>準備シートに根拠のない金額が出てきた</td><td>「この金額の根拠はどの事例ですか。根拠がなければ削って」と返す</td></tr>
+    <tr><td>自分の仕事の置き換えが思いつかない</td><td>「3回目の同じ作業」を探す。今週、同じ転記や同じ連絡文を何回書いたか</td></tr>
+  </table>
+
+  <div class="foot"><span>AI勉強会 第9回 体験シート｜株式会社ククルデザイン</span><span>3/3</span></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+  <meta name="hz:canvas-width" content="1280">
+  <meta name="hz:canvas-height" content="720">
+  <meta name="hz:slide-selector" content=".slide">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#F7F9FC; --bg-white:#FFF; --bg-soft:#EEF2F8;
+      --text-body:#1D2940; --text-muted:#5E6A84; --border:#DCE3EF;
+      --font-jp:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+      --font-num:"Helvetica Neue",Inter,Arial,sans-serif;
+    }
+    [data-theme="blue"]{ --text-hd:#0F2A5C; --primary:#0F2A5C; --accent:#3466E8; --accent-soft:#B8CAF4; --bg-tint:#E8EFFC; }
+
+    *{margin:0;box-sizing:border-box;}
+    body{background:#888;}
+    .slide{
+      width:1280px;height:720px;position:relative;overflow:hidden;
+      background:var(--bg);color:var(--text-body);font-family:var(--font-jp);
+      padding:64px 72px;margin:0 auto 24px;
+    }
+    .eyebrow{font-family:var(--font-num);font-weight:700;font-size:15px;letter-spacing:4px;
+      text-transform:uppercase;color:var(--text-muted);}
+    .action-title{font-weight:700;font-size:34px;line-height:1.4;color:var(--text-hd);}
+    .display{font-weight:700;font-size:120px;line-height:1.05;color:var(--text-hd);letter-spacing:-2px;}
+    .body{font-size:19px;line-height:1.7;}
+    .metric{font-family:var(--font-num);font-weight:700;font-size:88px;color:var(--text-hd);line-height:1;}
+    .metric .unit{font-family:var(--font-jp);font-weight:400;font-size:34px;color:var(--text-muted);margin-left:6px;}
+    .source{font-size:13px;font-style:italic;color:var(--text-muted);position:absolute;left:72px;bottom:28px;}
+    .action-title::before{content:"";display:inline-block;width:11px;height:11px;border-radius:50%;
+      background:var(--accent);margin-right:14px;vertical-align:middle;}
+    table{border-collapse:collapse;width:100%;font-size:17px;} th,td{border:none;border-bottom:1px solid var(--border);
+      padding:12px 8px;text-align:left;} th{color:var(--text-hd);font-weight:700;}
+    .mesh{position:absolute;inset:0;z-index:0;background:
+      radial-gradient(60% 50% at 80% 10%, var(--bg-tint), transparent 70%),
+      radial-gradient(50% 40% at 10% 90%, var(--accent-soft), transparent 70%);opacity:.55;}
+    .card{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;
+      padding:28px;box-shadow:0 12px 32px rgba(15,42,92,.06);position:relative;z-index:1;}
+    .grad-accent{background:linear-gradient(90deg,var(--primary),var(--accent));
+      -webkit-background-clip:text;background-clip:text;color:transparent;}
+    .pagefoot{position:absolute;right:72px;bottom:26px;font-family:var(--font-num);
+      font-size:13px;color:var(--text-muted);letter-spacing:1px;}
+    .flowrow{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:20px;
+      padding:12px 0;border-bottom:1px solid var(--border);}
+    .stmt{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;}
+    @media print{ .slide{page-break-after:always;margin:0;} body{background:#fff;} }
+  </style>
+</head>
+<body data-theme="blue">
+
+<!-- 1. 表紙 -->
+<section class="slide" data-intent="cover" style="padding:0;">
+  <img src="assets/cover_session9.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+  <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(247,249,252,.92) 0%,rgba(247,249,252,.78) 42%,rgba(247,249,252,0) 68%);"></div>
+  <div style="position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;padding:64px 72px;">
+    <p class="eyebrow">AI STUDY SESSION / DAY 9 OF 12</p>
+    <h1 class="display" style="font-size:64px;margin-top:20px;">道具を組んで、仕事の定番に。<br><span class="grad-accent">Use Cases</span></h1>
+    <p class="body" style="margin-top:30px;color:var(--text-muted);">職種別の活用例を組む｜AI勉強会 第9回（全12回）<br>株式会社ククルデザイン</p>
+  </div>
+  <p class="pagefoot" style="color:#5E6A84;">v2.0</p>
+</section>
+
+<!-- 2. 今日のゴール -->
+<section class="slide" data-intent="goal">
+  <p class="eyebrow">TODAY'S GOAL</p>
+  <h2 class="action-title">今日のゴールは、この4つです</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px;">
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 1</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">すぐ試せる活用例を<b>2〜3本、自分の言葉で説明できる</b></p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 2</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">活用例の<b>アイデアを探す場所</b>がわかる</p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 3</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">他の職種の活用例を<b>建設業の仕事に置き換えられる</b></p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 4</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">明日からの<b>「定番の頼みごと」を1本決める</b></p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:28px;color:var(--text-muted);">今日の合格ラインは「来週も同じように頼む仕事が1本、定番カードに書けた」です。新しい機能は出てきません。ここまでの道具の組み合わせ方の回です。</p>
+  <p class="pagefoot">01</p>
+</section>
+
+<!-- 3. 道具の総まとめ -->
+<section class="slide" data-intent="toolbox">
+  <p class="eyebrow">YOUR TOOLBOX</p>
+  <h2 class="action-title">8回分で、道具はもう全部そろっています</h2>
+  <div style="margin-top:22px;">
+    <div class="flowrow" style="padding:10px 0;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:17px;">頼み方（第2・3回）</p>
+      <p class="body" style="font-size:16.5px;">舞台・タスク・ルールの3要素。うまくいかなければ直しの一言を足す</p>
+    </div>
+    <div class="flowrow" style="padding:10px 0;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:17px;">部屋（第5回）</p>
+      <p class="body" style="font-size:16.5px;">プロジェクト。前置きと資料を覚えさせておく場所</p>
+    </div>
+    <div class="flowrow" style="padding:10px 0;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:17px;">作品（第6回）</p>
+      <p class="body" style="font-size:16.5px;">アーティファクト。チラシ・スライド・動く計算ページ。リンクで配れる</p>
+    </div>
+    <div class="flowrow" style="padding:10px 0;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:17px;">技とつなぎ口（第7回）</p>
+      <p class="body" style="font-size:16.5px;">スキルでExcel・Wordのファイルを作る。コネクタでカレンダーやメールとつなぐ</p>
+    </div>
+    <div class="flowrow" style="padding:10px 0;border-bottom:none;">
+      <p style="font-weight:700;color:var(--text-hd);font-size:17px;">調べる係（第8回）</p>
+      <p class="body" style="font-size:16.5px;">リサーチ。比較・一覧を出典つきのレポートで</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:22px;">ひとつずつは覚えました。今日は<b>組み合わせて1つの仕事を片づける</b>型を、公式の活用例から3本借りてきます。</p>
+  <p class="pagefoot">02</p>
+</section>
+
+<!-- 4. 公式の活用例 -->
+<section class="slide" data-intent="gallery">
+  <p class="eyebrow">OFFICIAL USE CASES</p>
+  <h2 class="action-title">公式の活用例は職種別。経営者に効く3本を選びました</h2>
+  <table style="margin-top:22px;font-size:16.5px;">
+    <tr><th style="width:150px;">分野</th><th>公式の活用例（一部）</th><th style="width:330px;">今日、建設業に置き換える1本</th></tr>
+    <tr><td><b>どの仕事にも</b></td><td>プロジェクト進捗レポートの作成／お客様の声の分析／ブランドの決まりをスキルにする</td><td><b>① 現場の状況まとめ</b></td></tr>
+    <tr><td><b>財務・経理</b></td><td>財務モデルの構築／<b>引き継いだスプレッドシートの理解と拡張</b></td><td><b>② 前任の見積Excelを読み解く</b></td></tr>
+    <tr><td><b>営業</b></td><td><b>商談の準備</b>／競合比較カード／営業レポート</td><td><b>③ 現地調査・打ち合わせの準備</b></td></tr>
+    <tr><td style="color:var(--text-muted);">ほかに</td><td style="color:var(--text-muted);" colspan="2">マーケティング・人事（新人の受け入れ手引き）・法務・研究</td></tr>
+  </table>
+  <p class="body" style="margin-top:24px;color:var(--text-muted);">職種名に引っぱられないのがコツです。「営業」の活用例は、工務店なら「施主様との打ち合わせ」。「財務」の活用例は「前任が作った見積Excel」。<b>仕事の形が似ていれば、そのまま使えます</b>。</p>
+  <p class="pagefoot">03</p>
+</section>
+
+<!-- 5. 活用例の型 -->
+<section class="slide" data-intent="pattern">
+  <p class="eyebrow">THE PATTERN</p>
+  <h2 class="action-title">公式の活用例は、どれも同じ6ステップでできています</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px;">
+    <div class="card" style="padding:20px 22px;">
+      <p class="metric" style="font-size:28px;color:var(--accent-soft);">1</p>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:6px;">仕事を書く</h3>
+      <p class="body" style="margin-top:6px;font-size:15px;">何を・どこから・どんな形で。指示文は長めでよい</p>
+    </div>
+    <div class="card" style="padding:20px 22px;">
+      <p class="metric" style="font-size:28px;color:var(--accent-soft);">2</p>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:6px;">材料を渡す</h3>
+      <p class="body" style="margin-top:6px;font-size:15px;">ファイル添付か、コネクタでつないだ道具</p>
+    </div>
+    <div class="card" style="padding:20px 22px;">
+      <p class="metric" style="font-size:28px;color:var(--accent-soft);">3</p>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:6px;">形で受け取る</h3>
+      <p class="body" style="margin-top:6px;font-size:15px;">Excel・作品・文書。チャットの文章で終わらせない</p>
+    </div>
+    <div class="card" style="padding:20px 22px;">
+      <p class="metric" style="font-size:28px;color:var(--accent-soft);">4</p>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:6px;">追いかけて聞く</h3>
+      <p class="body" style="margin-top:6px;font-size:15px;">「ここを深掘り」「施主様向けの1枚にして」</p>
+    </div>
+    <div class="card" style="padding:20px 22px;">
+      <p class="metric" style="font-size:28px;color:var(--accent-soft);">5</p>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:6px;">コツを足す</h3>
+      <p class="body" style="margin-top:6px;font-size:15px;">「記録がなければ推測で埋めない」など一行の注文</p>
+    </div>
+    <div class="card" style="padding:20px 22px;">
+      <p class="metric" style="font-size:28px;color:var(--accent-soft);">6</p>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:6px;">定番にする</h3>
+      <p class="body" style="margin-top:6px;font-size:15px;">毎週やるなら部屋か技（スキル）にしまう</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:26px;color:var(--text-muted);">この6ステップを知っていれば、知らない職種の活用例でも「材料を差し替えれば自分のもの」になります。</p>
+  <p class="pagefoot">04</p>
+</section>
+
+<!-- 6. 活用例① -->
+<section class="slide" data-intent="case1">
+  <p class="eyebrow">USE CASE 1 / 進捗レポート → 現場の状況まとめ</p>
+  <h2 class="action-title">散らばったメモ・メール・日報を、1枚の管理表に</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;">
+    <div class="card" style="padding:26px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">組み合わせる道具</h3>
+      <p class="body" style="margin-top:10px;font-size:16.5px;line-height:1.9;"><b>材料</b>: 定例会議メモ・協力会社のメール・現場日報・工程メモ（ファイル添付）<br><b>技</b>: Excelスキルで状況管理表に<br><b>追い質問</b>:「施主様にお伝えする内容だけ抜き出して」</p>
+    </div>
+    <div class="card" style="padding:26px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">公式から借りるコツ</h3>
+      <p class="body" style="margin-top:10px;font-size:16.5px;line-height:1.9;">「状態はプルダウンで選べるように」「止まっている行は色で目立たせて」<br><b>「記録がない項目は推測で埋めず『記録なし』と書いて」</b>。ここが一番効きます</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:26px;">毎週の定例のあとに回せば、<b>「誰が・何で止まっているか」が5分で見える</b>ようになります。メールやカレンダーをつないでいれば、ファイルを集める手間も消えます。</p>
+  <p class="pagefoot">05</p>
+</section>
+
+<!-- 7. 活用例② -->
+<section class="slide" data-intent="case2">
+  <p class="eyebrow">USE CASE 2 / 引き継いだExcel → 前任の見積Excel</p>
+  <h2 class="action-title">誰も中身を説明できないExcelを、読み解いてから増やす</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;">
+    <div class="card" style="padding:26px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">頼む順番が大事</h3>
+      <p class="body" style="margin-top:10px;font-size:16.5px;line-height:1.9;">① まず<b>仕組みを説明させる</b>（シートのつながり・数式の意味）<br>② <b>書き残されていない決まり</b>を探させる<br>③ そのあとで、<b>同じ決まりに沿って</b>行やシートを足させる</p>
+    </div>
+    <div class="card" style="padding:26px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">公式から借りるコツ</h3>
+      <p class="body" style="margin-top:10px;font-size:16.5px;line-height:1.9;"><b>説明はセルのコメントに書き込ませる</b>。別紙のメモはなくなるが、コメントはファイルと一緒に残る。次に引き継ぐ人が助かります</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:26px;">掛け率・端数の切り上げ・諸経費の計算。<b>作った人の頭の中にしかなかった決まり</b>が、文字になって残ります。事業承継や担当替えのときに一番効く使い方です。</p>
+  <p class="pagefoot">06</p>
+</section>
+
+<!-- 8. 活用例③ -->
+<section class="slide" data-intent="case3">
+  <p class="eyebrow">USE CASE 3 / 商談の準備 → 現地調査・打ち合わせの準備</p>
+  <h2 class="action-title">過去の似た工事から、打ち合わせで話すことを用意する</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;">
+    <div class="card" style="padding:26px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">組み合わせる道具</h3>
+      <p class="body" style="margin-top:10px;font-size:16.5px;line-height:1.9;"><b>材料</b>: 新規相談のメモ＋過去の似た工事の事例<br><b>作品</b>: 打ち合わせ前に目を通す準備シート<br><b>追い質問</b>:「話す要点を5つ、話し言葉で」<br><b>調べる係</b>: 必要なら補助金をリサーチで</p>
+    </div>
+    <div class="card" style="padding:26px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">公式から借りるコツ</h3>
+      <p class="body" style="margin-top:10px;font-size:16.5px;line-height:1.9;">「先方が気にしていること」を必ず渡す。<b>不安の言葉に、過去事例の事実で答える</b>準備シートになります。台本ではなく、話し言葉の要点で</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:26px;">「床下が傷んでいたら、いくら見ておけば？」に、過去の実例と「別途と明記する理由」で答えられる。<b>他社との差がつくのは、こういう説明のわかりやすさ</b>です。</p>
+  <p class="pagefoot">07</p>
+</section>
+
+<!-- 9. ステートメント -->
+<section class="slide" data-intent="statement">
+  <div class="mesh"></div>
+  <div class="stmt">
+    <p class="eyebrow">PRINCIPLE</p>
+    <h2 class="display" style="font-size:80px;margin-top:20px;">道具の名前ではなく、<br><span class="grad-accent">仕事の名前で覚える。</span></h2>
+    <p class="body" style="margin-top:32px;font-size:22px;">「スキルを使う」ではなく「月曜の朝、現場の状況まとめを頼む」。<br>仕事の名前で覚えた使い方だけが、毎週の習慣になります。</p>
+  </div>
+  <p class="pagefoot">08</p>
+</section>
+
+<!-- 10. アイデアの探し場所 -->
+<section class="slide" data-intent="where">
+  <p class="eyebrow">WHERE TO FIND IDEAS</p>
+  <h2 class="action-title">次の活用例は、この3か所から見つかります</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px;">
+    <div class="card" style="padding:24px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">公式の活用例集</h3>
+      <p class="body" style="margin-top:10px;font-size:16px;">Claude公式サイトの「ユースケース」。日本語・職種別・1本15分ほど。指示文をそのままコピーして試せる。今日ブックマークします</p>
+    </div>
+    <div class="card" style="padding:24px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">3回目の同じ作業</h3>
+      <p class="body" style="margin-top:10px;font-size:16px;">同じ集計・同じ連絡文・同じ転記を3回やったら、それが次の定番候補。第5回の「二度同じ説明をしない」と同じ合図です</p>
+    </div>
+    <div class="card" style="padding:24px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">Claudeに聞く</h3>
+      <p class="body" style="margin-top:10px;font-size:16px;">「私は従業員18名の工務店の代表です。1週間の仕事の流れはこう。Claudeに任せられそうな仕事を5つ挙げて」</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:30px;color:var(--text-muted);">公式の活用例集は英語版が先に増えることがあります。気になるものがあれば講師に聞いてください。</p>
+  <p class="pagefoot">09</p>
+</section>
+
+<!-- 11. ワーク -->
+<section class="slide" data-intent="handson">
+  <p class="eyebrow">HANDS-ON 70 MIN</p>
+  <h2 class="action-title">今日は、活用例を2本組んで、自分の定番を1本決めます</h2>
+  <div style="margin-top:26px;">
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">15<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">講師デモ。活用例①「現場の状況まとめ」。現場フォルダ5ファイルから状況管理表のExcel、続けて施主様向けの要点まで</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">20<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ワーク1。活用例②。前任の見積Excelを読み解かせ、水栓をタッチレスに変えた変更見積シートを足させる</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">15<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ワーク2。活用例③。新規相談メモと過去事例から、来週の現地調査の準備シートと話す要点5つ</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;border-bottom:none;">
+      <p class="metric" style="font-size:22px;">20<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ワーク3。自分の仕事に置き換える。定番カードに1本書き、その場で1回だけ実際に回す</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:24px;color:var(--text-muted);">材料はすべて演習データ（架空の赤城建設）にあります。自分の資料で試すときは第3回の線引きを先に。</p>
+  <p class="pagefoot">10</p>
+</section>
+
+<!-- 12. 持ち帰り -->
+<section class="slide" data-intent="takeaway">
+  <p class="eyebrow">TAKEAWAY</p>
+  <h2 class="action-title">持ち帰りは「定番カード」と「活用例の6ステップ」</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;">
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">定番カード（体験シート3枚目）</h3>
+      <p class="body" style="margin-top:12px;">仕事の名前・材料・使う道具・頼む一言・いつやるか。1本書けたら、来週から同じ曜日に回すだけです。</p>
+    </div>
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">活用例の6ステップ</h3>
+      <p class="body" style="margin-top:12px;">仕事を書く→材料を渡す→形で受け取る→追いかけて聞く→コツを足す→定番にする。新しい活用例を見つけたときの読み方です。</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:36px;color:var(--text-muted);">宿題はありません。今日決めた定番を、来週1回だけ本番の仕事で回してみてください。</p>
+  <p class="pagefoot">11</p>
+</section>
+
+<!-- 13. 次回予告 -->
+<section class="slide" data-intent="cta">
+  <div class="mesh"></div>
+  <div class="stmt">
+    <p class="eyebrow">NEXT SESSION</p>
+    <h2 class="display" style="font-size:70px;margin-top:20px;">次回は、作業を<br><span class="grad-accent">丸ごと任せる。</span></h2>
+    <p class="body" style="margin-top:30px;font-size:21px;">第4回で触れた「任せる」使い方の本編です。フォルダを渡して、<br>報告書づくりを最初から最後まで任せ、途中で舵を取る練習をします。</p>
+    <p class="body" style="margin-top:36px;color:var(--text-muted);">第10回 作業を丸ごと任せる｜株式会社ククルデザイン</p>
+  </div>
+  <p class="pagefoot">12</p>
+</section>
+
+</body>
+</html>
