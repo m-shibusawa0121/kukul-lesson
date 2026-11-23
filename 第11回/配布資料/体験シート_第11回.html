@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page{size:A4;margin:0;}
+  *{margin:0;box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:#1D2940;width:210mm;}
+  .page{width:210mm;height:296mm;padding:11mm 15mm 9mm;position:relative;page-break-after:always;}
+  .page:last-child{page-break-after:auto;}
+  .eyebrow{font-size:9pt;letter-spacing:3px;color:#5E6A84;font-weight:700;}
+  h1{font-size:18pt;color:#0F2A5C;margin-top:1.5mm;}
+  h1::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#3466E8;margin-right:8px;vertical-align:middle;}
+  h2{font-size:12pt;color:#0F2A5C;margin-top:2.6mm;display:flex;align-items:center;gap:3mm;}
+  .badge{font-size:9pt;font-weight:700;color:#FFF;background:#3466E8;border-radius:999px;padding:1.2mm 4mm;white-space:nowrap;}
+  .lead{font-size:10.3pt;line-height:1.65;margin-top:2mm;}
+  .lead b{color:#0F2A5C;}
+  .box{border:1.5px solid #DCE3EF;border-radius:10px;padding:2.5mm 5mm;margin-top:1.8mm;background:#FFF;}
+  .stepline{display:grid;grid-template-columns:8mm 1fr;gap:3mm;align-items:start;
+    padding:1.3mm 0;border-bottom:1px dashed #DCE3EF;font-size:10.2pt;line-height:1.5;}
+  .stepline:last-child{border-bottom:none;}
+  .cb{display:inline-block;width:4.2mm;height:4.2mm;border:1.8px solid #3466E8;border-radius:1.2mm;margin-top:1.6mm;}
+  .stepline b{color:#0F2A5C;}
+  .place{background:#E8EFFC;border-radius:4px;padding:0 2mm;font-weight:700;color:#0F2A5C;white-space:nowrap;}
+  .prompt{margin-top:1.6mm;background:#F7F9FC;border:1.5px dashed #B8CAF4;border-radius:8px;
+    padding:2.1mm 4.5mm;font-size:9.8pt;line-height:1.6;color:#1D2940;}
+  .prompt::before{content:"そのまま打ち込む（コピーでもOK） ";display:block;font-size:8pt;font-weight:700;color:#3466E8;margin-bottom:1mm;}
+  .prompt b{color:#0F2A5C;}
+  .memo{margin-top:2.5mm;font-size:10pt;color:#5E6A84;}
+  .memo .line{display:inline-block;border-bottom:1px solid #9AA5BC;min-width:110mm;height:5mm;vertical-align:-1mm;}
+  .hint{font-size:9.3pt;color:#5E6A84;line-height:1.6;margin-top:1.5mm;}
+  .foot{position:absolute;left:15mm;right:15mm;bottom:7mm;padding-top:2.5mm;border-top:1px solid #DCE3EF;
+    font-size:8.5pt;color:#5E6A84;display:flex;justify-content:space-between;}
+  .note{margin-top:2.2mm;border-radius:10px;background:#E8EFFC;padding:2.4mm 5mm;font-size:9.8pt;line-height:1.6;color:#0F2A5C;}
+  .tmpl{border:1.5px solid #DCE3EF;border-radius:10px;padding:2.4mm 5mm;margin-top:2mm;background:#FFF;}
+  .lbl{font-size:10.5pt;font-weight:700;color:#3466E8;}
+  .ex{font-size:9pt;color:#5E6A84;line-height:1.6;margin-top:1mm;}
+  .fill{border-bottom:1px solid #9AA5BC;height:5.6mm;margin-top:1.4mm;}
+  table.sos{border-collapse:collapse;width:100%;margin-top:2.5mm;font-size:10pt;}
+  table.sos th{background:#E8EFFC;color:#0F2A5C;font-weight:700;padding:1.6mm 3mm;text-align:left;border:1px solid #DCE3EF;}
+  table.sos td{border:1px solid #DCE3EF;padding:1.3mm 3mm;line-height:1.45;vertical-align:top;}
+</style>
+</head>
+<body>
+
+<!-- ============ 1ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第11回 体験シート（1/3）</p>
+  <h1>きょう作るもの: 「概算見積の道具」</h1>
+  <p class="lead">きょうは、Claudeのほかの働き場所を一通り見てから、<b>Claude Codeで小さな道具を1本つくります</b>。題材は第9回で読み解いた、前任者のExcelの見積計算です。プログラムは読めなくて構いません。こちらの役目は、<b>計画を読むこと</b>と、<b>答えのわかっている例題で確かめること</b>です。</p>
+
+  <h2><span class="badge">見る</span>講師のお手本（15分）</h2>
+  <div class="box">
+    <div class="stepline"><span class="cb"></span><p><b>Chromeの中</b>: 開いているページを、横の欄から要約させるところ</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>Excelの中</b>: 開いている表の式の意味を、横の欄で聞くところ</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>Code</b>: フォルダを選び、入力欄の下のモードを<span class="place">Plan（計画）</span>にするところ</p></div>
+    <p class="memo">気づいたこと: <span class="line"></span></p>
+  </div>
+
+  <h2><span class="badge">ワーク1</span>計画モードで頼み、計画を読む（15分）</h2>
+  <div class="box">
+    <div class="stepline"><span class="cb"></span><p><b>1.</b> 講師と一緒に、演習フォルダ<span class="place">道具づくりフォルダ_概算見積</span>を<b>デスクトップに置く</b>（中にファイルが3つ）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>2.</b> Claudeの<b>デスクトップアプリ</b>で、左上の<span class="place">Code</span>を開く</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>3.</b> 入力欄の下でフォルダを選ぶ。デスクトップの演習フォルダ<b>だけ</b>を選ぶ（第10回と同じコツ）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>4.</b> 入力欄の下のモードを<span class="place">Plan（計画）</span>に切りかえる</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>5.</b> 下の文を送る</p></div>
+  </div>
+  <div class="prompt">このフォルダの「02_つくりたい道具のメモ.txt」を読んで、そこに書いてある<b>「概算見積の道具」をつくる計画</b>を立ててください。単価は「01_単価表.csv」を使います。わからない点があれば、つくり始める前に質問してください。私はプログラムの経験がないので、<b>計画は専門用語を使わずに</b>説明してください。</div>
+  <div class="box" style="margin-top:1.8mm;">
+    <div class="stepline"><span class="cb"></span><p><b>6.</b> 質問が来たら答える（選ぶだけのことが多い。迷ったら「メモのとおりで」）</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>7.</b> 出てきた<b>計画を3点で読む</b>:<br>□ つくるファイルは<b>1つ</b>と書いてあるか（メモの「ファイル1つで動く」）<br>□ <b>計算の決まり</b>（100円単位の切り上げ、諸経費8%の切り捨て、消費税）が入っているか<br>□ <b>頼んでいないもの</b>（ログイン、ネット上への保存、見積書の体裁）が混ざっていないか</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>8.</b> 足りない・余計だと思ったら、<b>承認する前に</b>「〇〇が抜けています」「〇〇はいりません」と送る</p></div>
+  </div>
+  <p class="hint">※「Code」の場所やモードの名前（Plan／Manual など）は、画面の更新で変わることがあります。見つからなければ手を挙げてください。</p>
+
+  <div class="note"><b>きょうのゴールはひとつだけ。</b>「計画を読んでからつくらせた道具が、例題で正しい金額を出すと自分で確かめた」。ここまでできれば合格です。</div>
+
+  <div class="foot"><span>AI勉強会 第11回 体験シート｜株式会社ククルデザイン</span><span>1/3</span></div>
+</div>
+
+<!-- ============ 2ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第11回 体験シート（2/3）</p>
+  <h1>承認して、つくらせて、例題で確かめる</h1>
+
+  <h2><span class="badge">ワーク2</span>道具をつくらせて、確かめる（25分）</h2>
+  <div class="box">
+    <div class="stepline"><span class="cb"></span><p><b>1.</b> 計画に納得したら<b>承認</b>する。進め方を選ぶ画面が出たら、<b>1つずつ確認する進め方</b>（<span class="place">Manual</span>）を選ぶ</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>2.</b> 途中で「このファイルをつくってよいですか」と聞かれたら、<b>内容を読んでから</b>許可する。演習フォルダの外に何かする内容なら、許可せず手を挙げる</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>3.</b> 完成の知らせが出たら、デスクトップの演習フォルダを開く。<b>ファイルが1つ増えていれば成功</b>。ダブルクリックするとブラウザで開く</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>4.</b> <b>例題A</b>で確かめる。「03_例題A_答えつき.txt」の数量と運賃12,000円を入れる → 合計（税込）が<b>1,008,425円</b>なら合格</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>5.</b> <b>例題B</b>で確かめる。答えはこのシートにしかありません（Claudeは見ていない）</p></div>
+  </div>
+  <table class="sos" style="margin-top:1.8mm;">
+    <tr><th colspan="4">例題B 洗面所だけの小工事（運賃 8,000円）</th></tr>
+    <tr><td style="width:25%;">洗面化粧台 <b>1</b>台</td><td style="width:25%;">タッチレス水栓 <b>1</b>個</td><td style="width:25%;">クッションフロア <b>3.5</b>㎡</td><td>壁紙 <b>12</b>㎡</td></tr>
+    <tr><td>解体手間 <b>1</b>人工</td><td>設備工手間 <b>1.5</b>人工</td><td>内装工手間 <b>1</b>人工</td><td>廃材処分 <b>1</b>台</td></tr>
+    <tr><td colspan="4">正しい答え: 小計 <b>277,550</b>／諸経費 <b>22,200</b>／税抜合計 <b>307,750</b>／消費税 <b>30,775</b>／合計（税込）<b>338,525円</b></td></tr>
+  </table>
+  <div class="box" style="margin-top:1.8mm;">
+    <div class="stepline"><span class="cb"></span><p><b>6.</b> 合わなかったら、<b>数字をそのまま伝える</b>:「例題Bで合計が〇〇円になりました。正しくは338,525円です。原因を調べて直してください」</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>7.</b> 直しを1つ頼む（舵を取る練習）。下の文を送る</p></div>
+  </div>
+  <div class="prompt">数量と運賃をぜんぶ空に戻す「クリア」ボタンを、合計の下に足してください。計算の決まりは変えないでください。</div>
+  <div class="box" style="margin-top:1.8mm;">
+    <div class="stepline"><span class="cb"></span><p><b>8.</b> 直ったら道具を開き直し、<b>もう一度 例題Aを入れて</b>1,008,425円のままか確かめる。<b>直したら、確かめ直す</b></p></div>
+  </div>
+  <p class="memo">例題Aの合計: <span class="line" style="min-width:42mm;"></span>　例題Bの合計: <span class="line" style="min-width:42mm;"></span></p>
+
+  <h2><span class="badge">ワーク3</span>自社に要る働き場所を選ぶ（15分）</h2>
+  <div class="box">
+    <div class="stepline"><span class="cb"></span><p><b>1.</b> 3ページ目の早見表を読み、「うちは」の欄に <b>要る／今は使わない</b> の丸をつける</p></div>
+    <div class="stepline"><span class="cb"></span><p><b>2.</b> 「要る」の中から<b>1つだけ</b>選び、最初に試す仕事を書く</p></div>
+    <p class="memo">選んだ場所: <span class="line" style="min-width:48mm;"></span>　最初に試す仕事: <span class="line" style="min-width:60mm;"></span></p>
+  </div>
+
+  <div class="foot"><span>AI勉強会 第11回 体験シート｜株式会社ククルデザイン</span><span>2/3</span></div>
+</div>
+
+<!-- ============ 3ページ目 ============ -->
+<div class="page">
+  <p class="eyebrow">AI勉強会 第11回 体験シート（3/3）── 保存版</p>
+  <h1>働き場所の早見表と、道具づくりの決まりごと</h1>
+  <p class="lead" style="font-size:10pt;margin-top:1.2mm;">全部を使う必要はありません。「こんな仕事があるなら」に心当たりがある場所だけ選びます。</p>
+
+  <table class="sos">
+    <tr><th style="width:38mm;">働き場所</th><th>こんな仕事があるなら</th><th style="width:40mm;">うちは</th></tr>
+    <tr><td><b>いつものClaude</b><br>（会話・任せる）</td><td>相談、文章、調べもの、書類づくり、月次のような手順の多い仕事</td><td>使っている</td></tr>
+    <tr><td><b>Chromeの中</b></td><td>ページの要約、同じフォームへの入力のくり返し、タブを行き来する調べもの</td><td>要る・今は使わない</td></tr>
+    <tr><td><b>Excelの中</b></td><td>人がつくった表の式を読み解く、式を壊さずに数字を直す、集計やグラフ</td><td>要る・今は使わない</td></tr>
+    <tr><td><b>Word・PowerPointの中</b></td><td>メモから文書やスライドの初稿、言い回しの手直し、自社のひな形のまま書式そろえ</td><td>要る・今は使わない</td></tr>
+    <tr><td><b>Outlookの中</b></td><td>受信メールの仕分け、経緯をふまえた返信の下書き</td><td>要る・今は使わない</td></tr>
+    <tr><td><b>デザイン</b></td><td>画面やチラシの案をいくつも出して見比べたい</td><td>要る・今は使わない</td></tr>
+    <tr><td><b>Slackの中</b></td><td>社内でSlackを使っていて、やり取りの要約や返信の下書きがほしい</td><td>要る・今は使わない</td></tr>
+    <tr><td><b>Claude Code</b></td><td>計算の道具、入力フォーム、ファイルの一括整理など、動く道具がほしい</td><td>要る・今は使わない</td></tr>
+  </table>
+  <p class="hint">※Chrome・Office・Codeは有料プランで使えます。ChromeとOfficeは追加の導入が必要です。入れるときは講師と一緒に確かめます。</p>
+
+  <h2 style="margin-top:3mm;">道具をつくらせるときの決まりごと</h2>
+  <table class="sos">
+    <tr><td style="width:44mm;"><b>計画から入る</b></td><td>モードを「Plan（計画）」にして頼む。読んで調べるだけで、何も書きかえない</td></tr>
+    <tr><td><b>計画を読む3点</b></td><td>何をつくるか（ファイルの名前と数）／こちらの決まりが入っているか／頼んでいないものが混ざっていないか</td></tr>
+    <tr><td><b>例題で確かめる</b></td><td>答えのわかっている例題を2つ用意する。1つはClaudeに渡し、もう1つは自分だけが持つ。どこかを直させたら、前に合っていた例題をもう一度入れる</td></tr>
+    <tr><td><b>渡すのは小さいフォルダ</b></td><td>その道具のためのフォルダだけ。大事なファイルが入った場所は渡さない</td></tr>
+  </table>
+
+  <h2 style="margin-top:3mm;">困ったときは、この表</h2>
+  <table class="sos">
+    <tr><th style="width:64mm;">こうなったら</th><th>こうする</th></tr>
+    <tr><td>「Code」が見つからない</td><td>デスクトップアプリで開いているか確かめる。左上に並ぶ切りかえの中にあります</td></tr>
+    <tr><td>計画の言葉がむずかしい</td><td>「専門用語を使わずに、もう一度説明してください」と送る</td></tr>
+    <tr><td>許可を何度も聞かれる</td><td>正常です。内容を読んで、演習フォルダの中のことなら許可する</td></tr>
+    <tr><td>道具を開いても何も出ない・数字が合わない</td><td>起きたことをそのまま伝える。「開いたら真っ白でした」「合計が〇〇円でした」</td></tr>
+  </table>
+
+  <div class="foot"><span>AI勉強会 第11回 体験シート｜株式会社ククルデザイン</span><span>3/3</span></div>
+</div>
+
+</body>
+</html>

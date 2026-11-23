@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+  <meta name="hz:canvas-width" content="1280">
+  <meta name="hz:canvas-height" content="720">
+  <meta name="hz:slide-selector" content=".slide">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#F7F9FC; --bg-white:#FFF; --bg-soft:#EEF2F8;
+      --text-body:#1D2940; --text-muted:#5E6A84; --border:#DCE3EF;
+      --font-jp:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+      --font-num:"Helvetica Neue",Inter,Arial,sans-serif;
+    }
+    [data-theme="blue"]{ --text-hd:#0F2A5C; --primary:#0F2A5C; --accent:#3466E8; --accent-soft:#B8CAF4; --bg-tint:#E8EFFC; }
+
+    *{margin:0;box-sizing:border-box;}
+    body{background:#888;}
+    .slide{
+      width:1280px;height:720px;position:relative;overflow:hidden;
+      background:var(--bg);color:var(--text-body);font-family:var(--font-jp);
+      padding:64px 72px;margin:0 auto 24px;
+    }
+    .eyebrow{font-family:var(--font-num);font-weight:700;font-size:15px;letter-spacing:4px;
+      text-transform:uppercase;color:var(--text-muted);}
+    .action-title{font-weight:700;font-size:34px;line-height:1.4;color:var(--text-hd);}
+    .display{font-weight:700;font-size:120px;line-height:1.05;color:var(--text-hd);letter-spacing:-2px;}
+    .body{font-size:19px;line-height:1.7;}
+    .metric{font-family:var(--font-num);font-weight:700;font-size:88px;color:var(--text-hd);line-height:1;}
+    .metric .unit{font-family:var(--font-jp);font-weight:400;font-size:34px;color:var(--text-muted);margin-left:6px;}
+    .source{font-size:13px;font-style:italic;color:var(--text-muted);position:absolute;left:72px;bottom:28px;}
+    .action-title::before{content:"";display:inline-block;width:11px;height:11px;border-radius:50%;
+      background:var(--accent);margin-right:14px;vertical-align:middle;}
+    table{border-collapse:collapse;width:100%;font-size:17px;} th,td{border:none;border-bottom:1px solid var(--border);
+      padding:12px 8px;text-align:left;} th{color:var(--text-hd);font-weight:700;}
+    .mesh{position:absolute;inset:0;z-index:0;background:
+      radial-gradient(60% 50% at 80% 10%, var(--bg-tint), transparent 70%),
+      radial-gradient(50% 40% at 10% 90%, var(--accent-soft), transparent 70%);opacity:.55;}
+    .card{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;
+      padding:28px;box-shadow:0 12px 32px rgba(15,42,92,.06);position:relative;z-index:1;}
+    .grad-accent{background:linear-gradient(90deg,var(--primary),var(--accent));
+      -webkit-background-clip:text;background-clip:text;color:transparent;}
+    .pagefoot{position:absolute;right:72px;bottom:26px;font-family:var(--font-num);
+      font-size:13px;color:var(--text-muted);letter-spacing:1px;}
+    .flowrow{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:20px;
+      padding:12px 0;border-bottom:1px solid var(--border);}
+    .stmt{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;}
+    @media print{ .slide{page-break-after:always;margin:0;} body{background:#fff;} }
+  </style>
+</head>
+<body data-theme="blue">
+
+<!-- 1. 表紙 -->
+<section class="slide" data-intent="cover" style="padding:0;">
+  <img src="assets/cover_session11.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+  <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(247,249,252,.95) 0%,rgba(247,249,252,.86) 40%,rgba(247,249,252,0) 62%);"></div>
+  <div style="position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;padding:64px 72px;">
+    <p class="eyebrow">AI STUDY SESSION / DAY 11 OF 12</p>
+    <h1 class="display" style="font-size:58px;margin-top:20px;">Claudeの、<br>ほかの働き場所。<br><span class="grad-accent">Other Ways</span></h1>
+    <p class="body" style="margin-top:30px;color:var(--text-muted);">ブラウザの中、Excelの中、そして道具づくり<br>AI勉強会 第11回（全12回）｜株式会社ククルデザイン</p>
+  </div>
+  <p class="pagefoot" style="color:#5E6A84;">v2.0</p>
+</section>
+
+<!-- 2. 今日のゴール -->
+<section class="slide" data-intent="goal">
+  <p class="eyebrow">TODAY'S GOAL</p>
+  <h2 class="action-title">今日のゴールは、この4つです</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px;">
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 1</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">Claudeの働き場所を挙げて、<b>それぞれ「いつ使うか」</b>を言える</p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 2</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">Claude Codeが<b>「道具をつくる係」</b>で、集める・動く・確かめるの繰り返しで進むと説明できる</p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 3</p>
+      <p class="body" style="margin-top:10px;font-weight:500;"><b>計画を読んでから承認</b>する頼み方で、小さな道具を1本つくれる</p>
+    </div>
+    <div class="card" style="padding:24px 28px;">
+      <p class="eyebrow" style="letter-spacing:2px;color:var(--accent);">GOAL 4</p>
+      <p class="body" style="margin-top:10px;font-weight:500;">自社に要る場所を<b>1つ選び</b>、残りは「今は使わない」と決められる</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:28px;color:var(--text-muted);">今日の合格ラインは「計画を読んでから承認してつくらせた概算見積の道具が、例題で正しい金額を出すと自分で確かめた」です。</p>
+  <p class="pagefoot">01</p>
+</section>
+
+<!-- 3. 全体地図 -->
+<section class="slide" data-intent="map">
+  <p class="eyebrow">WHERE CLAUDE WORKS</p>
+  <h2 class="action-title">Claudeは「頭脳」。アプリは、その入口のひとつです</h2>
+  <table style="margin-top:22px;font-size:16.5px;">
+    <tr><th style="width:320px;">働き場所</th><th>得意なこと</th><th style="width:270px;">どこで動くか</th></tr>
+    <tr><td><b>いつものClaude</b>（会話・任せる）</td><td>相談、文章、調べもの、ファイルづくり、手順の多い仕事</td><td>アプリ・ブラウザ・スマホ</td></tr>
+    <tr><td><b>Chromeの中</b></td><td>開いているページの要約、フォーム入力、ブラウザ上の手作業</td><td>Chromeの横の欄</td></tr>
+    <tr><td><b>Excel・Word・PowerPoint・Outlookの中</b></td><td>開いているファイルを、その場で読む・直す・つくる</td><td>各ソフトの横の欄</td></tr>
+    <tr><td><b>デザイン</b></td><td>画面の試作、デザイン案の見比べ</td><td>いつもの会話の中</td></tr>
+    <tr><td><b>Slackの中</b>（Claude Tag）</td><td>社内チャットの要約、返信の下書き</td><td>Slackを使う会社向け</td></tr>
+    <tr><td><b>Claude Code</b></td><td>道具（ソフト）をつくる、直す</td><td>アプリの「Code」ほか</td></tr>
+  </table>
+  <p class="body" style="margin-top:20px;color:var(--text-muted);font-size:17px;">Chrome・Office・Codeは<b>有料プランで使えます</b> ⚠️。全部を使う必要はありません。今日は一通り見て、自社に要る場所を選びます。</p>
+  <p class="pagefoot">02</p>
+</section>
+
+<!-- 4. Chrome -->
+<section class="slide" data-intent="chrome">
+  <p class="eyebrow">IN YOUR BROWSER ⚠️</p>
+  <h2 class="action-title">Chromeの中のClaudeは、ページを見て、代わりに手を動かします</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px;">
+    <div class="card" style="padding:28px;">
+      <h3 style="font-size:20px;color:var(--text-hd);">こんなときに使う</h3>
+      <p class="body" style="margin-top:12px;font-size:17px;">・開いている記事やページを<b>その場で要約</b>したい<br>・同じようなフォームを<b>何度も入力</b>している<br>・タブをいくつも行き来する調べものを任せたい<br>・ブラウザで開く社内の画面から情報を拾いたい</p>
+    </div>
+    <div class="card" style="padding:28px;border-color:var(--accent);">
+      <h3 style="font-size:20px;color:var(--text-hd);">使うときの決まり</h3>
+      <p class="body" style="margin-top:12px;font-size:17px;">公式の勧めは<b>「信頼できるサイトで、リスクの低い作業に」</b>。買い物や個人情報の送信など重い操作の前は、Claudeが止まって許可を求めます。銀行やお金が動く画面では使いません</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:28px;color:var(--text-muted);">Chromeに追加する拡張機能です。第7回のつなぎ口は「Claudeが道具に手を伸ばす」、こちらは「<b>自分のブラウザにClaudeが同席する</b>」。今日は講師の画面で見ます。</p>
+  <p class="pagefoot">03</p>
+</section>
+
+<!-- 5. Office -->
+<section class="slide" data-intent="office">
+  <p class="eyebrow">IN EXCEL, WORD, POWERPOINT, OUTLOOK ⚠️</p>
+  <h2 class="action-title">Officeの中のClaudeは、開いているファイルをその場で扱います</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px;">
+    <div class="card" style="padding:22px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">Excel</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">式の意味をたどる。<b>式のつながりを保ったまま</b>数字を直す。エラーの原因を探す。集計表やグラフをつくる</p>
+    </div>
+    <div class="card" style="padding:22px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">Word</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">メモから初稿をつくる。言い回しを整える。<b>変更履歴やコメント</b>にその場で対応する</p>
+    </div>
+    <div class="card" style="padding:22px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">PowerPoint</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">メモや文書からスライドの初稿。<b>自社のひな形のまま</b>並べ替え、書式をそろえる</p>
+    </div>
+    <div class="card" style="padding:22px;">
+      <h3 style="font-size:19px;color:var(--text-hd);">Outlook</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">受信メールの仕分け。経緯をふまえた返信の下書き。長いやり取りを要点と次の一手に</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:28px;">これまでは、ファイルをClaudeに渡して、できたものを受け取っていました。こちらは<b>ファイルを開いたまま、横の欄で頼む</b>やり方です。第9回の「前任者のExcel」は、Excelの中で聞くのがいちばん近道でした。</p>
+  <p class="body" style="margin-top:12px;color:var(--text-muted);font-size:16px;">各ソフトに追加する「アドイン」です。Microsoft 365の契約と版に条件があります。入れるかどうかは体験シートの早見表で決めます。</p>
+  <p class="pagefoot">04</p>
+</section>
+
+<!-- 6. Design と Tag -->
+<section class="slide" data-intent="design-tag">
+  <p class="eyebrow">DESIGN &amp; SLACK</p>
+  <h2 class="action-title">残りの2つは、名前と使いどきだけ押さえます</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px;">
+    <div class="card" style="padding:28px;">
+      <h3 style="font-size:20px;color:var(--text-hd);">デザイン（Claude Design）</h3>
+      <p class="body" style="margin-top:12px;font-size:17px;">ことば・手書きのスケッチ・画面の写真から、<b>さわれる画面の試作</b>をつくる。案をいくつも出して見比べられる。第6回の「作品」の仲間で、いつもの会話の中で使えます</p>
+      <p class="body" style="margin-top:10px;font-size:14px;color:var(--text-muted);">例: 自社サイトの問い合わせ画面の案、受付表の画面</p>
+    </div>
+    <div class="card" style="padding:28px;">
+      <h3 style="font-size:20px;color:var(--text-hd);">Slackの中（Claude Tag）</h3>
+      <p class="body" style="margin-top:12px;font-size:17px;">社内チャットのSlackで、Claudeに呼びかけて使う。<b>長いやり取りの要約、返信の下書き、会議前の整理</b>。Slackを使っている会社向けです</p>
+      <p class="body" style="margin-top:10px;font-size:14px;color:var(--text-muted);">Slackを使っていなければ、今は気にしなくて構いません</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:28px;color:var(--text-muted);">ここまでの4つは「すでに仕事をしている場所に、Claudeが来てくれる」入口でした。最後のひとつだけ毛色が違います。<b>道具そのものをつくる係</b>です。</p>
+  <p class="pagefoot">05</p>
+</section>
+
+<!-- 7. ステートメント -->
+<section class="slide" data-intent="statement">
+  <div class="mesh"></div>
+  <div class="stmt">
+    <p class="eyebrow">PRINCIPLE</p>
+    <h2 class="display" style="font-size:74px;margin-top:20px;">場所が増えても、<br><span class="grad-accent">やることは同じ。</span></h2>
+    <p class="body" style="margin-top:32px;font-size:22px;">ほしいものを伝える。途中で舵を取る。でき上がりを自分で確かめる。<br>10回かけて身につけた型は、どの働き場所でもそのまま使えます。</p>
+  </div>
+  <p class="pagefoot">06</p>
+</section>
+
+<!-- 8. Claude Codeとは -->
+<section class="slide" data-intent="code-what">
+  <p class="eyebrow">CLAUDE CODE</p>
+  <h2 class="action-title">Claude Codeは「道具をつくる係」。自分で手を動かします</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;">
+    <div class="card" style="padding:26px;">
+      <h3 style="font-size:20px;color:var(--text-hd);">会話のClaudeとの違い</h3>
+      <p class="body" style="margin-top:12px;font-size:17px;">会話では、出てきたものを<b>自分でコピーして貼る</b>。Claude Codeは、渡したフォルダの中のファイルを<b>直接読み、書きかえ、動かして確かめる</b>。もともとは開発者向けの道具です</p>
+    </div>
+    <div class="card" style="padding:26px;border-color:var(--accent);">
+      <h3 style="font-size:20px;color:var(--text-hd);">できること</h3>
+      <p class="body" style="margin-top:12px;font-size:17px;">・フォルダの中身を読んで理解する<br>・ファイルをつくる、まとめて書きかえる<br>・つくったものを動かして、結果を見る<br>・必要ならウェブで調べる</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:24px;">第10回の「任せる」は<b>報告書などの書類</b>が成果物でした。こちらは<b>動く道具</b>が成果物です。計算の道具、入力フォーム、ファイル名をまとめて直す仕掛けなど。</p>
+  <p class="body" style="margin-top:12px;color:var(--text-muted);font-size:17px;">デスクトップアプリの「Code」から使えば、黒い画面に文字を打つ必要はありません ⚠️。日本語で頼めます。</p>
+  <p class="pagefoot">07</p>
+</section>
+
+<!-- 9. 仕組み -->
+<section class="slide" data-intent="loop">
+  <p class="eyebrow">HOW IT WORKS</p>
+  <h2 class="action-title">進み方は、集める・動く・確かめるの繰り返しです</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px;">
+    <div class="card" style="padding:22px;">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">1</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">頼みごとを受ける</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">ほしい道具を、ふだんの言葉で伝える</p>
+    </div>
+    <div class="card" style="padding:22px;">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">2</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">材料を集める</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">フォルダのファイルを読み、何が要るかを自分で調べる</p>
+    </div>
+    <div class="card" style="padding:22px;">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">3</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">動く</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">ファイルをつくる、書きかえる、動かしてみる</p>
+    </div>
+    <div class="card" style="padding:22px;border-color:var(--accent);">
+      <div class="metric" style="font-size:32px;color:var(--accent-soft);">4</div>
+      <h3 style="font-size:18px;color:var(--text-hd);margin-top:8px;">確かめる</h3>
+      <p class="body" style="margin-top:10px;font-size:15px;">頼まれたとおりにできたかを見る。<b>できていなければ2へ戻る</b></p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:30px;">この輪が回っているあいだ、こちらは<b>情報を足す、止める、向きを変える</b>ことができます。第10回の「途中で舵を取る」と同じです。</p>
+  <p class="body" style="margin-top:12px;color:var(--text-muted);font-size:17px;">公式の注意書きも3つ。一度に覚えていられる量には限りがある。どこまで任せるかは自分で決められる。<b>間違えることがある</b>（意図の取り違え、作り込みすぎ）。</p>
+  <p class="pagefoot">08</p>
+</section>
+
+<!-- 10. 権限モード -->
+<section class="slide" data-intent="modes">
+  <p class="eyebrow">PERMISSION MODES ⚠️</p>
+  <h2 class="action-title">任せ具合は4段階。最初は「計画」から入ります</h2>
+  <table style="margin-top:22px;font-size:17px;">
+    <tr><th style="width:330px;">モード（画面の表示）</th><th>Claudeの動き方</th><th style="width:280px;">使いどき</th></tr>
+    <tr><td><b>手動</b>（Manual）</td><td>ファイルを書きかえる前、何かを動かす前に、毎回聞いてくる</td><td>慣れるまで。中身を1つずつ見たいとき</td></tr>
+    <tr><td><b>編集を自動で承認</b>（Accept edits）</td><td>ファイルの書きかえは聞かずに進める。それ以外は聞いてくる</td><td>計画に納得したあと、手早く進めたいとき</td></tr>
+    <tr style="background:var(--bg-tint);"><td><b>計画</b>（Plan）</td><td><b>読んで調べるだけで、何も書きかえない</b>。確認の質問をして、進め方の計画を出す</td><td><b>今日の入口。</b>手順の多い頼みごとの前</td></tr>
+    <tr><td><b>自動</b>（Auto）</td><td>ほとんど聞かずに進める。裏で安全確認が動き、危ない操作は止める</td><td>今日は使いません</td></tr>
+  </table>
+  <p class="body" style="margin-top:22px;">順番は<b>「計画で頼む → 計画を読む → 承認する → つくらせる」</b>。計画を読む時間が、いちばん安いやり直しです。</p>
+  <p class="body" style="margin-top:10px;color:var(--text-muted);font-size:16px;">モードは入力欄の下で選びます。表示名は画面の更新で変わることがあります。確認を飛ばすほど、間違いに気づくのが遅れます。</p>
+  <p class="pagefoot">09</p>
+</section>
+
+<!-- 11. ワーク -->
+<section class="slide" data-intent="handson">
+  <p class="eyebrow">HANDS-ON 70 MIN</p>
+  <h2 class="action-title">今日は、概算見積の道具を1本つくって帰ります</h2>
+  <div style="margin-top:26px;">
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">15<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">講師デモ。Chromeの中のClaude → Excelの中のClaude → Codeでフォルダを渡して計画モードで頼むところまで ⚠️</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">15<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ワーク1。計画モードで頼み、<b>計画を3点で読む</b>。足りなければ承認する前に言う</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;">
+      <p class="metric" style="font-size:22px;">25<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ワーク2。承認してつくらせる → できた道具を開く → <b>答えのわかっている例題で確かめる</b> → 直しを1つ頼む</p>
+    </div>
+    <div class="flowrow" style="grid-template-columns:90px 1fr;border-bottom:none;">
+      <p class="metric" style="font-size:22px;">15<span class="unit" style="font-size:15px;">分</span></p>
+      <p class="body">ワーク3。働き場所の早見表で、自社に要る場所を1つ選ぶ。残りは「今は使わない」に丸</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:24px;color:var(--text-muted);">題材は、第9回で読み解いた「前任者のExcelの見積計算」です。あの計算の決まりを、現場でも使える道具につくり替えます。</p>
+  <p class="pagefoot">10</p>
+</section>
+
+<!-- 12. 持ち帰り -->
+<section class="slide" data-intent="takeaway">
+  <p class="eyebrow">TAKEAWAY</p>
+  <h2 class="action-title">持ち帰りは「計画を読む3点」と「例題で確かめる」</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;">
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">計画を読む3点</h3>
+      <p class="body" style="margin-top:12px;">何をつくるか（ファイルの名前と数）。こちらの決まりが入っているか。頼んでいないものが混ざっていないか。</p>
+    </div>
+    <div class="card" style="padding:32px;">
+      <h3 style="font-size:21px;color:var(--text-hd);">例題で確かめる</h3>
+      <p class="body" style="margin-top:12px;">中身のプログラムは読めなくて構いません。答えのわかっている例題を入れて、同じ数字が出るかを見ます。</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:36px;color:var(--text-muted);">宿題はありません。今日つくった道具は演習用です。自社で使う道具にするときは、単価や施主名の扱いを第3回の線引きで見直し、正式な見積は今までどおり事務所で出します。</p>
+  <p class="pagefoot">11</p>
+</section>
+
+<!-- 13. 次回予告 -->
+<section class="slide" data-intent="cta">
+  <div class="mesh"></div>
+  <div class="stmt">
+    <p class="eyebrow">NEXT SESSION</p>
+    <h2 class="display" style="font-size:70px;margin-top:20px;">次回は、最終回。<br><span class="grad-accent">まとめと成果発表。</span></h2>
+    <p class="body" style="margin-top:30px;font-size:21px;">12回で身につけたことを一枚に並べ直します。<br>この3か月で変わった仕事を1つ、「前は何分、今は何分」で話してもらいます。</p>
+    <p class="body" style="margin-top:36px;color:var(--text-muted);">第12回 総まとめと成果発表｜準備は要りません。当日、その場で一緒に整理します｜株式会社ククルデザイン</p>
+  </div>
+  <p class="pagefoot">12</p>
+</section>
+
+</body>
+</html>
